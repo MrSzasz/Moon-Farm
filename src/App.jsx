@@ -7,7 +7,7 @@ function App() {
 
   <>
     <NavBar />
-    <ItemListContainer greeting='Hola! Soy un greeting!' subGreeting='Bienvenido a mi pagina!'/>
+    <ItemListContainer greeting='Hola! Soy un greeting!' subGreeting='Bienvenido a mi pagina!' />
   </>
   
   )
