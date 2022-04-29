@@ -3,11 +3,14 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import NavBar from "./components/NavBar.jsx";
 
 function App() {
+
+  const greeting = 'Hola! Soy un greeting!';
+  
   return (
 
   <>
     <NavBar />
-    <ItemListContainer greeting='Hola! Soy un greeting!' subGreeting='Bienvenido a mi pagina!' />
+    <ItemListContainer greeting={greeting} subGreeting='Bienvenido a mi pagina!' />
   </>
   
   )
