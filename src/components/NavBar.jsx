@@ -1,9 +1,10 @@
 import CartWidget from "./CartWidget/CartWidget";
+import { BsFillMoonFill } from 'react-icons/bs';
 
 function NavBar() {
   return (
     <header>
-      <div className="logo center"> MOON FARM <i class="fa-solid fa-moon"></i></div>
+      <div className="logo text-center"> MOON FARM <BsFillMoonFill /></div>
       <nav>
         <ul>
           <li><a href="#">INICIO</a></li>

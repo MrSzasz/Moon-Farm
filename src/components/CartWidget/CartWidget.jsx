@@ -1,9 +1,10 @@
 import "./CartWidget.css";
+import { BsFillBasket2Fill } from 'react-icons/bs'
 
 function CartWidget() {
   return (
     <li>
-      <a href="#"><i class="fa-solid fa-basket-shopping"></i></a>
+      <a href="#"><BsFillBasket2Fill /></a>
     </li>
   );
 }
