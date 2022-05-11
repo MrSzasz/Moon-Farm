@@ -1,4 +1,4 @@
-import CartWidget from "./CartWidget/CartWidget";
+import CartWidget from "../CartWidget/CartWidget";
 import { BsFillMoonFill } from 'react-icons/bs';
 
 function NavBar() {

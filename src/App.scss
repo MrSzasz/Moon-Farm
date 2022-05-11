@@ -1,11 +1,6 @@
 @font-face {
   font-family: pixel;
-  src: url(../fonts/pixel1.ttf);
-}
-
-@font-face {
-  font-family: pixel2;
-  src: url(../fonts/pixel2.ttf);
+  src: url(src/resources/fonts/pixel.ttf);
 }
 
 // ======================================================================================================================== //
@@ -43,13 +38,15 @@ $iridium: #801FE2;
   border: 2px solid #1e1e1e;
 }
 
-body {
-  height: 100vh;
-  background-image: url(../images/mainDay.jpg);
+.body {
+  min-height: 100vh;
+  height: 100%;
+  background-image: url(src/resources/images/mainDay.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  font-family: pixel2;
+  background-attachment: fixed;
+  font-family: pixel;
   font-size: 14px;
   letter-spacing: 0.5px;
   word-spacing: 1px;

@@ -19,12 +19,12 @@ function ItemCount({ stock, initial, onAdd }) {
 
   return (
     <div className="counterContainer">
-      <h2>Stock disponible = {stock}</h2>
+      <h2 className="text-center">Stock disponible <br></br> {stock}</h2>
       <div className="counterControl">
         <button className="btn btn-danger" onClick={removeCounter}>
           <ImMinus />
         </button>
-        <p className="counterStatus">{counter}</p>
+        <p className="counterStatus px-5">{counter}</p>
         <button className="btn btn-success" onClick={addCounter}>
           <ImPlus />
         </button>
