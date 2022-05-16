@@ -72,7 +72,7 @@ let productList = [
     bundle: "spring",
     id: 106,
     product: "Coliflor",
-    image: "https://i.imgur.com/wLNTD6j.png",
+    image: "https://i.imgur.com/HKgKklR.png",
     hasRecipe: true,
     quantity: 10,
     price: 25,
