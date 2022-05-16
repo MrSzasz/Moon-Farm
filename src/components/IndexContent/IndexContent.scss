@@ -1,0 +1,91 @@
+@mixin glassMorph {
+    background-color: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(8.5px);
+    -webkit-backdrop-filter: blur(8.5px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+@mixin borderRadiusPreset {
+    border-radius: 5px;
+}
+
+@mixin shadowPreset {
+    box-shadow: 11px 11px 30px 0px rgba(0, 0, 0, 0.75);
+}
+
+.mainButton {
+    @include glassMorph;
+    @include borderRadiusPreset;
+    @include shadowPreset;
+    padding: 10px 20px 10px 20px;
+    box-shadow:
+        0 0 0 3px #5B2B2A,
+        0 0 0 6px #FA9305,
+        0 0 0 9px #853605;
+    transition: ease all .20s;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    &:focus {
+        box-shadow:
+            0 0 0 3px #5B2B2A,
+            0 0 0 6px #FA9305,
+            0 0 0 9px #853605;
+    }
+}
+
+
+.body {
+    .indexContainer {
+        margin: 20px 10%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding: 20px 0 20px 0;
+        margin-bottom: 0;
+
+        h1 {
+            padding: 25px;
+            @include glassMorph;
+            box-shadow:
+                0 0 0 3px #5B2B2A,
+                0 0 0 6px #FA9305,
+                0 0 0 9px #853605;
+            border-radius: 5px;
+        }
+
+        .mainImg {
+            margin: 0 10%;
+            height: 400px;
+            width: 80%;
+            margin: auto;
+            background-image: url("src/resources/images/farm.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            @include borderRadiusPreset;
+            @include shadowPreset;
+            box-shadow:
+                0 0 0 3px #5B2B2A,
+                0 0 0 6px #FA9305,
+                0 0 0 9px #853605;
+        }
+
+        p {
+            text-align: justify;
+            padding: 25px;
+            @include glassMorph;
+            @include borderRadiusPreset;
+            @include shadowPreset;
+            box-shadow:
+                0 0 0 3px #5B2B2A,
+                0 0 0 6px #FA9305,
+                0 0 0 9px #853605;
+        }
+    }
+}

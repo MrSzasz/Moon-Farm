@@ -18,9 +18,11 @@ function NavBar() {
               <a href="#">INICIO</a>
             </li>
           </Link>
-          <li>
-            <a href="#">TIENDA</a>
-          </li>
+          <Link to="/tienda">
+            <li>
+              <a href="#">TIENDA</a>
+            </li>
+          </Link>
           <CartWidget />
         </ul>
       </nav>

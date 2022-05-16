@@ -1,45 +1,123 @@
-body{
-    background:#E0E0E0;
+// ======================================================================================================================== //
+
+@mixin glassMorph {
+    background-color: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(8.5px);
+    -webkit-backdrop-filter: blur(8.5px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
 }
-.details {
-            border: 1.5px solid grey;
-            color: #212121;
-            width: 80%;
-            height: auto;
-            box-shadow: 0px 0px 10px #212121;
-            
+
+@mixin borderRadiusPreset {
+    border-radius: 5px;
+}
+
+@mixin shadowPreset {
+    box-shadow: 11px 11px 30px 0px rgba(0, 0, 0, 0.75);
+}
+
+// ======================================================================================================================== //
+
+$silver: #A0A0A0;
+$gold: #EFC90B;
+$iridium: #801FE2;
+
+// ======================================================================================================================== //
+
+.infoCard {
+    grid-column: 2/3;
+    height: min-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-around;
+    align-items: center;
+    padding: 25px;
+    @include glassMorph;
+    box-shadow:
+        0 0 0 3px #5B2B2A,
+        0 0 0 6px #FA9305,
+        0 0 0 9px #853605;
+    border-radius: 5px;
+    margin: 30px 0 30px 0;
+
+    .infoContainer {
+        height: min-content;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0 30px 0 30px;
+
+        .prodInfo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+
+            .infoCardModal {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 300px;
+                min-width: 200px;
+                transition: ease all .20s;
+                margin: 10px 0 10px 0;
+                @include glassMorph;
+                border-radius: 5px;
+                box-shadow:
+                    0 0 0 3px #5B2B2A,
+                    0 0 0 6px #FA9305,
+                    0 0 0 9px #853605;
+
+                .infoCardModalContent {
+                    height: 20%;
+                    width: 100%;
+                    border: 1px solid black;
+                }
+            }
+
+            p {
+                width: auto;
+            }
         }
 
-        .cart {
-            background-color: #212121;
-            color: white;
-            margin-top: 10px;
-            font-size: 12px;
-            font-weight: 900;
+        .recipe {
             width: 100%;
-            height: 39px;
-            padding-top: 9px;
-            box-shadow: 0px 5px 10px  #212121;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+
+            .buttonsRecipe {
+                width: 100%;
+                height: max-content;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+            }
+
+            .collapse {
+                height: min-content;
+            }
+
+            .expandedRecipe {
+                text-align: justify;
+                padding: 25px;
+                @include glassMorph;
+                @include borderRadiusPreset;
+                @include shadowPreset;
+                box-shadow:
+                    0 0 0 3px #5B2B2A,
+                    0 0 0 6px #FA9305,
+                    0 0 0 9px #853605;
+                margin: 30px 0 30px 0;
+            }
         }
 
-        .card {
-            width: fit-content;
-        }
-
-        .card-body {
-            width: fit-content;
-        }
-
-        .btn {
-            border-radius: 0;
-        }
-
-        .img-thumbnail {
-            border: none;
-        }
-
-        .card {
-            box-shadow: 0 20px 40px rgba(0, 0, 0, .2);
-            border-radius: 5px;
-            padding-bottom: 10px;
-        }
+    }
+}

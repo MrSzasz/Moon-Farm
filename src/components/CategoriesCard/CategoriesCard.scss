@@ -1,0 +1,92 @@
+// ======================================================================================================================== //
+
+@mixin glassMorph {
+    background-color: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(8.5px);
+    -webkit-backdrop-filter: blur(8.5px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+@mixin borderRadiusPreset {
+    border-radius: 5px;
+}
+
+@mixin shadowPreset {
+    box-shadow: 11px 11px 30px 0px rgba(0, 0, 0, 0.75);
+}
+
+// ======================================================================================================================== //
+
+$silver: #A0A0A0;
+$gold: #EFC90B;
+$iridium: #801FE2;
+
+// ======================================================================================================================== //
+
+
+.shopCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    min-width: 200px;
+    transition: ease all .20s;
+    margin: 10px 0 10px 0;
+    cursor: pointer;
+    @include glassMorph;
+    border-radius: 5px;
+
+
+    box-shadow:
+        0 0 0 3px #5B2B2A,
+        0 0 0 6px #FA9305,
+        0 0 0 9px #853605;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    .mainShopCardTitle {
+        height: 10%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .backCard {
+        height: 90%;
+        width: 100%;
+
+    }
+
+    .spring {
+        background-image: url(src/resources/images/seasons/spring.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 300%;
+    }
+
+    .summer {
+        background-image: url(src/resources/images/seasons/summer.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 300%;
+    }
+
+    .autumn {
+        background-image: url(src/resources/images/seasons/autumn.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 300%;
+    }
+
+    .specials {
+        background-image: url(src/resources/images/seasons/specials.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 300%;
+    }
+}

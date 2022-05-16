@@ -203,7 +203,7 @@ const ItemDetailContainer = () => {
 
   return (
     <div className="d-flex flex-wrap w-100 justify-content-around gap-4 p-4">
-      <ItemDetail img={grabProduct.image} name={grabProduct.product} price={grabProduct.price} recipe={grabProduct.recipe} />
+      <ItemDetail img={grabProduct.image} name={grabProduct.product} price={grabProduct.price} recipe={grabProduct.recipe} bundle={grabProduct.bundle}/>
     </div>
   );
 };
