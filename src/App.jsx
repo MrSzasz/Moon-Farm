@@ -17,12 +17,12 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<IndexContent />} />
-          <Route path="/tienda/:seasonUrl/:packDetail" element={<ItemDetailContainer />} />
-          {/* <Route path="/detalle" element={<ItemDetailContainer />} /> */}
-          <Route path="/carrito" element={<Cart />} />
           <Route path="/tienda" element={<Categories />} />
           <Route path="/tienda/:seasonUrl" element={<ItemListContainer />} />
+          <Route path="/tienda/:seasonUrl/:packDetail" element={<ItemDetailContainer />} />
+          <Route path="/carrito" element={<Cart />} />
           <Route path="/*" element={<Navigate to="/" replace />} />
+          {/* <Route path="/detalle" element={<ItemDetailContainer />} /> */}
         </Routes>
         {/* <Footer /> */}
       </div>

@@ -1,13 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Item from "../Item/Item";
 import "./ItemDetail.scss";
 
 const ItemDetail = ({ name, price, recipe, bundle}) => {
+  const {seasonUrl} = useParams()
+  const { packDetail } = useParams();
+  console.log(packDetail)
+
+
   return (
-    <div class="infoCard">
-      <h2>{name}</h2>
-      <div class="infoContainer">
-        <div class="prodInfo">
+    <div className="infoCard">
+      <h2 className="text-uppercase">{packDetail}</h2>
+      <div className="infoContainer">
+        <div className="prodInfo">
           <Item />
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
@@ -20,13 +25,13 @@ const ItemDetail = ({ name, price, recipe, bundle}) => {
             Precio: ${price}
           </p>
         </div>
-        <div class="recipe text-center">
-          <div class="buttonsRecipe text-center">
-          <Link class="btn mainButton" to="/packs">
+        <div className="recipe text-center">
+          <div className="buttonsRecipe text-center">
+          <Link className="btn mainButton" to={`/tienda/${seasonUrl}`}>
           &lt; VOLVER
             </Link>
             <button
-              class="btn mainButton"
+              className="btn mainButton"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseExample"
@@ -35,11 +40,11 @@ const ItemDetail = ({ name, price, recipe, bundle}) => {
             >
               RECETAS
             </button>
-            <button class="btn mainButton">+ CARRITO</button>
+            <button className="btn mainButton">+ CARRITO</button>
           </div>
-          <div class="collapse" id="collapseExample">
-            <div class="expandedRecipe">
-              <h2 class="text-center">TITULO</h2>
+          <div className="collapse" id="collapseExample">
+            <div className="expandedRecipe">
+              <h2 className="text-center">TITULO</h2>
               <p>{recipe}</p>
             </div>
           </div>

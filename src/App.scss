@@ -246,3 +246,8 @@ $iridium: #801FE2;
       @include glassMorph;
   }
 }
+a {
+    height: min-content;
+    text-decoration: none;
+    color: black;
+}

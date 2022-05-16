@@ -34,6 +34,17 @@ $iridium: #801FE2;
     justify-content: center;
     align-items: center;
     margin: 30px 0 30px 0;
+    h2{
+        text-align: justify;
+        padding: 20px 25px;
+        @include glassMorph;
+        @include borderRadiusPreset;
+        @include shadowPreset;
+        box-shadow:
+        0 0 0 3px #5B2B2A,
+        0 0 0 6px #FA9305,
+        0 0 0 9px #853605;
+    }
     .linkToDetails{
         width: 100%;
     }

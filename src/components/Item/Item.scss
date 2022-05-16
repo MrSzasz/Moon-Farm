@@ -47,11 +47,31 @@ $iridium: #801FE2;
         height: 20%;
         width: 100%;
         border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10%;
+        padding:10px;
+        img {
+            height: 100%;
+            width: auto;
+        }
+        p{
+            margin: 0;
+        }
     }
 
     &:hover {
         transform: scale(1.05);
     }
+}
+.packCardWoH{
+    @extend .packCard;
+    cursor: default;
+    &:hover{
+        transform: scale(1);
+    }
+
 }
 
 .silver {

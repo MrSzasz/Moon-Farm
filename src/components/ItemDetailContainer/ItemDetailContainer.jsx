@@ -33,7 +33,7 @@ let productList = [
     bundle: "spring",
     id: 103,
     product: "Allium",
-    image: "src/resources/images/crops/spring/Blue_Jazz.png",
+    image: "https://i.imgur.com/xTsjp3F.png",
     hasRecipe: false,
     quantity: 10,
     price: 25,
@@ -72,7 +72,7 @@ let productList = [
     bundle: "spring",
     id: 106,
     product: "Coliflor",
-    image: "https://i.imgur.com/wLNTD6j.png",
+    image: "https://i.imgur.com/HKgKklR.png",
     hasRecipe: true,
     quantity: 10,
     price: 25,
@@ -183,6 +183,8 @@ let productList = [
     recipe: null,
   },
 ];
+
+
 
 const ItemDetailContainer = () => {
   const [grabProduct, setGrabProduct] = useState({});
