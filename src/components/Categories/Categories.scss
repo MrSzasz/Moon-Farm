@@ -1,20 +1,8 @@
-@mixin glassMorph {
-    background-color: rgba(255, 255, 255, 0.35);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(8.5px);
-    -webkit-backdrop-filter: blur(8.5px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-}
+@import "/src/resources/style/props.scss";
 
-@mixin borderRadiusPreset {
-    border-radius: 5px;
-}
-
-@mixin shadowPreset {
-    box-shadow: 11px 11px 30px 0px rgba(0, 0, 0, 0.75);
-}
 
 .shopContainer {
+    grid-column: 2/3;
     height: min-content;
     width: 100%;
     display: flex;

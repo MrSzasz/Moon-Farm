@@ -3,38 +3,6 @@ import { Link, useParams } from "react-router-dom";
 import ItemList from "../ItemList/ItemList";
 import "./ItemListContainer.scss";
 
-// let packList = [
-//   {
-//     id: "B1",
-//     className: "silver",
-//     detailUrl: "plata",
-//     image1: "",
-//     image2: "",
-//     image3: "",
-//     image4: "",
-//   },
-//   {
-//     id: "B2",
-//     className: "gold",
-//     detailUrl: "oro",
-//     image1: "",
-//     image2: "",
-//     image3: "",
-//     image4: "",
-//     image5: "",
-//   },
-//   {
-//     id: "B3",
-//     className: "iridium",
-//     detailUrl: "iridio",
-//     image1: "",
-//     image2: "",
-//     image3: "",
-//     image4: "",
-//     image5: "",
-//   },
-// ];
-
 let packList = [
   {
     season: "primavera",
@@ -235,40 +203,15 @@ const ItemListContainer = () => {
 
   useEffect(() => {
     setFilteredList(
-      packsFromList.filter(seasonPack => seasonPack.season == seasonUrl )
+      packsFromList.filter((seasonPack) => seasonPack.season == seasonUrl)
     );
-  }, );
-
+  });
 
   return (
-    <div className="d-flex flex-wrap w-100 justify-content-center align-items-center">
+    <div className="d-flex flex-wrap w-100 justify-content-center align-items-center containerPacks">
       {loading ? (
         <h2 className="p-3">Cargando...</h2>
       ) : (
-        // <div className="shopContainer">
-        //       {packsFromList.map((mappedSeasons) => (
-        //         <Link key={mappedSeasons.id} to={`/tienda/${mappedSeasons.packUrl}`}>
-        //         <ItemList
-        //           packs={packsFromList}
-        //         />
-        //         </Link>
-        //       ))}
-        //     </div>
-
-        // packsFromList.map((mappedPack) => (
-        //   <div className="mainPacks">
-        //     <Link
-        //       className="linkToDetails"
-        //       to={`/tienda/${seasonUrl}/${mappedPack.detailUrl}`}
-        //     >
-        //       <ItemList packs={packsFromList} />
-        //     </Link>
-        //     <Link className="btn mainButton" to="/tienda">
-        //       &lt; VOLVER
-        //     </Link>
-        //   </div>
-        // ))
-
         <div className="mainPacks">
           <h2>{seasonUrl.toUpperCase()}</h2>
           <ItemList packs={filteredList} />
@@ -276,88 +219,9 @@ const ItemListContainer = () => {
             &lt; VOLVER
           </Link>
         </div>
-
-        // <div className="mainPacks">
-        //   <Link
-        //     className="linkToDetails"
-        //     to={`/tienda/${seasonUrl}/${holi}`}
-        //   >
-        //     <ItemList packs={packsFromList} />
-        //   </Link>
-        //   <Link className="btn mainButton" to="/tienda">
-        //     &lt; VOLVER
-        //   </Link>
-        // </div>
       )}
     </div>
   );
 };
 
 export default ItemListContainer;
-
-{
-  /* <div className="shopContainer">
-  {seasonListFetched.map((mappedSeasons) => (
-    <Link to={`/tienda/${mappedSeasons.packUrl}`}>
-      <CategoriesCard
-        key={mappedSeasons.id}
-        name={mappedSeasons.name}
-        className={mappedSeasons.className}
-      />
-    </Link>
-  ))}
-</div>; */
-}
-
-// import { useEffect, useState } from "react";
-// import { Link, useParams } from "react-router-dom";
-// import ItemList from "../ItemList/ItemList";
-// import "./ItemListContainer.scss";
-
-// let packList = [
-//   { className: "silver", detailUrl: "plata" },
-//   { className: "gold", detailUrl: "oro" },
-//   { className: "iridium", detailUrl: "iridio" },
-// ];
-
-// const getFetch = new Promise((res) => {
-//   setTimeout(() => {
-//     res(packList);
-//   }, 2000);
-// });
-
-// const ItemListContainer = ({ detailUrl }) => {
-//   const [packsFromList, setPacksFromList] = useState([]);
-//   const [loading, setLoading] = useState(true);
-
-//   useEffect(() => {
-//     getFetch
-//       .then((res) => setPacksFromList(res))
-//       .catch((err) => console.log(err))
-//       .finally(() => setLoading(false));
-//   }, []);
-
-//   const { seasonUrl } = useParams();
-
-//   return (
-//     <div className="d-flex flex-wrap w-100 justify-content-center align-items-center">
-//       {loading ? (
-//         <h2 className="p-3">Cargando...</h2>
-//       ) : (
-//         <div className="mainPacks">
-//           <Link
-//             className="linkToDetails"
-//             to={`/tienda/${seasonUrl}/${packsFromList.detailUrl}`}
-//           >
-//             <ItemList packs={packsFromList} />
-//           </Link>
-//           <Link className="btn mainButton" to="/tienda">
-//             &lt; VOLVER
-//           </Link>
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default ItemListContainer;

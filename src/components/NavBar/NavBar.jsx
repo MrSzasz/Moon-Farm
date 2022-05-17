@@ -1,13 +1,15 @@
 import CartWidget from "../CartWidget/CartWidget";
 import { BsFillMoonFill } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import "./NavBar.scss"
+
 
 function NavBar() {
+
   return (
     <header>
       <Link to="/">
         <div className="logo text-center">
-          {" "}
           MOON FARM <BsFillMoonFill />
         </div>
       </Link>

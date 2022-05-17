@@ -1,26 +1,5 @@
-// ======================================================================================================================== //
+@import "/src/resources/style/props.scss";
 
-@mixin glassMorph {
-    background-color: rgba(255, 255, 255, 0.35);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(8.5px);
-    -webkit-backdrop-filter: blur(8.5px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-@mixin borderRadiusPreset {
-    border-radius: 5px;
-}
-
-@mixin shadowPreset {
-    box-shadow: 11px 11px 30px 0px rgba(0, 0, 0, 0.75);
-}
-
-// ======================================================================================================================== //
-
-$silver: #A0A0A0;
-$gold: #EFC90B;
-$iridium: #801FE2;
 
 // ======================================================================================================================== //
 
@@ -38,10 +17,7 @@ $iridium: #801FE2;
     @include glassMorph;
     border-radius: 5px;
     margin: auto;
-    box-shadow:
-        0 0 0 3px #5B2B2A,
-        0 0 0 6px #FA9305,
-        0 0 0 9px #853605;
+    @include svBorder;
 
     .contentCard {
         height: 20%;
@@ -83,16 +59,13 @@ $iridium: #801FE2;
         top: -42px;
         height: 24px;
         width: 24px;
-        background-image: url(src/resources/images/stars/Silver.png);
+        background-image: url("https://i.imgur.com/9nmOzyF.png");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         @include glassMorph;
         border-radius: 5px;
-        box-shadow:
-            0 0 0 3px #5B2B2A,
-            0 0 0 6px #FA9305,
-            0 0 0 9px #853605;
+        @include svBorder;
     }
 }
 
@@ -105,16 +78,13 @@ $iridium: #801FE2;
         top: -42px;
         height: 24px;
         width: 24px;
-        background-image: url(src/resources/images/stars/Gold.png);
+        background-image: url("https://i.imgur.com/75UVLpj.png");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         @include glassMorph;
         border-radius: 5px;
-        box-shadow:
-            0 0 0 3px #5B2B2A,
-            0 0 0 6px #FA9305,
-            0 0 0 9px #853605;
+        @include svBorder;
     }
 }
 
@@ -127,15 +97,12 @@ $iridium: #801FE2;
         top: -42px;
         height: 24px;
         width: 24px;
-        background-image: url(src/resources/images/stars/Iridium.png);
+        background-image: url("https://i.imgur.com/k9noXH7.png");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         @include glassMorph;
         border-radius: 5px;
-        box-shadow:
-            0 0 0 3px #5B2B2A,
-            0 0 0 6px #FA9305,
-            0 0 0 9px #853605;
+        @include svBorder;
     }
 }

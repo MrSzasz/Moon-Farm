@@ -1,31 +1,11 @@
-// ======================================================================================================================== //
+@import "/src/resources/style/props.scss";
 
-@mixin glassMorph {
-    background-color: rgba(255, 255, 255, 0.35);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(8.5px);
-    -webkit-backdrop-filter: blur(8.5px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-@mixin borderRadiusPreset {
-    border-radius: 5px;
-}
-
-@mixin shadowPreset {
-    box-shadow: 11px 11px 30px 0px rgba(0, 0, 0, 0.75);
-}
 
 // ======================================================================================================================== //
 
-$silver: #A0A0A0;
-$gold: #EFC90B;
-$iridium: #801FE2;
-
-// ======================================================================================================================== //
-
-.infoCard {
+.containerDetails{
     grid-column: 2/3;
+    .infoCard {
     height: min-content;
     width: 100%;
     display: flex;
@@ -35,10 +15,7 @@ $iridium: #801FE2;
     align-items: center;
     padding: 25px;
     @include glassMorph;
-    box-shadow:
-        0 0 0 3px #5B2B2A,
-        0 0 0 6px #FA9305,
-        0 0 0 9px #853605;
+    @include svBorder;
     border-radius: 5px;
     margin: 30px 0 30px 0;
 
@@ -69,10 +46,7 @@ $iridium: #801FE2;
                 margin: 10px 0 10px 0;
                 @include glassMorph;
                 border-radius: 5px;
-                box-shadow:
-                    0 0 0 3px #5B2B2A,
-                    0 0 0 6px #FA9305,
-                    0 0 0 9px #853605;
+                @include svBorder;
 
                 .infoCardModalContent {
                     height: 20%;
@@ -111,13 +85,10 @@ $iridium: #801FE2;
                 @include glassMorph;
                 @include borderRadiusPreset;
                 @include shadowPreset;
-                box-shadow:
-                    0 0 0 3px #5B2B2A,
-                    0 0 0 6px #FA9305,
-                    0 0 0 9px #853605;
+                @include svBorder;
                 margin: 30px 0 30px 0;
             }
         }
 
     }
-}
+}}
