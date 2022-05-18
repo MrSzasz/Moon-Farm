@@ -364,22 +364,17 @@ let packList = [
   },
 ];
 
-
-
 const getFetch = new Promise((res) => {
   setTimeout(() => {
     res(productList);
   }, 2000);
 });
 
-
 const getFetchForFilter = new Promise((res) => {
   setTimeout(() => {
     res(packList);
   }, 2000);
 });
-
-
 
 const ItemDetailContainer = () => {
   const [grabProduct, setGrabProduct] = useState({});
@@ -388,26 +383,24 @@ const ItemDetailContainer = () => {
 
   const { seasonUrl } = useParams();
 
-
   useEffect(() => {
     getFetch
       .then((res) => res.find((item) => item.id === 106))
-      .then((res) => setGrabProduct(res))
-  }, []); 
-
+      .then((res) => setGrabProduct(res));
+  }, []);
 
   useEffect(() => {
     getFetchForFilter
-      .then((res) => res.filter((filteredRes) => filteredRes.season == seasonUrl))
+      .then((res) =>
+        res.filter((filteredRes) => filteredRes.season == seasonUrl)
+      )
       .then((res) => setFilteredList(res))
       .catch((err) => console.log(err));
   }, []);
 
   return (
     <div className="d-flex flex-wrap w-100 justify-content-around gap-4 p-4 containerDetails">
-      <ItemDetail
-        pack={filteredList}
-      />
+      <ItemDetail pack={filteredList} />
     </div>
   );
 };

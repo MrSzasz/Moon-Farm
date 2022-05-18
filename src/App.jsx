@@ -22,7 +22,6 @@ function App() {
           <Route path="/tienda/:seasonUrl/:packDetail" element={<ItemDetailContainer />} />
           <Route path="/carrito" element={<Cart />} />
           <Route path="/*" element={<Navigate to="/" replace />} />
-          {/* <Route path="/detalle" element={<ItemDetailContainer />} /> */}
         </Routes>
         {/* <Footer /> */}
       </div>

@@ -34,18 +34,6 @@ const ItemDetail = ({ pack }) => {
               image5={mappedData.image5}
             />
           ))}
-
-          {/* <Item
-            key={filteredPickFromPack.id}
-            className={filteredPickFromPack.className}
-            url={filteredPickFromPack.detailUrl}
-            image1={filteredPickFromPack.image1}
-            image2={filteredPickFromPack.image2}
-            image3={filteredPickFromPack.image3}
-            image4={filteredPickFromPack.image4}
-            image5={filteredPickFromPack.image5}
-          /> */}
-          {/* <Item /> */}
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
             eos ratione, excepturi mollitia beatae quisquam. Magnam assumenda
