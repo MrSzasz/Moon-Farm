@@ -4,37 +4,6 @@ import CategoriesCard from "../CategoriesCard/CategoriesCard";
 import "./Categories.scss";
 import { getFetchCategories } from "../../helpers/getFetch";
 
-// let seasonList = [
-//   {
-//     name: "PRIMAVERA",
-//     id: "S1",
-//     image: "",
-//     className: "spring",
-//     packUrl: "primavera",
-//   },
-//   {
-//     name: "VERANO",
-//     id: "S2",
-//     image: "",
-//     className: "summer",
-//     packUrl: "verano",
-//   },
-//   { name: "OTOÑO", id: "S3", image: "", className: "autumn", packUrl: "otoño" },
-//   {
-//     name: "ESPECIALES",
-//     id: "S4",
-//     image: "",
-//     className: "specials",
-//     packUrl: "especiales",
-//   },
-// ];
-
-// const getFetch = new Promise((res) => {
-//   setTimeout(() => {
-//     res(seasonList);
-//   }, 2000);
-// });
-
 const Categories = ({ classForNight }) => {
   const [seasonListFetched, setSeasonListFetched] = useState([]);
   const [loading, setLoading] = useState(true);

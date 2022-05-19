@@ -332,7 +332,7 @@ let seasonList = [{
         image: "",
         className: "specials",
         packUrl: "especiales",
-    },
+    }
 ];
 
 
@@ -344,6 +344,7 @@ export const getFetch = (filter) => {
         }, 2000)
     })
 }
+
 export const getFetchCategories = (filter) => {
     return new Promise((resolve) => {
         setTimeout(() => {
@@ -352,11 +353,3 @@ export const getFetchCategories = (filter) => {
         }, 2000)
     })
 }
-// export const getFetch = (id) => {
-//     return new Promise((resolve) => {
-//         setTimeout(() => {
-//             const query = id ? packList.find(prod => prod.id === id) : packList
-//             resolve(query)
-//         }, 2000)
-//     })
-// }

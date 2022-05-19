@@ -14,12 +14,11 @@ function App() {
   let today = new Date();
   let time = today.getHours();
   let isNight;
+  // time = 20;
 
   if (time <= 6 || 19 <= time) {
     isNight = "night";
   }
-
-  console.log(isNight)
 
   return (
     <BrowserRouter>

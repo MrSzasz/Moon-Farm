@@ -19,11 +19,6 @@ const ItemDetailContainer = ({ classForNight }) => {
       .finally(() => setLoading(false));
   }, []);
 
-  // return (
-  //   <div className="d-flex flex-wrap w-100 justify-content-around gap-4 p-4 containerDetails">
-  //     <ItemDetail pack={filteredList} isNight={classForNight} />
-  //   </div>
-  // );
   return (
     <div className="d-flex flex-wrap w-100 justify-content-around gap-4 p-4 containerDetails">
       {loading ? (
