@@ -70,7 +70,7 @@
 
 .night {
     @include glassMorphNight;
-
+    
     .mainShopCardTitle {
         @include glassMorph(rgba(104, 72, 31, 0.65));
     }

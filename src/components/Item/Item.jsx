@@ -25,8 +25,6 @@ function Item({
     } else {
       setBorderForDetails("iridium");
     }
-
-    console.log("el pack pasado es " + className);
   }, []);
 
   
