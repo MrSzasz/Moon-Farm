@@ -18,12 +18,22 @@
 
     }
 }
+.mainButtonNight {
+    @include glassMorphNight;
+    @include svBorder;
+    color: $nightFont;
+
+    &:focus {
+        @include svBorder;
+    }
+}
 
 
 .body {
     display: grid;
     grid-template-columns: 10% auto 10%;
     height: min-content;
+
     .indexContainer {
         grid-column: 2/3;
         display: flex;
@@ -64,6 +74,20 @@
             @include shadowPreset;
             @include svBorder;
 
+        }
+    }
+}
+
+.night {
+    .indexContainer {
+        h1 {
+            @include glassMorphNight;
+            @include svBorder;
+        }
+
+        p {
+            @include glassMorphNight;
+            @include svBorder;
         }
     }
 }

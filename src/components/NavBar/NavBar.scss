@@ -6,12 +6,12 @@ header {
     height: min-content;
     width: 100%;
     @include glassMorph;
-
+    border: none;
 
     .logo {
         height: 80%;
         width: 100%;
-        border-bottom: 2px solid black;
+        border-bottom: 2px solid $font;
     }
 
     nav {
@@ -28,6 +28,7 @@ header {
             justify-content: space-around;
             align-items: center;
             margin: 0;
+            padding: 0;
 
             li {
                 transition: ease all .20s;
@@ -48,15 +49,25 @@ header {
                     height: min-content;
                     text-decoration: none;
                     color: inherit;
-
-
-
                 }
             }
         }
     }
 }
 
-.activeOnNav{
+.activeOnNav {
     color: $iridium !important;
+}
+
+.night {
+    @include glassMorphNight;
+    border: none;
+
+    a {
+        color: $nightFont !important;
+    }
+
+    .logo {
+        border-bottom: 2px solid $nightFont;
+    }
 }

@@ -11,15 +11,34 @@ import Categories from "./components/Categories/Categories";
 import Footer from "./components/Footer/Footer";
 
 function App() {
+  let today = new Date();
+  let time = today.getHours();
+  let isNight;
+
+  if (time <= 6 || time >= 19) {
+    isNight = "night";
+  }
+
+  console.log(isNight)
+
   return (
     <BrowserRouter>
-      <div className="body">
-        <NavBar />
+      <div className={`body ${isNight}`}>
+        <NavBar classForNight={isNight} />
         <Routes>
-          <Route path="/" element={<IndexContent />} />
-          <Route path="/tienda" element={<Categories />} />
-          <Route path="/tienda/:seasonUrl" element={<ItemListContainer />} />
-          <Route path="/tienda/:seasonUrl/:packDetail" element={<ItemDetailContainer />} />
+          <Route path="/" element={<IndexContent classForNight={isNight} />} />
+          <Route
+            path="/tienda"
+            element={<Categories classForNight={isNight} />}
+          />
+          <Route
+            path="/tienda/:seasonUrl"
+            element={<ItemListContainer classForNight={isNight} />}
+          />
+          <Route
+            path="/tienda/:seasonUrl/:packDetail"
+            element={<ItemDetailContainer classForNight={isNight} />}
+          />
           <Route path="/carrito" element={<Cart />} />
           <Route path="/*" element={<Navigate to="/" replace />} />
         </Routes>

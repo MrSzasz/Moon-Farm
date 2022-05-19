@@ -34,7 +34,7 @@ const getFetch = new Promise((res) => {
   }, 2000);
 });
 
-const Categories = () => {
+const Categories = ({ isNight }) => {
   const [seasonListFetched, setSeasonListFetched] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -53,6 +53,7 @@ const Categories = () => {
             key={mappedSeasons.id}
             name={mappedSeasons.name}
             className={mappedSeasons.className}
+            isNight={isNight}
           />
         </Link>
       ))}

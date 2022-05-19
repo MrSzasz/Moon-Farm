@@ -1,0 +1,44 @@
+@import "/src/resources/style/props.scss";
+
+.itemListDescription {
+    ul {
+        list-style: none;
+        padding: 20px;
+        display: inline-block;
+
+        .nameLi {
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        li {
+            display: inline-block;
+            position: relative;
+            color: inherit;
+            transition: ease all 0.8s;
+
+
+            &:after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                transform: scaleX(0);
+                height: 3px;
+                bottom: 0;
+                left: 0;
+                background-color: $iridium;
+                transform-origin: bottom right;
+                transition: transform 0.25s ease-out;
+            }
+
+            &:hover {
+                color: $iridium;
+
+                &:after {
+                    transform: scaleX(1);
+                    transform-origin: bottom left;
+                }
+            }
+        }
+    }
+}

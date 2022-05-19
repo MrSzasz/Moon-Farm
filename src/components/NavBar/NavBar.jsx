@@ -1,16 +1,16 @@
 import CartWidget from "../CartWidget/CartWidget";
 import { BsFillMoonFill } from "react-icons/bs";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./NavBar.scss"
 
 
-function NavBar() {
+function NavBar({ classForNight }) {
 
   return (
-    <header>
+    <header className={classForNight}>
       <Link to="/">
-        <div className="logo text-center">
-          MOON FARM <BsFillMoonFill />
+        <div className="logo text-center d-flex justify-content-center align-items-center gap-2">
+          MOON FARM <BsFillMoonFill className="iconFont"/>
         </div>
       </Link>
       <nav>

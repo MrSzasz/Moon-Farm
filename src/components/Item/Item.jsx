@@ -10,8 +10,10 @@ function Item({
   image3 = "https://i.imgur.com/KFivjtP.png",
   image4 = "https://i.imgur.com/KFivjtP.png",
   image5 = "https://i.imgur.com/KFivjtP.png",
+  classForNight
 }) {
   const [borderForDetails, setBorderForDetails] = useState();
+  const [isNight, setIsNight] = useState();
   const { seasonUrl } = useParams();
   const { packDetail } = useParams();
 
@@ -27,100 +29,115 @@ function Item({
     console.log("el pack pasado es " + className);
   }, []);
 
+  
+  useEffect(() => {
+    classForNight&&
+    setIsNight(
+      'nightContainer'
+    )
+  },[])
+
+
   return (
     <div>
+
+      {/* =========================  ITEM DETAILS  ========================= */}
+
       {packDetail ? (
         borderForDetails === "silver" ? (
-          <div className={`packCardWoH ${borderForDetails}`}>
+          <div className={`packCardWoH ${borderForDetails, isNight&&'packNightWoH'}`}>
             <div className="contentCard">
-              <img src={image1}></img>
-              <p>x 10</p>
+              <img className="productN1" src={image1}></img>
+              <p>x 20</p>
             </div>
             <div className="contentCard">
-              <img src={image2}></img>
-              <p>x 10</p>
+              <img className="productN1" src={image2}></img>
+              <p>x 20</p>
             </div>
             <div className="contentCard">
-              <img src={image3}></img>
-              <p>x 10</p>
+              <img className="productN1" src={image3}></img>
+              <p>x 20</p>
             </div>
             <div className="contentCard">
-              <img src={image4}></img>
-              <p>x 10</p>
+              <img className="productN1" src={image4}></img>
+              <p>x 20</p>
             </div>
             <div className="contentCard">
-              <img src={image5}></img>
-              <p>x 10</p>
+              <img className="productN1" src={image5}></img>
+              <p>x 20</p>
             </div>
           </div>
-        ) : (
-          <div className={`packCardWoH ${borderForDetails}`}>
-            <div className="contentCard">
+        ) : (          
+          <div className={`packCardWoH ${borderForDetails, isNight&&'packNightWoH'}`}>
+            <div className={`contentCard bg-${borderForDetails}`}>
               <p>ANTERIOR +</p>
             </div>
             <div className="contentCard">
-              <img src={image1}></img>
-              <p>x 10</p>
+              <img className="productN1" src={image1}></img>
+              <p>x 20</p>
             </div>
             <div className="contentCard">
-              <img src={image2}></img>
-              <p>x 10</p>
+              <img className="productN1" src={image2}></img>
+              <p>x 20</p>
             </div>
             <div className="contentCard">
-              <img src={image3}></img>
-              <p>x 10</p>
+              <img className="productN1" src={image3}></img>
+              <p>x 20</p>
             </div>
             <div className="contentCard">
-              <img src={image4}></img>
-              <p>x 10</p>
+              <img className="productN1" src={image4}></img>
+              <p>x 20</p>
             </div>
           </div>
         )
       ) : (
+
+        // =========================  ITEM IN LIST =========================
+
         <Link to={`/tienda/${seasonUrl}/${url}`}>
           {className === "silver" ? (
-            <div className={`packCard ${className}`}>
-              <div className="contentCard">
-                <img src={image1}></img>
-                <p>x 10</p>
+            <div className={`packCard ${className, classForNight&&'packNight'}`}>
+              <div className={`contentCard`}>
+                <img className="productN1" src={image1}></img>
+                <p>x 20</p>
               </div>
               <div className="contentCard">
-                <img src={image2}></img>
-                <p>x 10</p>
+                <img className="productN1" src={image2}></img>
+                <p>x 20</p>
               </div>
               <div className="contentCard">
-                <img src={image3}></img>
-                <p>x 10</p>
+                <img className="productN1" src={image3}></img>
+                <p>x 20</p>
               </div>
               <div className="contentCard">
-                <img src={image4}></img>
-                <p>x 10</p>
+                <img className="productN1" src={image4}></img>
+                <p>x 20</p>
               </div>
               <div className="contentCard">
-                <img src={image5}></img>
-                <p>x 10</p>
+                <img className="productN1" src={image5}></img>
+                <p>x 20</p>
               </div>
             </div>
           ) : (
-            <div className={`packCard ${className}`}>
-              <div className="contentCard">
+            <div className={`packCard ${className, classForNight&&'packNight'}`}>
+              <div className={`contentCard bg-${className}`}>
                 <p>ANTERIOR +</p>
               </div>
               <div className="contentCard">
-                <img src={image1}></img>
-                <p>x 10</p>
+                <img className="productN1" src={image1}></img>
+                <p>x 20</p>
               </div>
               <div className="contentCard">
-                <img src={image2}></img>
-                <p>x 10</p>
+                <img className="productN1" src={image2}></img>
+                <p>x 20</p>
               </div>
               <div className="contentCard">
-                <img src={image3}></img>
-                <p>x 10</p>
+                <img className="productN1" src={image3}></img>
+                <p>x 20</p>
               </div>
               <div className="contentCard">
-                <img src={image4}></img>
-                <p>x 10</p>
+                <img className="productN1" src={image4}></img>
+                <p>x 20</p>
               </div>
             </div>
           )}

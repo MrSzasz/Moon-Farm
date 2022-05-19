@@ -188,8 +188,9 @@ const getFetch = new Promise((res) => {
   }, 2000);
 });
 
-const ItemListContainer = () => {
+const ItemListContainer = ({ classForNight }) => {
   const [packsFromList, setPacksFromList] = useState([]);
+  const [isNight, setIsNight] = useState();
   const [filteredList, setFilteredList] = useState([]);
   const [loading, setLoading] = useState(true);
   const { seasonUrl } = useParams();
@@ -207,15 +208,23 @@ const ItemListContainer = () => {
     );
   });
 
+  useEffect(() => {
+    classForNight&&
+    setIsNight(
+      'nightContainer'
+    )
+  });
+
+
   return (
-    <div className="d-flex flex-wrap w-100 justify-content-center align-items-center containerPacks">
+    <div className={`d-flex flex-wrap w-100 justify-content-center align-items-center containerPacks ${isNight}`}>
       {loading ? (
         <h2 className="p-3">Cargando...</h2>
       ) : (
         <div className="mainPacks">
           <h2>{seasonUrl.toUpperCase()}</h2>
-          <ItemList packs={filteredList} />
-          <Link className="btn mainButton" to="/tienda">
+          <ItemList packs={filteredList} isNight={classForNight} />
+          <Link className={`btn mainButton ${isNight && 'mainButtonNight'}`}  to="/tienda">
             &lt; VOLVER
           </Link>
         </div>

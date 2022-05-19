@@ -27,6 +27,10 @@
         display: flex;
         justify-content: center;
         align-items: flex-end;
+        @include glassMorph(rgba(128, 31, 226,.65));
+        @include glassMorph(rgba(253, 193, 117,.65));
+        border-radius: 5px 5px 0 0;
+        border: 1.5px solid black;
     }
 
     .backCard {
@@ -61,5 +65,13 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: 300%;
+    }
+}
+
+.night {
+    @include glassMorphNight;
+
+    .mainShopCardTitle {
+        @include glassMorph(rgba(104, 72, 31, 0.65));
     }
 }
