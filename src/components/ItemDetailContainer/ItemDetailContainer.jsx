@@ -23,8 +23,8 @@ const ItemDetailContainer = ({ classForNight }) => {
     <div className="d-flex flex-wrap w-100 justify-content-around gap-4 p-4 containerDetails">
       {loading ? (
         <div className={`text-center loadingDiv ${classForNight&&'loadingNight'}`} >
-          <span class="loader">
-            <span class="loader-inner"></span>
+          <span className="loader">
+            <span className="loader-inner"></span>
           </span>
           <h2 className="mt-4">LOADING...</h2>
         </div>

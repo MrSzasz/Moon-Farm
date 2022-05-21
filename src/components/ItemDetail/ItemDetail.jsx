@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import ChangeButton from "../changeButton/changeButton";
 import Item from "../Item/Item";
+import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetail.scss";
 
-const ItemDetail = ({ pack,isNight }) => {
+const ItemDetail = ({ pack, isNight }) => {
   const [filteredPickFromPack, setFilteredPickFromPack] = useState([]);
+  const [buttonStatus, setButtonStatus] = useState(false);
 
   const { seasonUrl } = useParams();
   const { packDetail } = useParams();
@@ -15,8 +18,10 @@ const ItemDetail = ({ pack,isNight }) => {
     );
   });
 
+  const changeButton = () => {};
+
   return (
-    <div className={`infoCard ${isNight&&'infoCardNight'}`}>
+    <div className={`infoCard ${isNight && "infoCardNight"}`}>
       <h2 className="text-uppercase">{packDetail}</h2>
       <h3 className="mb-3">= Contenido del pack =</h3>
       <div className="infoContainer">
@@ -79,9 +84,18 @@ const ItemDetail = ({ pack,isNight }) => {
                   </ul>
                 )}
                 <hr></hr>
-                <div className="d-flex justify-content-between ">
-                  <p className="hoverLine">&gt; Stock disponible: {mappedData.stock} </p>
-                  <p className="hoverLine">&gt; Precio: ${mappedData.price}</p>
+                <div className="d-flex flex-column">
+                  <div className="d-flex justify-content-between">
+                    <p className="hoverLine">
+                      &gt; Stock disponible: {mappedData.stock}{" "}
+                    </p>
+                    <p className="hoverLine">
+                      &gt; Precio: ${mappedData.price}
+                    </p>
+                  </div>
+                  <div>
+                    <ChangeButton stockFromObject={mappedData.stock} />
+                  </div>
                 </div>
               </div>
             </>
@@ -89,11 +103,16 @@ const ItemDetail = ({ pack,isNight }) => {
         </div>
         <div className="recipe text-center">
           <div className="buttonsRecipe text-center">
-            <Link className={`btn mainButton ${isNight&&'mainButtonNight'}`} to={`/tienda/${seasonUrl}`}>
+            <Link
+              className={`btn mainButton ${isNight && "mainButtonNight"}`}
+              to={`/tienda/${seasonUrl}`}
+            >
               &lt; VOLVER
             </Link>
             <button
-              className={`btn mainButton ${isNight&&'mainButtonNight hoverNight' }`}
+              className={`btn mainButton ${
+                isNight && "mainButtonNight hoverNight"
+              }`}
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseExample"
@@ -102,7 +121,7 @@ const ItemDetail = ({ pack,isNight }) => {
             >
               RECETAS
             </button>
-            <button className={`btn mainButton ${isNight&&'mainButtonNight hoverNight'}`}>+ CARRITO</button>
+            {/* <button className={`btn mainButton ${isNight&&'mainButtonNight hoverNight'}`}>+ CARRITO</button> */}
           </div>
           <div className="collapse" id="collapseExample">
             <div className="expandedRecipe">

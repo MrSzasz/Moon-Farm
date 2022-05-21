@@ -15,6 +15,7 @@ function App() {
   let time = today.getHours();
   let isNight;
   // time = 20;
+  // time = 11;
 
   if (time <= 6 || 19 <= time) {
     isNight = "night";

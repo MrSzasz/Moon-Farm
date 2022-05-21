@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ImMinus, ImPlus } from "react-icons/im";
-import "./ItemCount.css";
+import "./ItemCount.scss";
 
 function ItemCount({ stock, initial, onAdd }) {
   const [counter, setCounter] = useState(initial);
@@ -19,7 +19,6 @@ function ItemCount({ stock, initial, onAdd }) {
 
   return (
     <div className="counterContainer">
-      <h2 className="text-center">Stock disponible <br></br> {stock}</h2>
       <div className="counterControl">
         <button className="btn btn-danger" onClick={removeCounter}>
           <ImMinus />
@@ -29,7 +28,7 @@ function ItemCount({ stock, initial, onAdd }) {
           <ImPlus />
         </button>
       </div>
-      <button className="btn btn-primary" onClick={() => onAdd(counter)}>
+      <button className={`btn mainButton`} onClick={() => onAdd(counter)}>
         Agregar al carrito
       </button>
     </div>

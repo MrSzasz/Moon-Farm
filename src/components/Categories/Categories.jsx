@@ -23,8 +23,8 @@ const Categories = ({ classForNight }) => {
             classForNight && "loadingNight"
           }`}
         >
-          <span class="loader">
-            <span class="loader-inner"></span>
+          <span className="loader">
+            <span className="loader-inner"></span>
           </span>
           <h2 className="mt-4">LOADING...</h2>
         </div>
