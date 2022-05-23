@@ -3,11 +3,12 @@ import ItemCount from "../ItemCount/ItemCount";
 import "./ChangeButton.scss";
 import ContinueShoppingButton from "../ContinueShoppingButton/ContinueShoppingButton";
 
-const ChangeButton = ({ stockFromObject }) => {
+const ChangeButton = ({ stockFromObject, selectedPack }) => {
   const [showButton, setShowButton] = useState(false);
 
-  const changeOnClick = (counter) => {
+  const changeOnClick = (counter, itemForCart) => {
     setShowButton(true);
+    addToCartList(itemForCart)
     alert(`Agregaste ${counter} objeto/s al carrito`);
   };
 
@@ -16,7 +17,7 @@ const ChangeButton = ({ stockFromObject }) => {
       {showButton ? (
         <ContinueShoppingButton />
       ) : (
-        <ItemCount stock={stockFromObject} initial={1} onAdd={changeOnClick} />
+        <ItemCount stock={stockFromObject} initial={1} onAdd={changeOnClick} selectedPack={selectedPack}/>
       )}
     </>
   );
