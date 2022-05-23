@@ -2,29 +2,32 @@ import { useState } from "react";
 import { ImMinus, ImPlus } from "react-icons/im";
 import "./ItemCount.scss";
 
+import {useContext} from "react";
+import {CartContext} from "../../context/CartContext/CartContext"
+
 function ItemCount({ stock, initial, onAdd }) {
   const [counter, setCounter] = useState(initial);
 
-  function addCounter() {
-    if (counter < stock) {
-      setCounter(counter + 1);
-    }
-  }
-
-  function removeCounter() {
-    if (counter > initial) {
-      setCounter(counter - 1);
-    }
+  const addCount = (quantity) => {
+    setCounter(counter+quantity)
   }
 
   return (
     <div className="counterContainer">
       <div className="counterControl">
-        <button className="btn btn-danger" onClick={removeCounter}>
+        <button
+          className="btn btn-danger"
+          onClick={()=>addCount(-1)}
+          disabled={counter === 1 ? true : false}
+        >
           <ImMinus />
         </button>
         <p className="counterStatus px-5">{counter}</p>
-        <button className="btn btn-success" onClick={addCounter}>
+        <button
+          className="btn btn-success"
+          onClick={()=>addCount(1)}
+          disabled={counter === stock ? true : false}
+        >
           <ImPlus />
         </button>
       </div>

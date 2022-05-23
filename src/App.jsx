@@ -9,6 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import IndexContent from "./components/IndexContent/IndexContent";
 import Categories from "./components/Categories/Categories";
 import Footer from "./components/Footer/Footer";
+import CartContextProvider from "./context/CartContext/CartContext";
 
 function App() {
   let today = new Date();
@@ -23,27 +24,29 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className={`body ${isNight}`}>
-        <NavBar classForNight={isNight} />
-        <Routes>
-          <Route path="/" element={<IndexContent classForNight={isNight} />} />
-          <Route
-            path="/tienda"
-            element={<Categories classForNight={isNight} />}
-          />
-          <Route
-            path="/tienda/:seasonUrl"
-            element={<ItemListContainer classForNight={isNight} />}
-          />
-          <Route
-            path="/tienda/:seasonUrl/:packDetail"
-            element={<ItemDetailContainer classForNight={isNight} />}
-          />
-          <Route path="/carrito" element={<Cart />} />
-          <Route path="/*" element={<Navigate to="/" replace />} />
-        </Routes>
-        {/* <Footer /> */}
-      </div>
+      <CartContextProvider>
+        <div className={`body ${isNight}`}>
+          <NavBar classForNight={isNight} />
+          <Routes>
+            <Route path="/" element={<IndexContent classForNight={isNight} />} />
+            <Route
+              path="/tienda"
+              element={<Categories classForNight={isNight} />}
+            />
+            <Route
+              path="/tienda/:seasonUrl"
+              element={<ItemListContainer classForNight={isNight} />}
+            />
+            <Route
+              path="/tienda/:seasonUrl/:packDetail"
+              element={<ItemDetailContainer classForNight={isNight} />}
+            />
+            <Route path="/carrito" element={<Cart />} />
+            <Route path="/*" element={<Navigate to="/" replace />} />
+          </Routes>
+          {/* <Footer /> */}
+        </div>
+      </CartContextProvider>
     </BrowserRouter>
   );
 }
