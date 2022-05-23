@@ -40,7 +40,7 @@ function App() {
             <Route
               path="/tienda/:seasonUrl/:packDetail"
               element={<ItemDetailContainer classForNight={isNight} />}
-            />
+            /> 
             <Route path="/carrito" element={<Cart />} />
             <Route path="/*" element={<Navigate to="/" replace />} />
           </Routes>

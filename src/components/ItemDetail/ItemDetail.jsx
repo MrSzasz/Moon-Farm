@@ -158,9 +158,9 @@
 
 
 
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { CartContext } from "../../context/cartContext/cartContext";
+import { useCartContext } from "../../context/CartContext/CartContext";
 import ChangeButton from "../changeButton/changeButton";
 import Item from "../Item/Item";
 import ItemCount from "../ItemCount/ItemCount";
@@ -171,7 +171,7 @@ const ItemDetail = ({ pack, isNight }) => {
   const [buttonStatus, setButtonStatus] = useState(false);
 
 
-  const {addToCartList} = useContext(CartContext)
+  const {addToCartList} = useCartContext()
 
   const { seasonUrl } = useParams();
   const { packDetail } = useParams();
@@ -259,7 +259,7 @@ const ItemDetail = ({ pack, isNight }) => {
                   </div>
                   <div>
                     <ChangeButton stockFromObject={mappedData.stock} selectedPack={mappedData}/>
-                    <button onClick={()=>{addToCartList(mappedData),console.log("hola")}}>cartlist</button>
+                    {/* <button onClick={()=>{addToCartList(mappedData),console.log("hola")}}>cartlist</button> */}
                   </div>
                 </div>
               </div>
