@@ -160,18 +160,18 @@
 
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { useCartContext } from "../../context/CartContext/CartContext";
+// import { useCartContext } from "../../context/CartContext/CartContext";
 import ChangeButton from "../changeButton/changeButton";
 import Item from "../Item/Item";
-import ItemCount from "../ItemCount/ItemCount";
+// import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetail.scss";
 
 const ItemDetail = ({ pack, isNight }) => {
   const [filteredPickFromPack, setFilteredPickFromPack] = useState([]);
-  const [buttonStatus, setButtonStatus] = useState(false);
+  // const [buttonStatus, setButtonStatus] = useState(false);
 
 
-  const {addToCartList} = useCartContext()
+  // const {addToCartList} = useCartContext()
 
   const { seasonUrl } = useParams();
   const { packDetail } = useParams();
@@ -182,7 +182,7 @@ const ItemDetail = ({ pack, isNight }) => {
     );
   });
 
-  const changeButton = () => {};
+  // const changeButton = () => {};
 
   return (
     <div className={`infoCard ${isNight && "infoCardNight"}`}>
