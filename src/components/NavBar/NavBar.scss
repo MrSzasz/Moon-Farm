@@ -38,13 +38,13 @@ header {
                 align-items: center;
 
                 &:hover {
-                    a {
+                    .linkOnNavBar {
                         transform: scale(1.05);
                         color: $iridium !important;
                     }
                 }
 
-                a {
+                .linkOnNavBar {
                     transition: ease all .20s;
                     height: min-content;
                     text-decoration: none;

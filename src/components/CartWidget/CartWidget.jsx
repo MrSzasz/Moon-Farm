@@ -4,11 +4,9 @@ import { Link } from "react-router-dom";
 
 function CartWidget() {
   return (
-    <Link to="/carrito">
+    <Link to="/carrito" className="linkOnNavBar">
       <li>
-        <a href="#">
-          <BsFillBasket2Fill />
-        </a>
+        <BsFillBasket2Fill />
       </li>
     </Link>
   );

@@ -1,6 +1,7 @@
 let packList = [{
         season: "primavera",
-        id: "B1",
+        id: "B1-SG",
+        idForItem: "B1-SGItem",
         className: "silver",
         detailUrl: "plata",
         price: 60,
@@ -28,7 +29,8 @@ let packList = [{
     },
     {
         season: "primavera",
-        id: "B2",
+        id: "B2-SG",
+        idForItem: "B2-SGItem",
         className: "gold",
         detailUrl: "oro",
         price: 95,
@@ -52,7 +54,8 @@ let packList = [{
     },
     {
         season: "primavera",
-        id: "B3",
+        id: "B3-SG",
+        idForItem: "B3-SGItem",
         className: "iridium",
         detailUrl: "iridio",
         price: 120,
@@ -76,7 +79,8 @@ let packList = [{
     },
     {
         season: "verano",
-        id: "B1",
+        id: "B1-SM",
+        idForItem: "B1-SMItem",
         className: "silver",
         detailUrl: "plata",
         price: 60,
@@ -104,7 +108,8 @@ let packList = [{
     },
     {
         season: "verano",
-        id: "B2",
+        id: "B2-SM",
+        idForItem: "B2-SMItem",
         className: "gold",
         detailUrl: "oro",
         price: 95,
@@ -128,7 +133,8 @@ let packList = [{
     },
     {
         season: "verano",
-        id: "B3",
+        id: "B3-SM",
+        idForItem: "B3-SMItem",
         className: "iridium",
         detailUrl: "iridio",
         price: 120,
@@ -152,7 +158,8 @@ let packList = [{
     },
     {
         season: "otoño",
-        id: "B1",
+        id: "B1-AU",
+        idForItem: "B1-AUItem",
         className: "silver",
         detailUrl: "plata",
         price: 60,
@@ -180,7 +187,8 @@ let packList = [{
     },
     {
         season: "otoño",
-        id: "B2",
+        id: "B2-AU",
+        idForItem: "B2-AUItem",
         className: "gold",
         detailUrl: "oro",
         price: 95,
@@ -204,7 +212,8 @@ let packList = [{
     },
     {
         season: "otoño",
-        id: "B3",
+        id: "B3-AU",
+        idForItem: "B3-AUItem",
         className: "iridium",
         detailUrl: "iridio",
         price: 120,
@@ -228,7 +237,8 @@ let packList = [{
     },
     {
         season: "especiales",
-        id: "B1",
+        id: "B1-SP",
+        idForItem: "B1-SPItem",
         className: "silver",
         detailUrl: "plata",
         price: 60,
@@ -256,7 +266,8 @@ let packList = [{
     },
     {
         season: "especiales",
-        id: "B2",
+        id: "B2-SP",
+        idForItem: "B2-SPItem",
         className: "gold",
         detailUrl: "oro",
         price: 60,
@@ -281,7 +292,8 @@ let packList = [{
     },
     {
         season: "especiales",
-        id: "B3",
+        id: "B3-SP",
+        idForItem: "B3-SPItem",
         className: "iridium",
         detailUrl: "iridio",
         price: 120,
@@ -307,28 +319,28 @@ let packList = [{
 
 let seasonList = [{
         name: "PRIMAVERA",
-        id: "S1",
+        seasonPackId: "S1",
         image: "",
         className: "spring",
         packUrl: "primavera",
     },
     {
         name: "VERANO",
-        id: "S2",
+        seasonPackId: "S2",
         image: "",
         className: "summer",
         packUrl: "verano",
     },
     {
         name: "OTOÑO",
-        id: "S3",
+        seasonPackId: "S3",
         image: "",
         className: "autumn",
         packUrl: "otoño"
     },
     {
         name: "ESPECIALES",
-        id: "S4",
+        seasonPackId: "S4",
         image: "",
         className: "specials",
         packUrl: "especiales",
@@ -353,3 +365,25 @@ export const getFetchCategories = (filter) => {
         }, 2000)
     })
 }
+
+
+// ====================  FETCH WITHOUT LOADING TIME  ==================== //
+
+
+// export const getFetch = (filter) => {
+//     return new Promise((resolve) => {
+//         setTimeout(() => {
+//             const query = filter ? packList.filter((filteredRes) => filteredRes.season == seasonUrl) : packList
+//             resolve(query)
+//         }, 0)
+//     })
+// }
+
+// export const getFetchCategories = (filter) => {
+//     return new Promise((resolve) => {
+//         setTimeout(() => {
+//             const query = filter ? seasonList.filter((filteredRes) => filteredRes.season == seasonUrl) : seasonList
+//             resolve(query)
+//         }, 0)
+//     })
+// }

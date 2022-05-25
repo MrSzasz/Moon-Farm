@@ -30,9 +30,8 @@ const Categories = ({ classForNight }) => {
         </div>
       ) : (
         seasonListFetched.map((mappedSeasons) => (
-          <Link to={`/tienda/${mappedSeasons.packUrl}`}>
+          <Link to={`/tienda/${mappedSeasons.packUrl}`} key={mappedSeasons.seasonPackId}>
             <CategoriesCard
-              key={mappedSeasons.id}
               name={mappedSeasons.name}
               className={mappedSeasons.className}
               isNight={classForNight}

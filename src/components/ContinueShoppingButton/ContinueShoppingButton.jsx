@@ -5,7 +5,7 @@ const ContinueShoppingButton = () => {
   const { seasonUrl } = useParams();
 
   return (
-    <div className="d-flex justify-content-center">
+    <div className="d-flex justify-content-around p-3">
 
 <Link to={`/tienda/${seasonUrl}`} className={`btn mainButton`}>SEGUIR COMPRANDO</Link>
 <Link to="/carrito" className={`btn mainButton`}>CARRITO</Link>

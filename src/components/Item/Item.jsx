@@ -43,7 +43,7 @@ function Item({
 
       {packDetail ? (
         borderForDetails === "silver" ? (
-          <div className={`packCardWoH ${borderForDetails, isNight&&'packNightWoH'}`}>
+          <div className={`packCardWoH w-50 ${borderForDetails, isNight&&'packNightWoH'}`}>
             <div className="contentCard">
               <img className="productN1" src={image1}></img>
               <p>x 20</p>
@@ -66,7 +66,7 @@ function Item({
             </div>
           </div>
         ) : (          
-          <div className={`packCardWoH ${borderForDetails, isNight&&'packNightWoH'}`}>
+          <div className={`packCardWoH w-25 ${borderForDetails, isNight&&'packNightWoH'}`}>
             <div className={`contentCard bg-${borderForDetails}`}>
               <p>ANTERIOR +</p>
             </div>

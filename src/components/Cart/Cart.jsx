@@ -3,64 +3,72 @@ import { useCartContext } from "../../context/CartContext/CartContext";
 import "./Cart.scss";
 
 const Cart = () => {
-  const { cartList, clearCart } = useCartContext();
-
+  const { cartList, clearCart, removeFromCart, totalOfCart } = useCartContext();
   return (
-    // <div><button onClick={()=>{console.log('hola')}}>cartlist</button></div>
-    <div className="cartContainer">
+    <div className="cartContainer text-center">
       {cartList.length === 0 ? (
-        <div>
+        <>
           {" "}
-          <h2>Deberias ir a buscar algo a la tienda</h2>{" "}
-          <Link to="/tienda">TIENDA &gt;</Link>{" "}
-        </div>
+          <h2>Tal vez deberías ir a buscar algo a la tienda...</h2>{" "}
+          <Link to="/tienda" className={`btn mainButton w-25 m-auto`}>
+            TIENDA &gt;
+          </Link>{" "}
+        </>
       ) : (
         <>
-          <table className="table table-dark table-hover">
+          <table className="table table-hover">
             <thead>
               <tr>
-                <th className="text-center" scope="col">#</th>
-                <th className="text-center" scope="col">Producto</th>
-                <th className="text-center" scope="col">Cantidad</th>
-                <th className="text-center" scope="col">Precio</th>
-                <th className="text-center" scope="col">Eliminar</th>
+                <th className="text-center" scope="col">
+                  Producto
+                </th>
+                <th className="text-center" scope="col">
+                  Cantidad
+                </th>
+                <th className="text-center" scope="col">
+                  Precio
+                </th>
+                <th className="text-center" scope="col">
+                  Eliminar
+                </th>
               </tr>
             </thead>
-              {cartList.map((productMapped) => (                
-            <tbody>
-                <tr>
-                  <th className="text-center">{productMapped.id}</th>
-                  <td className="text-center">Bundle {productMapped.detailUrl}</td>
+            {cartList.map((productMapped) => (
+              <tbody>
+                <tr data-productId={productMapped.id}>
+                  <td className="text-center text-capitalize">
+                    {productMapped.season}, {productMapped.detailUrl}
+                  </td>
                   <td className="text-center">{productMapped.qtyOnCart}</td>
-                  <td className="text-center">${productMapped.price}</td>
-                  <td className="text-center"><button className="btn btn-danger">X</button></td>
+                  <td className="text-center">
+                    ${productMapped.price * productMapped.qtyOnCart}
+                  </td>
+                  <td className="text-center">
+                    <button
+                      className="btn btn-danger"
+                      onClick={(e) => removeFromCart(e)}
+                    >
+                      X
+                    </button>
+                  </td>
                 </tr>
-            </tbody>
-          ))}
+              </tbody>
+            ))}
           </table>
-          <button
-            className={`btn mainButton m-auto w-100`}
-            onClick={() => {
-              clearCart();
-            }}
-          >
-            Vaciar carrito
-          </button>
-          <button
-            className={`btn mainButton m-auto w-100`}
-          >
-            Comprar
-          </button>
+          <h3>Total: ${totalOfCart}</h3>
+          <div className="d-flex justify-content-between">
+            <button
+              className={`btn mainButton m-auto w-25`}
+              onClick={() => {
+                clearCart();
+              }}
+            >
+              Vaciar carrito
+            </button>
+            <button className={`btn mainButton m-auto w-25`}>Comprar</button>
+          </div>
         </>
       )}
-      <button
-        className="m-auto w-100 btn btn-primary"
-        onClick={() => {
-          console.log(cartList);
-        }}
-      >
-        CartList
-      </button>
     </div>
   );
 };

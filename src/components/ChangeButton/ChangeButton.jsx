@@ -12,7 +12,6 @@ const ChangeButton = ({ stockFromObject, selectedPack }) => {
   const changeOnClick = (counter, itemForCart) => {
     setShowButton(true);
     addToCartList({ ...itemForCart, qtyOnCart: counter });
-    alert(`Agregaste ${counter} objeto/s al carrito`);
   };
 
 
