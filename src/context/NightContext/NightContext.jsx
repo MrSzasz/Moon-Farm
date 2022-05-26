@@ -1,28 +1,27 @@
-import { createContext, useContext, useEffect, useState} from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
-const NightContext = createContext(false);
+const NightContext = createContext();
 
 export const useNightContext = () => useContext(NightContext);
 
 const NightContextProvider = ({ children }) => {
- const [isNight, setIsNight] = useState(false)
+  const [isNight, setIsNight] = useState();
 
- useEffect(() => {
-     const today = new Date();
-     const time = today.getHours();
-     // time = 20;
-     // time = 11;
-    
-     if (time <= 6 || 19 <= time) {
-        setIsNight(true);
-     } 
- }, [])
- 
+  useEffect(() => {
+    const today = new Date();
+    let time = today.getHours();
+    //  time = 20;
+    // time = 11;
+
+    if (time <= 6 || 19 <= time) {
+      setIsNight("night");
+    }
+  }, []);
 
   return (
     <NightContext.Provider
       value={{
-        isNight
+        isNight,
       }}
     >
       {children}

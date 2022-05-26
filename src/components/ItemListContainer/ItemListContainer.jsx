@@ -3,15 +3,17 @@ import { Link, useParams } from "react-router-dom";
 import ItemList from "../ItemList/ItemList";
 import "./ItemListContainer.scss";
 import { getFetch } from "../../helpers/getFetch";
+import { useNightContext } from "../../context/NightContext/NightContext";
 
 
 
-const ItemListContainer = ({ classForNight }) => {
+const ItemListContainer = () => {
   const [packsFromList, setPacksFromList] = useState([]);
-  const [isNight, setIsNight] = useState();
   const [filteredList, setFilteredList] = useState([]);
   const [loading, setLoading] = useState(true);
   const { seasonUrl } = useParams();
+
+const {isNight} = useNightContext();
 
   useEffect(() => {
     getFetch()
@@ -26,18 +28,10 @@ const ItemListContainer = ({ classForNight }) => {
     );
   });
 
-  useEffect(() => {
-    classForNight&&
-    setIsNight(
-      'nightContainer'
-    )
-  });
-
-
   return (
-    <div className={`d-flex flex-wrap w-100 justify-content-center align-items-center containerPacks ${isNight}`}>
+    <div className={`d-flex flex-wrap w-100 justify-content-center align-items-center containerPacks ${isNight?'nightContainer':undefined}`}>
       {loading ? (
-        <div className={`text-center loadingDiv ${classForNight&&'loadingNight'}`}>
+        <div className={`text-center loadingDiv ${isNight?'loadingNight':undefined}`}>
         <span className="loader">
           <span className="loader-inner"></span>
         </span>
@@ -46,8 +40,8 @@ const ItemListContainer = ({ classForNight }) => {
       ) : (
         <div className="mainPacks">
           <h2>{seasonUrl.toUpperCase()}</h2>
-          <ItemList packs={filteredList} isNight={classForNight} />
-          <Link className={`btn mainButton ${isNight && 'mainButtonNight'}`}  to="/tienda">
+          <ItemList packs={filteredList}/>
+          <Link className={`btn mainButton ${isNight?'mainButtonNight':undefined}`}  to="/tienda">
             &lt; VOLVER
           </Link>
         </div>

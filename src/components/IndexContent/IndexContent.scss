@@ -26,6 +26,9 @@
     &:focus {
         @include svBorder;
     }
+    &:hover{
+        color: inherit;
+    }
 }
 
 

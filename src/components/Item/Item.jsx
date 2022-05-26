@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { useNightContext } from "../../context/NightContext/NightContext";
 import "./Item.scss";
 
 function Item({
@@ -10,12 +11,12 @@ function Item({
   image3 = "https://i.imgur.com/KFivjtP.png",
   image4 = "https://i.imgur.com/KFivjtP.png",
   image5 = "https://i.imgur.com/KFivjtP.png",
-  classForNight
 }) {
   const [borderForDetails, setBorderForDetails] = useState();
-  const [isNight, setIsNight] = useState();
   const { seasonUrl } = useParams();
   const { packDetail } = useParams();
+
+  const { isNight } = useNightContext();
 
   useEffect(() => {
     if (packDetail === "plata") {
@@ -27,23 +28,17 @@ function Item({
     }
   }, []);
 
-  
-  useEffect(() => {
-    classForNight&&
-    setIsNight(
-      'nightContainer'
-    )
-  },[])
-
-
   return (
     <div>
-
       {/* =========================  ITEM DETAILS  ========================= */}
 
       {packDetail ? (
         borderForDetails === "silver" ? (
-          <div className={`packCardWoH w-50 ${borderForDetails, isNight&&'packNightWoH'}`}>
+          <div
+            className={`packCardWoH w-50 ${
+              (borderForDetails, (isNight? "packNightWoH":undefined))
+            }`}
+          >
             <div className="contentCard">
               <img className="productN1" src={image1}></img>
               <p>x</p>
@@ -70,8 +65,12 @@ function Item({
               <p>20</p>
             </div>
           </div>
-        ) : (          
-          <div className={`packCardWoH w-50 ${borderForDetails, isNight&&'packNightWoH'}`}>
+        ) : (
+          <div
+            className={`packCardWoH w-50 ${
+              (borderForDetails, (isNight? "packNightWoH":undefined))
+            }`}
+          >
             <div className={`contentCard bg-${borderForDetails}`}>
               <p>ANTERIOR +</p>
             </div>
@@ -98,12 +97,15 @@ function Item({
           </div>
         )
       ) : (
-
         // =========================  ITEM IN LIST =========================
 
         <Link to={`/tienda/${seasonUrl}/${url}`}>
           {className === "silver" ? (
-            <div className={`packCard w-50 ${className, classForNight&&'packNight'}`}>
+            <div
+              className={`packCard w-50 ${
+                (className, (isNight? "packNight":undefined))
+              }`}
+            >
               <div className={`contentCard`}>
                 <img className="productN1" src={image1}></img>
                 <p>x</p>
@@ -131,7 +133,11 @@ function Item({
               </div>
             </div>
           ) : (
-            <div className={`packCard w-50 ${className, classForNight&&'packNight'}`}>
+            <div
+              className={`packCard w-50 ${
+                (className, (isNight? "packNight":undefined))
+              }`}
+            >
               <div className={`contentCard bg-${className}`}>
                 <p>ANTERIOR +</p>
               </div>

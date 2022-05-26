@@ -22,5 +22,16 @@
             @include glassMorph;
             @include svBorder;
         }
+
+        .counterNight {
+            @include glassMorphNight;
+            @include svBorder;
+        }
+
+        .addToCartNight {
+            &:hover {
+                color: $nightFont !important;
+            }
+        }
     }
 }

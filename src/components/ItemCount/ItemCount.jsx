@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ImMinus, ImPlus } from "react-icons/im";
+import { useNightContext } from "../../context/NightContext/NightContext";
 import "./ItemCount.scss";
 
 function ItemCount({ stock, initial, onAdd, selectedPack }) {
@@ -16,19 +17,22 @@ function ItemCount({ stock, initial, onAdd, selectedPack }) {
       setCounter(counter - 1);
     }
   }
+  const {isNight} = useNightContext();
 
   return (
+
+
     <div className="counterContainer">
       <div className="counterControl">
         <button className="btn btn-danger" onClick={removeCounter}>
           <ImMinus />
         </button>
-        <p className="counterStatus px-5">{counter}</p>
+        <p className={`counterStatus px-5 ${isNight? 'counterNight' : undefined}`}>{counter}</p>
         <button className="btn btn-success" onClick={addCounter}>
           <ImPlus />
         </button>
       </div>
-      <button className={`btn mainButton`} onClick={() => onAdd(counter, selectedPack)}>
+      <button className={`btn mainButton ${isNight && 'mainButtonNight addToCartNight'}`} onClick={() => onAdd(counter, selectedPack)}>
         Agregar al carrito
       </button>
     </div>

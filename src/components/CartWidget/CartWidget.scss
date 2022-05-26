@@ -15,7 +15,7 @@
     padding: 7px;
     font-size: 10px;
     background-color: $iridium;
-    color: $nightFont;
+    color: $font;
     border-radius: 10%;
     @include glassMorph(rgba(128, 31, 226, 0.35));
     border: none;
@@ -24,4 +24,8 @@
         transform: scale(1.05);
         // color: $nightFont !important;
     }
+}
+
+.nightWidget{
+    color: $nightFont;
 }
