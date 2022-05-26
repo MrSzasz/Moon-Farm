@@ -9,7 +9,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 300px;
+    min-height: 300px;
+    height: 350px;
     min-width: 200px;
     transition: ease all .20s;
     margin: 10px 0 10px 0;
@@ -40,6 +41,7 @@
 
         p {
             margin: 0;
+            font-size: 16px;
         }
 
     }

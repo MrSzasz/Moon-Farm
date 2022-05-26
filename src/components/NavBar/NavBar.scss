@@ -38,17 +38,8 @@ header {
                 align-items: center;
 
                 &:hover {
-                    .linkOnNavBar {
-                        transform: scale(1.05);
-                        color: $iridium !important;
-                    }
-                }
-
-                .linkOnNavBar {
-                    transition: ease all .20s;
-                    height: min-content;
-                    text-decoration: none;
-                    color: inherit;
+                    transform: scale(1.05);
+                    color: $iridium !important;
                 }
             }
         }
