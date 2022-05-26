@@ -348,6 +348,58 @@ let seasonList = [{
 ];
 
 
+
+// import { getFirestore, doc, getDoc, collection, query, where } from 'firebase/firestore'
+
+// const [productoDeFirebase, setProductoDeFirebase] = useState({})
+// const [manyProductosDeFirebase, setManyProductosDeFirebase] = useState([])
+
+
+// ==========  TRAE UN SOLO ITEM, ITEMDETAILCONTAINER  ========== //
+
+// useEffect(() => {
+
+//     const db = getFirestore()
+
+//     const dbQuery = doc(db, 'products', '4lubzeEPMoeecUslAvCG') // (db [constante de arriba donde se guarda la colección], nombre de la colección, id del item per se)
+
+//     getDoc(dbQuery) // Agarrar la const de arriba, getDoc agarra un solo documento
+//     .then(res => setProductoDeFirebase( {id: res.id, ...res.data()} )) //data() para sacar los datos de la request 
+// }, [])
+
+
+// ========== TRAE TODO EL ARRAY ITEMLISTCONTAINER  ========== //
+
+// useEffect(() => {
+
+//     const db = getFirestore()
+
+//     const queryCollection = collection(db, 'products') // (db [constante de arriba donde se guarda la colección])
+
+//     getDocs(queryCollection) // Agarrar la const de arriba, trayendo todos los documentos
+//     .then(res => setManyProductosDeFirebase( res => res.docs.map(item => ({id: item.id, ...item.data()})) )) // armando el array con los productos y el id
+// }, [])
+
+
+
+// ========== TRAE TODO EL ARRAY ITEMLISTCONTAINER  ========== //
+
+// useEffect(() => {
+
+//     const db = getFirestore()
+
+//     const queryCollection = collection(db, 'products') // (db, [constante de arriba donde se guarda la colección])
+
+//     const queryCollectionFilter = query(queryCollection, where('season', '==', 'primavera'), limit(1)) // filtro para la colección, el where([campo a elegir], [la condición a comprar], [el valor a comparar]), el Limit([numero de elementos a traer])
+
+//     getDocs(queryCollectionFilter) // Agarrar la const de arriba, trayendo todos los documentos
+//     .then(res => setManyProductosDeFirebase( res => res.docs.map(item => ({id: item.id, ...item.data()})) )) // armando el array con los productos y el id
+// }, [])
+
+
+
+
+
 export const getFetch = (filter) => {
     return new Promise((resolve) => {
         setTimeout(() => {
