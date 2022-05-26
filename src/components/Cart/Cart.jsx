@@ -65,7 +65,7 @@ const Cart = () => {
             >
               Vaciar carrito
             </button>
-            <button className={`btn mainButton m-auto w-25`}>Comprar</button>
+            <button className={`btn mainButton m-auto w-25`}>Terminar compra</button>
           </div>
         </>
       )}

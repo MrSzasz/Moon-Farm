@@ -1,0 +1,27 @@
+@import "/src/resources/style/props.scss";
+
+.cartWidget {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%);
+}
+
+.cartSpan {
+    position: relative;
+    top: -20px;
+    right: -10px;
+    width: min-content;
+    height: min-content;
+    padding: 7px;
+    font-size: 10px;
+    background-color: $iridium;
+    color: $nightFont;
+    border-radius: 10%;
+    @include glassMorph(rgba(128, 31, 226, 0.35));
+    border: none;
+
+    &:hover {
+        transform: scale(1.05);
+        // color: $nightFont !important;
+    }
+}

@@ -34,6 +34,13 @@ const CartContextProvider = ({ children }) => {
     setCartList([]);
   }
 
+  function calculateTotalItemsOfCart() {
+    return cartList.reduce(
+      (accumulator, item) => (accumulator += item.qtyOnCart),
+      0
+    );
+  }
+
   useEffect(() => {
     const calculatedTotal = cartList.reduce(
       (accumulator, item) => accumulator + item.price * item.qtyOnCart,
@@ -50,6 +57,7 @@ const CartContextProvider = ({ children }) => {
         clearCart,
         removeFromCart,
         totalOfCart,
+        calculateTotalItemsOfCart,
       }}
     >
       {children}
