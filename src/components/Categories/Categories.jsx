@@ -3,10 +3,13 @@ import { Link } from "react-router-dom";
 import CategoriesCard from "../CategoriesCard/CategoriesCard";
 import "./Categories.scss";
 import { getFetchCategories } from "../../helpers/getFetch";
+import { useNightContext } from "../../context/NightContext/NightContext";
 
-const Categories = ({ classForNight }) => {
+const Categories = () => {
   const [seasonListFetched, setSeasonListFetched] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  const {isNight} = useNightContext();
 
   useEffect(() => {
     getFetchCategories()
@@ -20,7 +23,7 @@ const Categories = ({ classForNight }) => {
       {loading ? (
         <div
           className={`text-center loadingDiv ${
-            classForNight && "loadingNight"
+            isNight?"loadingNight":undefined
           }`}
         >
           <span className="loader">
@@ -34,7 +37,6 @@ const Categories = ({ classForNight }) => {
             <CategoriesCard
               name={mappedSeasons.name}
               className={mappedSeasons.className}
-              isNight={classForNight}
             />
           </Link>
         ))

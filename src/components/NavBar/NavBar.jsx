@@ -2,10 +2,14 @@ import CartWidget from "../CartWidget/CartWidget";
 import { BsFillMoonFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import "./NavBar.scss";
+import { useNightContext } from "../../context/NightContext/NightContext";
 
-function NavBar({ classForNight }) {
+function NavBar() {
+
+  const {isNight} = useNightContext();
+
   return (
-    <header className={classForNight}>
+    <header className={isNight}>
         <Link to="/" className="logo text-center d-flex justify-content-center align-items-center gap-2 linkOnNavBar">
           MOON FARM <BsFillMoonFill className="iconFont" />
         </Link>

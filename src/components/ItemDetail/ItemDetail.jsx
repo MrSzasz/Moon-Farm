@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { useNightContext } from "../../context/NightContext/NightContext";
 import ChangeButton from "../changeButton/changeButton";
 import Item from "../Item/Item";
 import "./ItemDetail.scss";
 
-const ItemDetail = ({ pack, isNight }) => {
+const ItemDetail = ({ pack }) => {
   const [filteredPickFromPack, setFilteredPickFromPack] = useState([]);
+
+const {isNight} = useNightContext();
 
   const { seasonUrl } = useParams();
   const { packDetail } = useParams();
@@ -17,7 +20,7 @@ const ItemDetail = ({ pack, isNight }) => {
   });
 
   return (
-    <div className={`infoCard ${isNight && "infoCardNight"}`}>
+    <div className={`infoCard ${isNight? "infoCardNight":undefined}`}>
       <h2 className="text-uppercase">{packDetail}</h2>
       <h3 className="mb-3">= Contenido del pack =</h3>
       <div className="infoContainer">
@@ -32,7 +35,6 @@ const ItemDetail = ({ pack, isNight }) => {
                 image3={mappedData.image3}
                 image4={mappedData.image4}
                 image5={mappedData.image5}
-                classForNight={isNight}
               />
               <div className="itemListDescription my-4">
                 {mappedData.prodName5 ? (
@@ -102,14 +104,14 @@ const ItemDetail = ({ pack, isNight }) => {
         <div className="recipe text-center">
           <div className="buttonsRecipe text-center">
             <Link
-              className={`btn mainButton ${isNight && "mainButtonNight"}`}
+              className={`btn mainButton ${isNight? "mainButtonNight":undefined}`}
               to={`/tienda/${seasonUrl}`}
             >
               &lt; VOLVER
             </Link>
             <button
               className={`btn mainButton ${
-                isNight && "mainButtonNight hoverNight"
+                isNight? "mainButtonNight hoverNight":undefined
               }`}
               type="button"
               data-bs-toggle="collapse"

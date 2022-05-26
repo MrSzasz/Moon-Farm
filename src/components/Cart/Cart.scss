@@ -1,7 +1,7 @@
 @import "/src/resources/style/props.scss";
 
-.cartContainer{
-    grid-column:2/3;
+.cartContainer {
+    grid-column: 2/3;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -11,7 +11,29 @@
     @include borderRadiusPreset;
     @include svBorder;
 
-    tr{
+    tr {
         border-bottom: 2px solid $font;
+    }
+}
+
+.cartContainerNight {
+    @include glassMorphNight;
+    @include borderRadiusPreset;
+    @include svBorder;
+
+}
+
+.nightTable {
+    color: $nightFont !important;
+    border-color: $nightFont !important;
+
+    tr {
+        border-color: $nightFont;
+
+        &:hover {
+            td {
+                color: $nightFont !important;
+            }
+        }
     }
 }

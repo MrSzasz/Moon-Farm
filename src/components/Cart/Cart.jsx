@@ -1,22 +1,35 @@
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext/CartContext";
+import { useNightContext } from "../../context/NightContext/NightContext";
 import "./Cart.scss";
 
 const Cart = () => {
   const { cartList, clearCart, removeFromCart, totalOfCart } = useCartContext();
+
+  const { isNight } = useNightContext();
+
   return (
-    <div className="cartContainer text-center">
+    <div
+      className={`cartContainer text-center ${
+        isNight ? "cartContainerNight" : undefined
+      }`}
+    >
       {cartList.length === 0 ? (
         <>
           {" "}
           <h2>Tal vez deberías ir a buscar algo a la tienda...</h2>{" "}
-          <Link to="/tienda" className={`btn mainButton w-25 m-auto`}>
+          <Link
+            to="/tienda"
+            className={`btn mainButton w-25 m-auto ${
+              isNight ? "mainButtonNight" : undefined
+            }`}
+          >
             TIENDA &gt;
           </Link>{" "}
         </>
       ) : (
         <>
-          <table className="table table-hover">
+          <table className={`table table-hover ${isNight?'nightTable':undefined}`}>
             <thead>
               <tr>
                 <th className="text-center" scope="col">
@@ -58,14 +71,16 @@ const Cart = () => {
           <h3>Total: ${totalOfCart}</h3>
           <div className="d-flex justify-content-between">
             <button
-              className={`btn mainButton m-auto w-25`}
+              className={`btn mainButton m-auto w-25 ${isNight? "mainButtonNight":undefined}`}
               onClick={() => {
                 clearCart();
               }}
             >
               Vaciar carrito
             </button>
-            <button className={`btn mainButton m-auto w-25`}>Terminar compra</button>
+            <button className={`btn mainButton m-auto w-25 ${isNight? "mainButtonNight":undefined}`}>
+              Terminar compra
+            </button>
           </div>
         </>
       )}

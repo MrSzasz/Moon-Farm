@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
+import { useNightContext } from "../../context/NightContext/NightContext";
 import "./IndexContent.scss";
 
 
 
-const IndexContent = ({ classForNight }) => {
+const IndexContent = () => {
+  
+  const {isNight} = useNightContext();
+  
   return (
-    <div className={`indexContainer`}>
+    <div className="indexContainer">
       <div className="mainImg"></div>
       <h1 className="text-center"> QUIENES SOMOS </h1>
       <p>
@@ -22,7 +26,7 @@ const IndexContent = ({ classForNight }) => {
         tenetur sapiente, harum eum vel iure. Facilis distinctio ipsam
         laboriosam libero.
       </p>
-      <Link className={`btn mainButton ${classForNight && 'mainButtonNight'}`} to="/tienda">
+      <Link className={`btn mainButton ${isNight && 'mainButtonNight'}`} to="/tienda">
         TIENDA &gt;{" "}
       </Link>
     </div>
