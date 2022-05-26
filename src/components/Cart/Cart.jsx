@@ -34,8 +34,8 @@ const Cart = () => {
               </tr>
             </thead>
             {cartList.map((productMapped) => (
-              <tbody>
-                <tr data-productId={productMapped.id}>
+              <tbody key={productMapped.id}>
+                <tr data-productid={productMapped.id}>
                   <td className="text-center text-capitalize">
                     {productMapped.season}, {productMapped.detailUrl}
                   </td>

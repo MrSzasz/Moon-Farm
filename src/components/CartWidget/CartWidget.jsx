@@ -6,7 +6,7 @@ function CartWidget() {
   return (
     <Link to="/carrito" className="linkOnNavBar">
       <li>
-        <BsFillBasket2Fill />
+        <BsFillBasket2Fill size={20} />
       </li>
     </Link>
   );

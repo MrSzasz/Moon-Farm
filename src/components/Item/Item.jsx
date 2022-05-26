@@ -46,45 +46,54 @@ function Item({
           <div className={`packCardWoH w-50 ${borderForDetails, isNight&&'packNightWoH'}`}>
             <div className="contentCard">
               <img className="productN1" src={image1}></img>
-              <p>x 20</p>
+              <p>x</p>
+              <p>20</p>
             </div>
             <div className="contentCard">
               <img className="productN1" src={image2}></img>
-              <p>x 20</p>
+              <p>x</p>
+              <p>20</p>
             </div>
             <div className="contentCard">
               <img className="productN1" src={image3}></img>
-              <p>x 20</p>
+              <p>x</p>
+              <p>20</p>
             </div>
             <div className="contentCard">
               <img className="productN1" src={image4}></img>
-              <p>x 20</p>
+              <p>x</p>
+              <p>20</p>
             </div>
             <div className="contentCard">
               <img className="productN1" src={image5}></img>
-              <p>x 20</p>
+              <p>x</p>
+              <p>20</p>
             </div>
           </div>
         ) : (          
-          <div className={`packCardWoH w-25 ${borderForDetails, isNight&&'packNightWoH'}`}>
+          <div className={`packCardWoH w-50 ${borderForDetails, isNight&&'packNightWoH'}`}>
             <div className={`contentCard bg-${borderForDetails}`}>
               <p>ANTERIOR +</p>
             </div>
             <div className="contentCard">
               <img className="productN1" src={image1}></img>
-              <p>x 20</p>
+              <p>x</p>
+              <p>20</p>
             </div>
             <div className="contentCard">
               <img className="productN1" src={image2}></img>
-              <p>x 20</p>
+              <p>x</p>
+              <p>20</p>
             </div>
             <div className="contentCard">
               <img className="productN1" src={image3}></img>
-              <p>x 20</p>
+              <p>x</p>
+              <p>20</p>
             </div>
             <div className="contentCard">
               <img className="productN1" src={image4}></img>
-              <p>x 20</p>
+              <p>x</p>
+              <p>20</p>
             </div>
           </div>
         )
@@ -94,48 +103,57 @@ function Item({
 
         <Link to={`/tienda/${seasonUrl}/${url}`}>
           {className === "silver" ? (
-            <div className={`packCard ${className, classForNight&&'packNight'}`}>
+            <div className={`packCard w-50 ${className, classForNight&&'packNight'}`}>
               <div className={`contentCard`}>
                 <img className="productN1" src={image1}></img>
-                <p>x 20</p>
+                <p>x</p>
+                <p>20</p>
               </div>
               <div className="contentCard">
                 <img className="productN1" src={image2}></img>
-                <p>x 20</p>
+                <p>x</p>
+                <p>20</p>
               </div>
               <div className="contentCard">
                 <img className="productN1" src={image3}></img>
-                <p>x 20</p>
+                <p>x</p>
+                <p>20</p>
               </div>
               <div className="contentCard">
                 <img className="productN1" src={image4}></img>
-                <p>x 20</p>
+                <p>x</p>
+                <p>20</p>
               </div>
               <div className="contentCard">
                 <img className="productN1" src={image5}></img>
-                <p>x 20</p>
+                <p>x</p>
+                <p>20</p>
               </div>
             </div>
           ) : (
-            <div className={`packCard ${className, classForNight&&'packNight'}`}>
+            <div className={`packCard w-50 ${className, classForNight&&'packNight'}`}>
               <div className={`contentCard bg-${className}`}>
                 <p>ANTERIOR +</p>
               </div>
               <div className="contentCard">
                 <img className="productN1" src={image1}></img>
-                <p>x 20</p>
+                <p>x</p>
+                <p>20</p>
               </div>
               <div className="contentCard">
                 <img className="productN1" src={image2}></img>
-                <p>x 20</p>
+                <p>x</p>
+                <p>20</p>
               </div>
               <div className="contentCard">
                 <img className="productN1" src={image3}></img>
-                <p>x 20</p>
+                <p>x</p>
+                <p>20</p>
               </div>
               <div className="contentCard">
                 <img className="productN1" src={image4}></img>
-                <p>x 20</p>
+                <p>x</p>
+                <p>20</p>
               </div>
             </div>
           )}
