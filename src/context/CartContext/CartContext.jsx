@@ -13,7 +13,7 @@ const CartContextProvider = ({ children }) => {
       (itemOnCart) => itemOnCart.id === item.id
     );
     if (indexOfItemOnCart !== -1) {
-      cartList[indexOfItemOnCart].qtyOnCart + item.qtyOnCart;
+      cartList[indexOfItemOnCart].qtyOnCart += item.qtyOnCart;
       setCartList([...cartList]);
     } else {
       setCartList([...cartList, item]);
