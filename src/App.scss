@@ -196,3 +196,17 @@ a {
     text-decoration: none !important;
     color: $font !important;
 }
+
+//========================================  SCROLLBAR  ========================================//
+
+::-webkit-scrollbar {
+    width: 14px;
+}
+
+::-webkit-scrollbar-track {
+    background: $font;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $iridium;
+}
