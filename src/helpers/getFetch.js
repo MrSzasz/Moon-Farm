@@ -403,7 +403,7 @@ import {
 
 
 
-// ========== TRAE TODO EL ARRAY ITEMLISTCONTAINER  ========== //
+// ========== FILTRA EL ARRAY ITEMLISTCONTAINER  ========== //
 
 // useEffect(() => {
 

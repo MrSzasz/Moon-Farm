@@ -5,8 +5,6 @@ import "./ItemListContainer.scss";
 import { getFetch } from "../../helpers/getFetch";
 import { useNightContext } from "../../context/NightContext/NightContext";
 
-
-
 const ItemListContainer = () => {
   const [packsFromList, setPacksFromList] = useState([]);
   const [filteredList, setFilteredList] = useState([]);
