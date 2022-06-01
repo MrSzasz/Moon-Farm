@@ -8,7 +8,7 @@ function ItemList({ packs }) {
         <Item
           key={mappedItems.id}
           className={mappedItems.className}
-          url={mappedItems.detailUrl}
+          url={mappedItems.id}
           image1={mappedItems.image1}
           image2={mappedItems.image2}
           image3={mappedItems.image3}

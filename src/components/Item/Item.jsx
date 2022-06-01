@@ -3,15 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { useNightContext } from "../../context/NightContext/NightContext";
 import "./Item.scss";
 
-function Item({
-  className,
-  url = "https://i.imgur.com/KFivjtP.png",
-  image1,
-  image2 = "https://i.imgur.com/KFivjtP.png",
-  image3 = "https://i.imgur.com/KFivjtP.png",
-  image4 = "https://i.imgur.com/KFivjtP.png",
-  image5 = "https://i.imgur.com/KFivjtP.png",
-}) {
+function Item({ className, url, image1, image2, image3, image4, image5 }) {
   const [borderForDetails, setBorderForDetails] = useState();
   const { seasonUrl } = useParams();
   const { packDetail } = useParams();
@@ -36,7 +28,7 @@ function Item({
         borderForDetails === "silver" ? (
           <div
             className={`packCardWoH w-50 ${
-              (borderForDetails, (isNight? "packNightWoH":""))
+              (borderForDetails, isNight ? "packNightWoH" : "")
             }`}
           >
             <div className="contentCard">
@@ -68,7 +60,7 @@ function Item({
         ) : (
           <div
             className={`packCardWoH w-50 ${
-              (borderForDetails, (isNight? "packNightWoH":""))
+              (borderForDetails, isNight ? "packNightWoH" : "")
             }`}
           >
             <div className={`contentCard bg-${borderForDetails}`}>
@@ -103,7 +95,7 @@ function Item({
           {className === "silver" ? (
             <div
               className={`packCard w-50 ${
-                (className, (isNight? "packNight":""))
+                (className, isNight ? "packNight" : "")
               }`}
             >
               <div className={`contentCard`}>
@@ -135,7 +127,7 @@ function Item({
           ) : (
             <div
               className={`packCard w-50 ${
-                (className, (isNight? "packNight":""))
+                (className, isNight ? "packNight" : "")
               }`}
             >
               <div className={`contentCard bg-${className}`}>

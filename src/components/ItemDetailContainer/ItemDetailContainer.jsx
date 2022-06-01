@@ -4,20 +4,34 @@ import ItemDetail from "../ItemDetail/ItemDetail";
 import "./ItemDetailContainer.scss";
 import { getFetch } from "../../helpers/getFetch";
 import { useNightContext } from "../../context/NightContext/NightContext";
+import { getFirestore, doc, getDoc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
-  const [filteredList, setFilteredList] = useState([]);
+  const [filteredList, setFilteredList] = useState({});
   const [loading, setLoading] = useState(true);
   const { seasonUrl } = useParams();
+  const { packDetail } = useParams();
 
-  const {isNight} = useNightContext();
+  const { isNight } = useNightContext();
+
+  // useEffect(() => {
+  //   getFetch()
+  //     .then((res) =>
+  //       res.filter((filteredRes) => filteredRes.season == seasonUrl)
+  //     )
+  //     .then((res) => setFilteredList(res))
+  //     .catch((err) => console.log(err))
+  //     .finally(() => setLoading(false));
+  // }, []);
 
   useEffect(() => {
-    getFetch()
-      .then((res) =>
-        res.filter((filteredRes) => filteredRes.season == seasonUrl)
-      )
-      .then((res) => setFilteredList(res))
+    const db = getFirestore();
+
+    const dbQuery = doc(db, "products", packDetail);
+
+    getDoc(dbQuery)
+      .then((res) => setFilteredList({ ...res.data(), id: res.id }))
+      // .then((res) => console.log(res.data()))
       .catch((err) => console.log(err))
       .finally(() => setLoading(false));
   }, []);
@@ -25,14 +39,16 @@ const ItemDetailContainer = () => {
   return (
     <div className="d-flex flex-wrap w-100 justify-content-around gap-4 p-4 containerDetails">
       {loading ? (
-        <div className={`text-center loadingDiv ${isNight?'loadingNight':""}`} >
+        <div
+          className={`text-center loadingDiv ${isNight ? "loadingNight" : ""}`}
+        >
           <span className="loader">
             <span className="loader-inner"></span>
           </span>
           <h2 className="mt-4">LOADING...</h2>
         </div>
       ) : (
-        <ItemDetail pack={filteredList}/>
+        <ItemDetail pack={filteredList} />
       )}
     </div>
   );
