@@ -20,7 +20,7 @@ const {isNight} = useNightContext();
   });
 
   return (
-    <div className={`infoCard ${isNight? "infoCardNight":undefined}`}>
+    <div className={`infoCard ${isNight? "infoCardNight":""}`}>
       <h2 className="text-uppercase">{packDetail}</h2>
       <h3 className="mb-3">= Contenido del pack =</h3>
       <div className="infoContainer">
@@ -104,14 +104,14 @@ const {isNight} = useNightContext();
         <div className="recipe text-center">
           <div className="buttonsRecipe text-center">
             <Link
-              className={`btn mainButton ${isNight? "mainButtonNight":undefined}`}
+              className={`btn mainButton ${isNight? "mainButtonNight":""}`}
               to={`/tienda/${seasonUrl}`}
             >
               &lt; VOLVER
             </Link>
             <button
               className={`btn mainButton ${
-                isNight? "mainButtonNight hoverNight":undefined
+                isNight? "mainButtonNight hoverNight":""
               }`}
               type="button"
               data-bs-toggle="collapse"

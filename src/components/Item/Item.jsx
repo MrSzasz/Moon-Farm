@@ -36,7 +36,7 @@ function Item({
         borderForDetails === "silver" ? (
           <div
             className={`packCardWoH w-50 ${
-              (borderForDetails, (isNight? "packNightWoH":undefined))
+              (borderForDetails, (isNight? "packNightWoH":""))
             }`}
           >
             <div className="contentCard">
@@ -68,7 +68,7 @@ function Item({
         ) : (
           <div
             className={`packCardWoH w-50 ${
-              (borderForDetails, (isNight? "packNightWoH":undefined))
+              (borderForDetails, (isNight? "packNightWoH":""))
             }`}
           >
             <div className={`contentCard bg-${borderForDetails}`}>
@@ -103,7 +103,7 @@ function Item({
           {className === "silver" ? (
             <div
               className={`packCard w-50 ${
-                (className, (isNight? "packNight":undefined))
+                (className, (isNight? "packNight":""))
               }`}
             >
               <div className={`contentCard`}>
@@ -135,7 +135,7 @@ function Item({
           ) : (
             <div
               className={`packCard w-50 ${
-                (className, (isNight? "packNight":undefined))
+                (className, (isNight? "packNight":""))
               }`}
             >
               <div className={`contentCard bg-${className}`}>

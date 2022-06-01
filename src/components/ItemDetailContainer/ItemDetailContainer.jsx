@@ -25,7 +25,7 @@ const ItemDetailContainer = () => {
   return (
     <div className="d-flex flex-wrap w-100 justify-content-around gap-4 p-4 containerDetails">
       {loading ? (
-        <div className={`text-center loadingDiv ${isNight?'loadingNight':undefined}`} >
+        <div className={`text-center loadingDiv ${isNight?'loadingNight':""}`} >
           <span className="loader">
             <span className="loader-inner"></span>
           </span>

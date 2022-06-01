@@ -29,9 +29,9 @@ const {isNight} = useNightContext();
   });
 
   return (
-    <div className={`d-flex flex-wrap w-100 justify-content-center align-items-center containerPacks ${isNight?'nightContainer':undefined}`}>
+    <div className={`d-flex flex-wrap w-100 justify-content-center align-items-center containerPacks ${isNight?'nightContainer':""}`}>
       {loading ? (
-        <div className={`text-center loadingDiv ${isNight?'loadingNight':undefined}`}>
+        <div className={`text-center loadingDiv ${isNight?'loadingNight':""}`}>
         <span className="loader">
           <span className="loader-inner"></span>
         </span>
@@ -41,7 +41,7 @@ const {isNight} = useNightContext();
         <div className="mainPacks">
           <h2>{seasonUrl.toUpperCase()}</h2>
           <ItemList packs={filteredList}/>
-          <Link className={`btn mainButton ${isNight?'mainButtonNight':undefined}`}  to="/tienda">
+          <Link className={`btn mainButton ${isNight?'mainButtonNight':""}`}  to="/tienda">
             &lt; VOLVER
           </Link>
         </div>

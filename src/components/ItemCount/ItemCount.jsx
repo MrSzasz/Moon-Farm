@@ -27,7 +27,7 @@ function ItemCount({ stock, initial, onAdd, selectedPack }) {
         <button className="btn btn-danger" onClick={removeCounter}>
           <ImMinus />
         </button>
-        <p className={`counterStatus px-5 ${isNight? 'counterNight' : undefined}`}>{counter}</p>
+        <p className={`counterStatus px-5 ${isNight? 'counterNight' : ""}`}>{counter}</p>
         <button className="btn btn-success" onClick={addCounter}>
           <ImPlus />
         </button>

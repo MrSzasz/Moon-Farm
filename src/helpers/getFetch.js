@@ -347,9 +347,30 @@ let seasonList = [{
     }
 ];
 
+function addAllObj() {
+    packList.forEach(object => {
+        const db = getFirestore();
+        const queryCollection = collection(db, 'products');
+        addDoc(queryCollection, object)
+    })
+}
+function addAllSeason() {
+    packList.forEach(season => {
+        const db = getFirestore();
+        const queryCollection = collection(db, 'categories');
+        addDoc(queryCollection, season)
+    })
+}
 
-
-// import { getFirestore, doc, getDoc, collection, query, where } from 'firebase/firestore'
+import {
+    getFirestore,
+    doc,
+    getDoc,
+    collection,
+    query,
+    where,
+    addDoc
+} from 'firebase/firestore'
 
 // const [productoDeFirebase, setProductoDeFirebase] = useState({})
 // const [manyProductosDeFirebase, setManyProductosDeFirebase] = useState([])
@@ -439,3 +460,4 @@ export const getFetchCategories = (filter) => {
 //         }, 0)
 //     })
 // }
+

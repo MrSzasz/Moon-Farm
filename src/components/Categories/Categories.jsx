@@ -23,7 +23,7 @@ const Categories = () => {
       {loading ? (
         <div
           className={`text-center loadingDiv ${
-            isNight?"loadingNight":undefined
+            isNight?"loadingNight":""
           }`}
         >
           <span className="loader">
