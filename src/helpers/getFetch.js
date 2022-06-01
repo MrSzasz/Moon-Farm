@@ -317,35 +317,35 @@ let packList = [{
     },
 ];
 
-let seasonList = [{
-        name: "PRIMAVERA",
-        seasonPackId: "S1",
-        image: "",
-        className: "spring",
-        packUrl: "primavera",
-    },
-    {
-        name: "VERANO",
-        seasonPackId: "S2",
-        image: "",
-        className: "summer",
-        packUrl: "verano",
-    },
-    {
-        name: "OTOÑO",
-        seasonPackId: "S3",
-        image: "",
-        className: "autumn",
-        packUrl: "otoño"
-    },
-    {
-        name: "ESPECIALES",
-        seasonPackId: "S4",
-        image: "",
-        className: "specials",
-        packUrl: "especiales",
-    }
-];
+// let seasonList = [{
+//         name: "PRIMAVERA",
+//         seasonPackId: "S1",
+//         image: "",
+//         className: "spring",
+//         packUrl: "primavera",
+//     },
+//     {
+//         name: "VERANO",
+//         seasonPackId: "S2",
+//         image: "",
+//         className: "summer",
+//         packUrl: "verano",
+//     },
+//     {
+//         name: "OTOÑO",
+//         seasonPackId: "S3",
+//         image: "",
+//         className: "autumn",
+//         packUrl: "otoño"
+//     },
+//     {
+//         name: "ESPECIALES",
+//         seasonPackId: "S4",
+//         image: "",
+//         className: "specials",
+//         packUrl: "especiales",
+//     }
+// ];
 
 function addAllObj() {
     packList.forEach(object => {
@@ -430,14 +430,14 @@ export const getFetch = (filter) => {
     })
 }
 
-export const getFetchCategories = (filter) => {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            const query = filter ? seasonList.filter((filteredRes) => filteredRes.season == seasonUrl) : seasonList
-            resolve(query)
-        }, 2000)
-    })
-}
+// export const getFetchCategories = (filter) => {
+//     return new Promise((resolve) => {
+//         setTimeout(() => {
+//             const query = filter ? seasonList.filter((filteredRes) => filteredRes.season == seasonUrl) : seasonList
+//             resolve(query)
+//         }, 2000)
+//     })
+// }
 
 
 // ====================  FETCH WITHOUT LOADING TIME  ==================== //

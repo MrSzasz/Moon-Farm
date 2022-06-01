@@ -2,18 +2,26 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import CategoriesCard from "../CategoriesCard/CategoriesCard";
 import "./Categories.scss";
-import { getFetchCategories } from "../../helpers/getFetch";
 import { useNightContext } from "../../context/NightContext/NightContext";
+import { collection, getDocs, getFirestore } from "firebase/firestore";
 
 const Categories = () => {
   const [seasonListFetched, setSeasonListFetched] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const {isNight} = useNightContext();
+  const { isNight } = useNightContext();
 
   useEffect(() => {
-    getFetchCategories()
-      .then((res) => setSeasonListFetched(res))
+    const db = getFirestore();
+
+    const queryCollection = collection(db, "categories"); 
+
+    getDocs(queryCollection)
+      .then((res) =>
+        setSeasonListFetched(
+          res.docs.map((cat) => ({ ...cat.data(), id: cat.id }))
+        )
+      )
       .catch((err) => console.log(err))
       .finally(() => setLoading(false));
   }, []);
@@ -22,9 +30,7 @@ const Categories = () => {
     <div className="shopContainer">
       {loading ? (
         <div
-          className={`text-center loadingDiv ${
-            isNight?"loadingNight":""
-          }`}
+          className={`text-center loadingDiv ${isNight ? "loadingNight" : ""}`}
         >
           <span className="loader">
             <span className="loader-inner"></span>
@@ -33,7 +39,10 @@ const Categories = () => {
         </div>
       ) : (
         seasonListFetched.map((mappedSeasons) => (
-          <Link to={`/tienda/${mappedSeasons.packUrl}`} key={mappedSeasons.seasonPackId}>
+          <Link
+            to={`/tienda/${mappedSeasons.packUrl}`}
+            key={mappedSeasons.seasonPackId}
+          >
             <CategoriesCard
               name={mappedSeasons.name}
               className={mappedSeasons.className}
