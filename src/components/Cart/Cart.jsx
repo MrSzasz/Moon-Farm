@@ -11,7 +11,7 @@ const Cart = () => {
   const { cartList, clearCart, removeFromCart, totalOfCart } = useCartContext();
 
   const { isNight } = useNightContext();
- 
+
   // function getDataForOrder() {
   //   // setCustomerOrder({
   //   //   buyer: { name, phone, email },
@@ -106,14 +106,14 @@ const Cart = () => {
             >
               Vaciar carrito
             </button>
-            <button
+            <Link to="/finalizar-compra"
               className={`btn mainButton m-auto w-25 ${
                 isNight ? "mainButtonNight" : ""
               }`}
               onClick={() => getDataForOrder()}
             >
               Terminar compra
-            </button>
+            </Link>
           </div>
         </>
       )}

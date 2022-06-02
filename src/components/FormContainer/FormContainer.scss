@@ -1,0 +1,29 @@
+@import "/src/resources/style/props.scss";
+
+.orderContainer{
+    grid-column: 2/3;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: min-content;
+    padding: 20px;
+    margin: 20px;
+    @include glassMorph;
+    @include borderRadiusPreset;
+    @include svBorder;
+    text-align: center;
+    form{
+        gap: 20px;
+        input{
+            @include glassMorph;
+            @include borderRadiusPreset;
+            @include svBorder;
+            text-align: center;
+        }
+    }
+    span{
+        color: red;
+     font-style: italic;
+     font-size: 10px;   
+    }
+}

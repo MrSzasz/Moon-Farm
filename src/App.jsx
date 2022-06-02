@@ -11,9 +11,12 @@ import Categories from "./components/Categories/Categories";
 import Footer from "./components/Footer/Footer";
 import CartContextProvider from "./context/CartContext/CartContext";
 import { useNightContext } from "./context/NightContext/NightContext";
+import FormContainer from "./components/FormContainer/FormContainer";
 
 function App() {
   const { isNight } = useNightContext();
+
+  // let notifier = new AWN(options) // Awesome Notifications
 
   return (
     <BrowserRouter>
@@ -29,6 +32,7 @@ function App() {
               element={<ItemDetailContainer />}
             />
             <Route path="/carrito" element={<Cart />} />
+            <Route path="/finalizar-compra" element={<FormContainer />} />
             <Route path="/*" element={<Navigate to="/" replace />} />
           </Routes>
           {/* <Footer /> */}
