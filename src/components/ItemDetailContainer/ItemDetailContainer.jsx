@@ -2,27 +2,15 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import "./ItemDetailContainer.scss";
-import { getFetch } from "../../helpers/getFetch";
 import { useNightContext } from "../../context/NightContext/NightContext";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
   const [filteredList, setFilteredList] = useState({});
   const [loading, setLoading] = useState(true);
-  const { seasonUrl } = useParams();
   const { packDetail } = useParams();
 
   const { isNight } = useNightContext();
-
-  // useEffect(() => {
-  //   getFetch()
-  //     .then((res) =>
-  //       res.filter((filteredRes) => filteredRes.season == seasonUrl)
-  //     )
-  //     .then((res) => setFilteredList(res))
-  //     .catch((err) => console.log(err))
-  //     .finally(() => setLoading(false));
-  // }, []);
 
   useEffect(() => {
     const db = getFirestore();
@@ -31,7 +19,6 @@ const ItemDetailContainer = () => {
 
     getDoc(dbQuery)
       .then((res) => setFilteredList({ ...res.data(), id: res.id }))
-      // .then((res) => console.log(res.data()))
       .catch((err) => console.log(err))
       .finally(() => setLoading(false));
   }, []);

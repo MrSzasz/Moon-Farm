@@ -7,6 +7,7 @@ import {
   collection,
   getDocs,
   getFirestore,
+  orderBy,
   query,
   where,
 } from "firebase/firestore";
@@ -27,8 +28,12 @@ const ItemListContainer = () => {
       queryCollection,
       where("season", "==", seasonUrl)
     );
+    const orderedProductList = query(
+      queryCollectionFiltered,
+      orderBy("idForItem")
+    );
 
-    getDocs(queryCollectionFiltered)
+    getDocs(orderedProductList)
       .then((res) =>
         setFilteredList(
           res.docs.map((item) => ({ ...item.data(), id: item.id }))

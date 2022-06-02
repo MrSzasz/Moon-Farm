@@ -9,10 +9,10 @@ const {isNight} = useNightContext();
   return (
     <div className="d-flex justify-content-around p-3">
       <Link to={`/tienda/${seasonUrl}`} className={`btn mainButton ${isNight && 'mainButtonNight'}`}>
-        SEGUIR COMPRANDO
+      &lt; SEGUIR COMPRANDO
       </Link>
       <Link to="/carrito" className={`btn mainButton ${isNight && 'mainButtonNight'}`}>
-        CARRITO
+        CARRITO &gt;
       </Link>
     </div>
   );

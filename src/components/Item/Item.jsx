@@ -1,34 +1,22 @@
-import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useNightContext } from "../../context/NightContext/NightContext";
 import "./Item.scss";
 
 function Item({ className, url, image1, image2, image3, image4, image5 }) {
-  const [borderForDetails, setBorderForDetails] = useState();
   const { seasonUrl } = useParams();
   const { packDetail } = useParams();
 
   const { isNight } = useNightContext();
-
-  useEffect(() => {
-    if (packDetail === "plata") {
-      setBorderForDetails("silver");
-    } else if (packDetail === "oro") {
-      setBorderForDetails("gold");
-    } else {
-      setBorderForDetails("iridium");
-    }
-  }, []);
 
   return (
     <div>
       {/* =========================  ITEM DETAILS  ========================= */}
 
       {packDetail ? (
-        borderForDetails === "silver" ? (
+        className === "silver" ? (
           <div
             className={`packCardWoH w-50 ${
-              (borderForDetails, isNight ? "packNightWoH" : "")
+              (className, isNight ? "packNightWoH" : "")
             }`}
           >
             <div className="contentCard">
@@ -60,10 +48,10 @@ function Item({ className, url, image1, image2, image3, image4, image5 }) {
         ) : (
           <div
             className={`packCardWoH w-50 ${
-              (borderForDetails, isNight ? "packNightWoH" : "")
+              (className, isNight ? "packNightWoH" : "")
             }`}
           >
-            <div className={`contentCard bg-${borderForDetails}`}>
+            <div className={`contentCard bg-${className}`}>
               <p>ANTERIOR +</p>
             </div>
             <div className="contentCard">

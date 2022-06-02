@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import CategoriesCard from "../CategoriesCard/CategoriesCard";
 import "./Categories.scss";
 import { useNightContext } from "../../context/NightContext/NightContext";
-import { collection, getDocs, getFirestore } from "firebase/firestore";
+import { collection, getDocs, getFirestore, orderBy, query } from "firebase/firestore";
 
 const Categories = () => {
   const [seasonListFetched, setSeasonListFetched] = useState([]);
@@ -15,8 +15,9 @@ const Categories = () => {
     const db = getFirestore();
 
     const queryCollection = collection(db, "categories"); 
+    const orderedQueryCollection = query(queryCollection, orderBy('id'))
 
-    getDocs(queryCollection)
+    getDocs(orderedQueryCollection)
       .then((res) =>
         setSeasonListFetched(
           res.docs.map((cat) => ({ ...cat.data(), id: cat.id }))
