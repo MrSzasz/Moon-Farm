@@ -11,6 +11,7 @@ const Cart = () => {
   const { cartList, clearCart, removeFromCart, totalOfCart } = useCartContext();
 
   const { isNight } = useNightContext();
+  
 
   // function getDataForOrder() {
   //   // setCustomerOrder({
