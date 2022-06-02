@@ -32,7 +32,7 @@ const Cart = () => {
   //     })),
   //     totalOfCart,
   //   });
-  // }
+  // } 
 
   return (
     <div
