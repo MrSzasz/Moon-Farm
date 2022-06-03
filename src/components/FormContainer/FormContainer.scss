@@ -1,29 +1,42 @@
 @import "/src/resources/style/props.scss";
 
-.orderContainer{
+.orderContainer {
     grid-column: 2/3;
     display: flex;
     flex-direction: column;
     gap: 20px;
     height: min-content;
-    padding: 20px;
     margin: 20px;
-    @include glassMorph;
-    @include borderRadiusPreset;
-    @include svBorder;
     text-align: center;
-    form{
+
+    form {
         gap: 20px;
-        input{
+
+        input {
             @include glassMorph;
             @include borderRadiusPreset;
             @include svBorder;
             text-align: center;
+
+            &::placeholder {
+                color: $nightFont;
+            }
+
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            &[type=number] {
+                -moz-appearance: textfield;
+            }
         }
     }
-    span{
+
+    span {
         color: red;
-     font-style: italic;
-     font-size: 10px;   
+        font-style: italic;
+        font-size: 10px;
     }
 }

@@ -1,13 +1,20 @@
+import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useNightContext } from "../../context/NightContext/NightContext";
 import ChangeButton from "../changeButton/changeButton";
 import Item from "../Item/Item";
+import ModalBase from "../ModalBase/ModalBase";
 import "./ItemDetail.scss";
 
 const ItemDetail = ({ pack }) => {
   const { isNight } = useNightContext();
 
   const { seasonUrl } = useParams();
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
     <div className={`infoCard ${isNight ? "infoCardNight" : ""}`}>
@@ -77,7 +84,7 @@ const ItemDetail = ({ pack }) => {
             >
               &lt; VOLVER
             </Link>
-            <button
+            {/* <button
               className={`btn mainButton ${
                 isNight ? "mainButtonNight hoverNight" : ""
               }`}
@@ -88,7 +95,14 @@ const ItemDetail = ({ pack }) => {
               aria-controls="collapseExample"
             >
               RECETAS
-            </button>
+            </button> */}
+            <ModalBase
+              show={show}
+              handleClose={handleClose}
+              handleShow={handleShow}
+              name={pack.seasonUrl}
+              recipe={pack.recipe}
+            />
           </div>
           <div className="collapse" id="collapseExample">
             <div className="expandedRecipe">

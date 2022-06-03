@@ -1,0 +1,18 @@
+@import "/src/resources/style/props.scss";
+
+.modal-content {
+  @include glassMorph; 
+  @include borderRadiusPreset;
+  @include shadowPreset;
+  @include svBorder;
+  font-family: pixel;
+  background-color: rgba(30, 30, 30,.7) !important;
+  color: $nightFont;
+  
+  .modal-header {
+    border-bottom: none;
+  }
+  .modal-body{
+padding: 40px;
+  }
+}

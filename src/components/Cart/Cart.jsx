@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext/CartContext";
 import { useNightContext } from "../../context/NightContext/NightContext";
+import ModalBase from "../ModalBase/ModalBase";
 import "./Cart.scss";
 
 const Cart = () => {
@@ -11,7 +12,11 @@ const Cart = () => {
   const { cartList, clearCart, removeFromCart, totalOfCart } = useCartContext();
 
   const { isNight } = useNightContext();
-  
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   // function getDataForOrder() {
   //   // setCustomerOrder({
@@ -33,7 +38,7 @@ const Cart = () => {
   //     })),
   //     totalOfCart,
   //   });
-  // } 
+  // }
 
   return (
     <div
@@ -96,9 +101,9 @@ const Cart = () => {
             ))}
           </table>
           <h3>Total: ${totalOfCart}</h3>
-          <div className="d-flex justify-content-between">
+          <div className="d-flex justify-content-around">
             <button
-              className={`btn mainButton m-auto w-25 ${
+              className={`btn mainButton w-25 ${
                 isNight ? "mainButtonNight" : ""
               }`}
               onClick={() => {
@@ -107,14 +112,21 @@ const Cart = () => {
             >
               Vaciar carrito
             </button>
-            <Link to="/finalizar-compra"
+            {/* <Link to="/finalizar-compra"
               className={`btn mainButton m-auto w-25 ${
                 isNight ? "mainButtonNight" : ""
               }`}
               onClick={() => getDataForOrder()}
             >
               Terminar compra
-            </Link>
+            </Link> */}
+
+            <ModalBase
+              buttonName="Terminar compra"
+              show={show}
+              handleClose={handleClose}
+              handleShow={handleShow}
+            />
           </div>
         </>
       )}

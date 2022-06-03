@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
+import { useCartContext } from "../../context/CartContext/CartContext";
 import { useNightContext } from "../../context/NightContext/NightContext";
 import "./FormContainer.scss";
 
 const FormContainer = () => {
   const { isNight } = useNightContext();
+  const { getDataForOrder } = useCartContext();
 
   return (
       
@@ -18,7 +20,7 @@ const FormContainer = () => {
         <label for="orderName">
           Nombre completo<span>*</span>
         </label>
-        <input
+        <input id="inputOrderName"
           type="text"
           name="orderName"
           placeholder="Ingrese su nombre"
@@ -27,29 +29,38 @@ const FormContainer = () => {
         <label for="orderMail">
           Mail<span>*</span>
         </label>
-        <input
+        <input id="inputOrderMail"
           type="mail"
           name="orderMail"
           placeholder="ejemplo@mail.com"
+          required
+        />
+        <label for="orderNumber">
+          Numero<span>*</span>
+        </label>
+        <input id="inputOrderNumber"
+          type="number"
+          name="orderNumber"
+          placeholder="+54 9 1123456789"
           required
         />
         <label for="orderHome">
           Region<span>*</span>
         </label>
         <div className="d-flex justify-content-around">
-          <input type="text" name="orderCountry" placeholder="País" required />
-          <input type="text" name="orderCity" placeholder="Ciudad" required />
+          <input id="inputOrderCountry" type="text" name="orderCountry" placeholder="País" required />
+          <input id="inputOrderCity" type="text" name="orderCity" placeholder="Ciudad" required />
         </div>
-        <input
+        <input id="inputOrderText"
           type="text"
           name="orderExtra"
           placeholder="¿Quiere agregar una nota?"
           rows="2"
           className="my-4"
         />
-        <div>
+        <div className="d-flex align-items-center justify-content-center">
           <input className="mx-4" type="checkbox" name="orderNewsletter" />
-          <label for="orderNewsletter">
+          <label for="orderNewsletter" className="text-start">
             ¿Quiere suscribirse a nuestro newsletter?
           </label>
         </div>
@@ -64,6 +75,7 @@ const FormContainer = () => {
             className={`btn mainButton w-25 ${
               isNight ? "mainButtonNight" : ""
             }`}
+            onClick={(e)=> getDataForOrder(e)}
             type="submit"
           >
             FINALIZAR COMPRA
