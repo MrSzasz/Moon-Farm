@@ -73,7 +73,7 @@ const CartContextProvider = ({ children }) => {
         (res) => res && window.location.reload()
       );
     }
-  }
+  } 
 
   function clearCart() {
     setCartList([]);
