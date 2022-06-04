@@ -34,6 +34,7 @@ const CartContextProvider = ({ children }) => {
 
   function getDataForOrder(e) {
     e.preventDefault();
+
     const todayDate = new Date();
     const orderName = document.getElementById("inputOrderName").value;
     const orderMail = document.getElementById("inputOrderMail").value;
@@ -41,9 +42,15 @@ const CartContextProvider = ({ children }) => {
     const orderCountry = document.getElementById("inputOrderCountry").value;
     const orderCity = document.getElementById("inputOrderCity").value;
     const orderText = document.getElementById("inputOrderText").value;
-    let customerOrder;
-    (orderName!=''&&orderMail!=''&&orderNumber!='' && orderCountry!=''&&orderCity!='') &&
-      (customerOrder = {
+
+    if (
+      orderName != "" &&
+      orderMail != "" &&
+      orderNumber != "" &&
+      orderCountry != "" &&
+      orderCity != ""
+    ) {
+      let customerOrder = {
         buyer: {
           customerName: orderName,
           customerMail: orderMail,
@@ -59,15 +66,13 @@ const CartContextProvider = ({ children }) => {
         })),
         todayDate,
         totalOfCart,
-      }
-
-    )
-    
-    const db = getFirestore()
-    const queryCollection = collection(db, "orders")
-    addDoc(queryCollection, customerOrder)
-    .then((res)=> res&&window.location.reload())
-    
+      };
+      const db = getFirestore();
+      const queryCollection = collection(db, "orders");
+      addDoc(queryCollection, customerOrder).then(
+        (res) => res && window.location.reload()
+      );
+    }
   }
 
   function clearCart() {
