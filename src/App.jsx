@@ -16,8 +16,6 @@ import FormContainer from "./components/FormContainer/FormContainer";
 function App() {
   const { isNight } = useNightContext();
 
-  // let notifier = new AWN(options) // Awesome Notifications
-
   return (
     <BrowserRouter>
       <CartContextProvider>

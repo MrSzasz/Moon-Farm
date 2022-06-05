@@ -7,8 +7,6 @@ import ModalBase from "../ModalBase/ModalBase";
 import "./Cart.scss";
 
 const Cart = () => {
-  // const [customerOrder, setCustomerOrder] = useState({});
-
   const { cartList, clearCart, removeFromCart, totalOfCart } = useCartContext();
 
   const { isNight } = useNightContext();

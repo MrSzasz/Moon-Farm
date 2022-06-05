@@ -84,18 +84,6 @@ const ItemDetail = ({ pack }) => {
             >
               &lt; VOLVER
             </Link>
-            {/* <button
-              className={`btn mainButton ${
-                isNight ? "mainButtonNight hoverNight" : ""
-              }`}
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseExample"
-              aria-expanded="false"
-              aria-controls="collapseExample"
-            >
-              RECETAS
-            </button> */}
             <ModalBase
               show={show}
               handleClose={handleClose}
