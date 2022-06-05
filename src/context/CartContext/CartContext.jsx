@@ -33,8 +33,6 @@ const CartContextProvider = ({ children }) => {
   }
 
   function getDataForOrder(e) {
-    e.preventDefault();
-
     const todayDate = new Date();
     const orderName = document.getElementById("inputOrderName").value;
     const orderMail = document.getElementById("inputOrderMail").value;
@@ -50,6 +48,7 @@ const CartContextProvider = ({ children }) => {
       orderCountry != "" &&
       orderCity != ""
     ) {
+      e.preventDefault();
       let customerOrder = {
         buyer: {
           customerName: orderName,
@@ -73,7 +72,7 @@ const CartContextProvider = ({ children }) => {
         (res) => res && window.location.reload()
       );
     }
-  } 
+  }
 
   function clearCart() {
     setCartList([]);

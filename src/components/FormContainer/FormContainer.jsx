@@ -17,7 +17,7 @@ const FormContainer = () => {
         mínimo
       </p>
       <form className="d-flex flex-column">
-        <label for="orderName">
+        <label htmlFor="orderName">
           Nombre completo<span>*</span>
         </label>
         <input id="inputOrderName"
@@ -26,7 +26,7 @@ const FormContainer = () => {
           placeholder="Ingrese su nombre"
           required
         />
-        <label for="orderMail">
+        <label htmlFor="orderMail">
           Mail<span>*</span>
         </label>
         <input id="inputOrderMail"
@@ -35,7 +35,7 @@ const FormContainer = () => {
           placeholder="ejemplo@mail.com"
           required
         />
-        <label for="orderNumber">
+        <label htmlFor="orderNumber">
           Numero<span>*</span>
         </label>
         <input id="inputOrderNumber"
@@ -44,7 +44,7 @@ const FormContainer = () => {
           placeholder="+54 9 1123456789"
           required
         />
-        <label for="orderHome">
+        <label htmlFor="orderHome">
           Region<span>*</span>
         </label>
         <div className="d-flex justify-content-around">
@@ -60,7 +60,7 @@ const FormContainer = () => {
         />
         <div className="d-flex align-items-center justify-content-center">
           <input className="mx-4" type="checkbox" name="orderNewsletter" />
-          <label for="orderNewsletter" className="text-start">
+          <label htmlFor="orderNewsletter" className="text-start">
             ¿Quiere suscribirse a nuestro newsletter?
           </label>
         </div>

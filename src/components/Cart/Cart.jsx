@@ -18,27 +18,6 @@ const Cart = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  // function getDataForOrder() {
-  //   // setCustomerOrder({
-  //   //   buyer: { name, phone, email },
-  //   //   items: [{ id, title, price }],
-  //   //   total
-  //   // });
-  //   console.log(customerOrder);
-  //   setCustomerOrder({
-  //     buyer: {
-  //       customerName: "tomas",
-  //       customerPhone: 1155224433,
-  //       customerEmail: "lugoleandro@hotmail.com",
-  //     },
-  //     items: cartList.map((itemForOrder) => ({
-  //       id: itemForOrder.id,
-  //       title: `${itemForOrder.season}, bundle ${itemForOrder.detailUrl}`,
-  //       price: itemForOrder.price * itemForOrder.qtyOnCart,
-  //     })),
-  //     totalOfCart,
-  //   });
-  // }
 
   return (
     <div
@@ -112,14 +91,6 @@ const Cart = () => {
             >
               Vaciar carrito
             </button>
-            {/* <Link to="/finalizar-compra"
-              className={`btn mainButton m-auto w-25 ${
-                isNight ? "mainButtonNight" : ""
-              }`}
-              onClick={() => getDataForOrder()}
-            >
-              Terminar compra
-            </Link> */}
 
             <ModalBase
               buttonName="Terminar compra"

@@ -42,7 +42,7 @@ const Categories = () => {
         seasonListFetched.map((mappedSeasons) => (
           <Link
             to={`/tienda/${mappedSeasons.packUrl}`}
-            key={mappedSeasons.seasonPackId}
+            key={mappedSeasons.id}
           >
             <CategoriesCard
               name={mappedSeasons.name}

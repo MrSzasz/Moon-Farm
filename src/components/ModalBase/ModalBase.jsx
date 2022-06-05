@@ -39,6 +39,7 @@ const ModalBase = ({ handleShow, handleClose, show, name, buttonName }) => {
         <Modal.Body>
         <FormContainer />
         </Modal.Body>
+        
       </Modal>
     </>
   );
