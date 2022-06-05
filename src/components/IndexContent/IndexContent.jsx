@@ -10,7 +10,7 @@ const IndexContent = () => {
   
   return (
     <div className="indexContainer">
-      <div className="mainImg"></div>
+      <div className={`mainImg ${isNight ? "mainImgNight" : ""}`}></div>
       <h1 className="text-center"> QUIENES SOMOS </h1>
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis

@@ -65,12 +65,6 @@ const FormContainer = () => {
           </label>
         </div>
         <div className="d-flex justify-content-around align-items-center">
-          <Link
-            className={`btn mainButton ${isNight ? "mainButtonNight" : ""}`}
-            to={`/carrito`}
-          >
-            &lt; VOLVER
-          </Link>
           <button
             className={`btn mainButton w-25 ${
               isNight ? "mainButtonNight" : ""
