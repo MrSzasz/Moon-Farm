@@ -1,4 +1,13 @@
-import { addDoc, collection, documentId, getDocs, getFirestore, query, where, writeBatch } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  documentId,
+  getDocs,
+  getFirestore,
+  query,
+  where,
+  writeBatch,
+} from "firebase/firestore";
 import { createContext, useContext, useEffect, useState } from "react";
 
 const CartContext = createContext([]);
@@ -32,21 +41,31 @@ const CartContextProvider = ({ children }) => {
     setCartList([...cartList]);
   }
 
-  async function changeStock(){
+  async function changeStock() {
     const db = getFirestore();
-  const queryCollectionStock = collection(db, 'products')
-  
-  const queryChangeStock = await query(
-    queryCollectionStock,
-    where(documentId(), 'in' , cartList.map((item) => item.id))
-  )
+    const queryCollectionStock = collection(db, "products");
 
-  const batch = writeBatch(db)
-  await getDocs(queryChangeStock)
-  .then((res)=> res.docs.forEach((res) =>batch.update(res.ref, {stock: res.data().stock - cartList.find((item)=> item.id === res.id).qtyOnCart})))
-  batch.commit()
+    const queryChangeStock = await query(
+      queryCollectionStock,
+      where(
+        documentId(),
+        "in",
+        cartList.map((item) => item.id)
+      )
+    );
 
-}
+    const batch = writeBatch(db);
+    await getDocs(queryChangeStock).then((res) =>
+      res.docs.forEach((res) =>
+        batch.update(res.ref, {
+          stock:
+            res.data().stock -
+            cartList.find((item) => item.id === res.id).qtyOnCart,
+        })
+      )
+    );
+    batch.commit();
+  }
   function getDataForOrder(e) {
     const todayDate = new Date();
     const orderName = document.getElementById("inputOrderName").value;
@@ -82,8 +101,8 @@ const CartContextProvider = ({ children }) => {
         totalOfCart,
       };
 
-      changeStock()
-      
+      changeStock();
+
       const db = getFirestore();
       const queryCollection = collection(db, "orders");
       addDoc(queryCollection, customerOrder).then(
@@ -121,7 +140,7 @@ const CartContextProvider = ({ children }) => {
         totalOfCart,
         calculateTotalItemsOfCart,
         getDataForOrder,
-        changeStock
+        changeStock,
       }}
     >
       {children}
@@ -130,4 +149,3 @@ const CartContextProvider = ({ children }) => {
 };
 
 export default CartContextProvider;
-
