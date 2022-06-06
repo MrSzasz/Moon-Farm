@@ -12,6 +12,11 @@ header {
         height: 80%;
         width: 100%;
         border-bottom: 2px solid $font;
+        img{
+            height: auto;
+            width: 250px;
+            padding: 10px;
+        }
     }
 
     nav {
@@ -37,10 +42,10 @@ header {
                 justify-content: center;
                 align-items: center;
 
-                &:hover {
-                    transform: scale(1.05);
-                    color: $iridium !important;
-                }
+            }
+            .liWithHover:hover {
+                transform: scale(1.05);
+                color: $iridium !important;
             }
         }
     }

@@ -2,8 +2,15 @@
 
 .cartWidget {
     position: absolute;
-    top: 50%;
+    top: 65%;
     transform: translate(-50%);
+    transition: ease all .20s;
+
+    &:hover {
+        color: $iridium;
+        height: 30px;
+        width: 30px;
+    }
 }
 
 .cartSpan {
@@ -20,11 +27,9 @@
     @include glassMorph(rgba(128, 31, 226, 0.35));
     border: none;
 
-    &:hover {
-        transform: scale(1.05);
-    }
+
 }
 
-.nightWidget{
+.nightWidget {
     color: $nightFont;
 }
