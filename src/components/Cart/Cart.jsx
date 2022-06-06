@@ -89,7 +89,6 @@ const Cart = () => {
             >
               Vaciar carrito
             </button>
-
             <ModalBase
               buttonName="Terminar compra"
               show={show}
