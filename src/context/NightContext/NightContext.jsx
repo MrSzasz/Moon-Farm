@@ -5,7 +5,7 @@ const NightContext = createContext();
 export const useNightContext = () => useContext(NightContext);
 
 const NightContextProvider = ({ children }) => {
-  const [isNight, setIsNight] = useState('');
+  const [isNight, setIsNight] = useState("");
 
   useEffect(() => {
     const today = new Date();
