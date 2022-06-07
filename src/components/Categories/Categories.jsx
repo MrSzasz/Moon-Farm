@@ -3,7 +3,13 @@ import { Link } from "react-router-dom";
 import CategoriesCard from "../CategoriesCard/CategoriesCard";
 import "./Categories.scss";
 import { useNightContext } from "../../context/NightContext/NightContext";
-import { collection, getDocs, getFirestore, orderBy, query } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  getFirestore,
+  orderBy,
+  query,
+} from "firebase/firestore";
 
 const Categories = () => {
   const [seasonListFetched, setSeasonListFetched] = useState([]);
@@ -14,8 +20,8 @@ const Categories = () => {
   useEffect(() => {
     const db = getFirestore();
 
-    const queryCollection = collection(db, "categories"); 
-    const orderedQueryCollection = query(queryCollection, orderBy('id'))
+    const queryCollection = collection(db, "categories");
+    const orderedQueryCollection = query(queryCollection, orderBy("id"));
 
     getDocs(orderedQueryCollection)
       .then((res) =>
@@ -25,8 +31,9 @@ const Categories = () => {
       )
       .catch((err) => console.log(err))
       .finally(() => setLoading(false));
-  }, []);
 
+    }, []);
+    
   return (
     <div className="shopContainer">
       {loading ? (
@@ -40,10 +47,7 @@ const Categories = () => {
         </div>
       ) : (
         seasonListFetched.map((mappedSeasons) => (
-          <Link
-            to={`/tienda/${mappedSeasons.packUrl}`}
-            key={mappedSeasons.id}
-          >
+          <Link to={`/tienda/${mappedSeasons.packUrl}`} key={mappedSeasons.id}>
             <CategoriesCard
               name={mappedSeasons.name}
               className={mappedSeasons.className}

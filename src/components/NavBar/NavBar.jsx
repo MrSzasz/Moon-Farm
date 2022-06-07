@@ -2,9 +2,16 @@ import CartWidget from "../CartWidget/CartWidget";
 import { Link } from "react-router-dom";
 import "./NavBar.scss";
 import { useNightContext } from "../../context/NightContext/NightContext";
+import { useState } from "react";
+import { AiOutlineDown } from "react-icons/ai";
 
 function NavBar() {
   const { isNight } = useNightContext();
+  const [show, setShow] = useState(false);
+
+  function changeDisplay() {
+    setShow((prev) => !prev);
+  }
 
   return (
     <header className={isNight}>
@@ -19,9 +26,43 @@ function NavBar() {
           <Link to="/" className="linkOnNavBar">
             <li className="liWithHover">INICIO</li>
           </Link>
-          <Link to="/tienda" className="linkOnNavBar">
+          <div>
+            <Link to="/tienda" className="text-center liWithHover">
+              TIENDA
+            </Link>
+            <button
+              className={`buttonDropdown ${
+                isNight ? "buttonDropdownNight" : ""
+              }`}
+              onClick={() => changeDisplay()}
+            >
+              <AiOutlineDown className="liWithHover" size={20} />
+            </button>
+            {show && (
+              <div
+                className={`dropDownNavBar ${
+                  isNight ? "dropDownNavBarNight" : ""
+                }`}
+              >
+                <Link onClick={() => changeDisplay()} to="/tienda/primavera">
+                  PRIMAVERA
+                </Link>
+                <Link onClick={() => changeDisplay()} to="/tienda/verano">
+                  VERANO
+                </Link>
+                <Link onClick={() => changeDisplay()} to="/tienda/otoño">
+                  OTOÑO
+                </Link>
+                <Link onClick={() => changeDisplay()} to="/tienda/especiales">
+                  ESPECIALES
+                </Link>
+              </div>
+            )}
+          </div>
+
+          {/* <Link to="/tienda" className="linkOnNavBar">
             <li className="liWithHover">TIENDA</li>
-          </Link>
+          </Link> */}
           <CartWidget />
         </ul>
       </nav>

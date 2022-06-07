@@ -18,15 +18,17 @@
 
     }
 }
+
 .mainButtonNight {
     @include glassMorphNight;
     @include svBorder;
-    color: $nightFont;
+    color: $nightFont !important;
 
     &:focus {
         @include svBorder;
     }
-    &:hover{
+
+    &:hover {
         color: inherit;
     }
 }
@@ -68,6 +70,7 @@
             @include svBorder;
 
         }
+
         .mainImgNight {
             background-image: url("https://i.imgur.com/7AHKCAK.jpg");
         }
@@ -79,6 +82,23 @@
             @include borderRadiusPreset;
             @include shadowPreset;
             @include svBorder;
+
+            span {
+                font-size: large;
+                text-shadow: 2px 2px 4px black;
+            }
+
+            .silverSpan {
+                color: $silver;
+            }
+
+            .goldSpan {
+                color: $gold;
+            }
+
+            .iridiumSpan {
+                color: $iridium;
+            }
 
         }
     }

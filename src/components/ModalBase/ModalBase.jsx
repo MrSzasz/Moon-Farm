@@ -10,7 +10,7 @@ const ModalBase = ({ handleShow, handleClose, show, name, buttonName }) => {
   return (
     <>
       <Button
-        className={`btn mainButton ${
+        className={`mainButton ${
           isNight ? "mainButtonNight hoverNight" : ""
         }`}
         onClick={handleShow}

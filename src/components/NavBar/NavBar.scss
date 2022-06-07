@@ -7,12 +7,14 @@ header {
     width: 100%;
     @include glassMorph;
     border: none;
+    z-index: 1000;
 
     .logo {
         height: 80%;
         width: 100%;
         border-bottom: 2px solid $font;
-        img{
+
+        img {
             height: auto;
             width: 250px;
             padding: 10px;
@@ -35,6 +37,48 @@ header {
             margin: 0;
             padding: 0;
 
+            a {
+                width: min-content;
+                transition: ease all .20s;
+            }
+
+
+            .buttonDropdown {
+                position: relative;
+                background-color: transparent;
+                border: none;
+                height: min-content;
+                width: min-content;
+            }
+
+            .buttonDropdownNight {
+                color: $nightFont;
+                
+            }
+
+            .dropDownNavBar {
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                padding: 10px;
+
+                @include borderRadiusPreset;
+                @include glassMorph(rgba(255, 255, 255, 0.85));
+
+                a {
+                    transition: ease all .20s;
+
+                    &:hover {
+                        color: $iridium !important;
+                    }
+                }
+
+            }
+
+            .dropDownNavBarNight {
+                @include glassMorphNight(rgba(14, 15, 94, 0.85));
+            }
+
             li {
                 transition: ease all .20s;
                 padding: 10px;
@@ -43,6 +87,7 @@ header {
                 align-items: center;
 
             }
+
             .liWithHover:hover {
                 transform: scale(1.05);
                 color: $iridium !important;

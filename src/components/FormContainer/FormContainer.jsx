@@ -48,8 +48,8 @@ const FormContainer = () => {
           Region<span>*</span>
         </label>
         <div className="d-flex justify-content-around">
-          <input id="inputOrderCountry" type="text" name="orderCountry" placeholder="País" required />
-          <input id="inputOrderCity" type="text" name="orderCity" placeholder="Ciudad" required />
+          <input className="cityInput" id="inputOrderCountry" type="text" name="orderCountry" placeholder="País" required />
+          <input className="cityInput" id="inputOrderCity" type="text" name="orderCity" placeholder="Ciudad" required />
         </div>
         <input id="inputOrderText"
           type="text"
@@ -66,7 +66,7 @@ const FormContainer = () => {
         </div>
         <div className="d-flex justify-content-around align-items-center">
           <button
-            className={`btn mainButton w-25 ${
+            className={`mainButton ${
               isNight ? "mainButtonNight" : ""
             }`}
             onClick={(e)=> getDataForOrder(e)}
