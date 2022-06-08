@@ -1,7 +1,18 @@
+// =========================  STYLES  =========================
+
+import "./ItemCount.scss";
+
+// =========================  LIBRARIES  =========================
+
 import { useState } from "react";
 import { ImMinus, ImPlus } from "react-icons/im";
+
+// =========================  CUSTOM IMPORTS  =========================
+
 import { useNightContext } from "../../context/NightContext/NightContext";
-import "./ItemCount.scss";
+
+
+
 
 function ItemCount({ stock, initial, onAdd, selectedPack }) {
   const [counter, setCounter] = useState(initial);

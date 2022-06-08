@@ -1,8 +1,11 @@
+// =========================  STYLES  =========================
+
+import "./Categories.scss";
+
+// =========================  LIBRARIES  =========================
+
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import CategoriesCard from "../CategoriesCard/CategoriesCard";
-import "./Categories.scss";
-import { useNightContext } from "../../context/NightContext/NightContext";
 import {
   collection,
   getDocs,
@@ -10,6 +13,17 @@ import {
   orderBy,
   query,
 } from "firebase/firestore";
+
+// =========================  CUSTOM IMPORTS  =========================
+
+import { useNightContext } from "../../context/NightContext/NightContext";
+
+// ----------  COMPONENTS  ----------
+
+import CategoriesCard from "../CategoriesCard/CategoriesCard";
+
+
+
 
 const Categories = () => {
   const [seasonListFetched, setSeasonListFetched] = useState([]);
@@ -32,8 +46,8 @@ const Categories = () => {
       .catch((err) => console.log(err))
       .finally(() => setLoading(false));
 
-    }, []);
-    
+  }, []);
+
   return (
     <div className="shopContainer">
       {loading ? (

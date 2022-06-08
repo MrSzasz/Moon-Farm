@@ -1,9 +1,22 @@
+// =========================  STYLES  =========================
+
+import "./ItemDetailContainer.scss";
+
+// =========================  LIBRARIES  =========================
+
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ItemDetail from "../ItemDetail/ItemDetail";
-import "./ItemDetailContainer.scss";
-import { useNightContext } from "../../context/NightContext/NightContext";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
+
+// =========================  CUSTOM IMPORTS  =========================
+
+import { useNightContext } from "../../context/NightContext/NightContext";
+
+// ----------  COMPONENTS  ----------
+
+import ItemDetail from "../ItemDetail/ItemDetail";
+
+
 
 const ItemDetailContainer = () => {
   const [filteredList, setFilteredList] = useState({});

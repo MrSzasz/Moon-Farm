@@ -1,10 +1,23 @@
-import { addDoc, collection, getFirestore } from "firebase/firestore";
+// =========================  STYLES  =========================
+
+import "./Cart.scss";
+
+// =========================  LIBRARIES  =========================
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
+
+// =========================  CUSTOM IMPORTS  =========================
+
 import { useCartContext } from "../../context/CartContext/CartContext";
 import { useNightContext } from "../../context/NightContext/NightContext";
+
+// ----------  COMPONENTS  ----------
+
 import ModalBase from "../ModalBase/ModalBase";
-import "./Cart.scss";
+
+
+
 
 const Cart = () => {
   const { cartList, clearCart, removeFromCart, totalOfCart } = useCartContext();
@@ -19,9 +32,8 @@ const Cart = () => {
 
   return (
     <div
-      className={`cartContainer text-center ${
-        isNight ? "cartContainerNight" : ""
-      }`}
+      className={`cartContainer text-center ${isNight ? "cartContainerNight" : ""
+        }`}
     >
       {cartList.length === 0 ? (
         <>
@@ -29,9 +41,8 @@ const Cart = () => {
           <h2>Tal vez deberías ir a buscar algo a la tienda...</h2>{" "}
           <Link
             to="/tienda"
-            className={`btn mainButton w-25 m-auto ${
-              isNight ? "mainButtonNight" : ""
-            }`}
+            className={`btn mainButton w-25 m-auto ${isNight ? "mainButtonNight" : ""
+              }`}
           >
             TIENDA &gt;
           </Link>{" "}
@@ -80,14 +91,13 @@ const Cart = () => {
           <h3>Total: ${totalOfCart}</h3>
           <div className="d-flex justify-content-around">
             <button
-              className={`btn mainButton w-25 ${
-                isNight ? "mainButtonNight" : ""
-              }`}
+              className={`btn mainButton w-25 ${isNight ? "mainButtonNight" : ""
+                }`}
               onClick={() => {
                 clearCart();
               }}
             >
-             VACIAR CARRITO
+              VACIAR CARRITO
             </button>
             <ModalBase
               buttonName="CONTINUAR"

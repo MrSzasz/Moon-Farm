@@ -1,9 +1,22 @@
-import CartWidget from "../CartWidget/CartWidget";
-import { Link } from "react-router-dom";
+// =========================  STYLES  =========================
+
 import "./NavBar.scss";
-import { useNightContext } from "../../context/NightContext/NightContext";
+
+// =========================  LIBRARIES  =========================
+
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import { AiOutlineDown } from "react-icons/ai";
+
+// =========================  CUSTOM IMPORTS  =========================
+
+import { useNightContext } from "../../context/NightContext/NightContext";
+
+// ----------  COMPONENTS  ----------
+
+import CartWidget from "../CartWidget/CartWidget";
+
+
 
 function NavBar() {
   const { isNight } = useNightContext();
@@ -31,18 +44,16 @@ function NavBar() {
               TIENDA
             </Link>
             <button
-              className={`buttonDropdown ${
-                isNight ? "buttonDropdownNight" : ""
-              }`}
+              className={`buttonDropdown ${isNight ? "buttonDropdownNight" : ""
+                }`}
               onClick={() => changeDisplay()}
             >
               <AiOutlineDown className="liWithHover" size={20} />
             </button>
             {show && (
               <div
-                className={`dropDownNavBar ${
-                  isNight ? "dropDownNavBarNight" : ""
-                }`}
+                className={`dropDownNavBar ${isNight ? "dropDownNavBarNight" : ""
+                  }`}
               >
                 <Link onClick={() => changeDisplay()} to="/tienda/primavera">
                   PRIMAVERA

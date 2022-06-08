@@ -1,5 +1,12 @@
+// =========================  STYLES  =========================
+
 import "./ItemList.scss";
+
+// =========================  CUSTOM IMPORTS  =========================
+
 import Item from "../Item/Item";
+
+
 
 function ItemList({ packs }) {
   return (

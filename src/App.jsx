@@ -1,17 +1,28 @@
-import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
-import NavBar from "./components/NavBar/NavBar";
-import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
-import Cart from "./components/Cart/Cart";
+// =========================  STYLES  =========================
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.scss";
+
+// =========================  LIBRARIES  =========================
+
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-import "./App.scss";
-import "bootstrap/dist/css/bootstrap.min.css";
+// =========================  CUSTOM IMPORTS  =========================
+
+import { useNightContext } from "./context/NightContext/NightContext";
+import CartContextProvider from "./context/CartContext/CartContext";
+
+// ----------  COMPONENTS  ----------
+
+import NavBar from "./components/NavBar/NavBar";
 import IndexContent from "./components/IndexContent/IndexContent";
 import Categories from "./components/Categories/Categories";
-import Footer from "./components/Footer/Footer";
-import CartContextProvider from "./context/CartContext/CartContext";
-import { useNightContext } from "./context/NightContext/NightContext";
-import FormContainer from "./components/FormContainer/FormContainer";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+import Cart from "./components/Cart/Cart";
+
+
+
 
 function App() {
   const { isNight } = useNightContext();
@@ -32,7 +43,6 @@ function App() {
             <Route path="/carrito" element={<Cart />} />
             <Route path="/*" element={<Navigate to="/" replace />} />
           </Routes>
-          {/* <Footer /> */}
         </div>
       </CartContextProvider>
     </BrowserRouter>
@@ -40,4 +50,3 @@ function App() {
 }
 
 export default App;
- 

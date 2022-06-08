@@ -1,3 +1,6 @@
+// =========================  LIBRARIES  =========================
+
+import { createContext, useContext, useEffect, useState } from "react";
 import {
   addDoc,
   collection,
@@ -8,7 +11,8 @@ import {
   where,
   writeBatch,
 } from "firebase/firestore";
-import { createContext, useContext, useEffect, useState } from "react";
+
+
 
 const CartContext = createContext([]);
 
@@ -101,9 +105,9 @@ const CartContextProvider = ({ children }) => {
       orderCountry != "" &&
       orderCity != ""
     ) {
-      
 
-      
+
+
 
 
       let customerOrder = {

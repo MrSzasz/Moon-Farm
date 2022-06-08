@@ -1,8 +1,22 @@
-import { useEffect, useState } from "react";
+// =========================  STYLES  =========================
+
+import "./FormContainer.scss";
+
+// =========================  LIBRARIES  =========================
+
+import { useEffect } from "react";
+
+// =========================  CUSTOM IMPORTS  =========================
+
 import { useCartContext } from "../../context/CartContext/CartContext";
 import { useNightContext } from "../../context/NightContext/NightContext";
+
+// ----------  COMPONENTS  ----------
+
 import FormInput from "../FormInput/FormInput";
-import "./FormContainer.scss";
+
+
+
 
 
 import { toast, Toaster } from 'react-hot-toast';

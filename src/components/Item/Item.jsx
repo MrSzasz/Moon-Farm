@@ -1,6 +1,17 @@
-import { Link, useParams } from "react-router-dom";
-import { useNightContext } from "../../context/NightContext/NightContext";
+// =========================  STYLES  =========================
+
 import "./Item.scss";
+
+// =========================  LIBRARIES  =========================
+
+import { Link, useParams } from "react-router-dom";
+
+// =========================  CUSTOM IMPORTS  =========================
+
+import { useNightContext } from "../../context/NightContext/NightContext";
+
+
+
 
 function Item({ className, url, image1, image2, image3, image4, image5 }) {
   const { seasonUrl } = useParams();
@@ -15,9 +26,8 @@ function Item({ className, url, image1, image2, image3, image4, image5 }) {
       {packDetail ? (
         className === "silver" ? (
           <div
-            className={`packCardWoH w-50 ${
-              (className, isNight ? "packNightWoH" : "")
-            }`}
+            className={`packCardWoH w-50 ${(className, isNight ? "packNightWoH" : "")
+              }`}
           >
             <div className="contentCard">
               <img className="productN1" src={image1}></img>
@@ -47,9 +57,8 @@ function Item({ className, url, image1, image2, image3, image4, image5 }) {
           </div>
         ) : (
           <div
-            className={`packCardWoH w-50 ${
-              (className, isNight ? "packNightWoH" : "")
-            }`}
+            className={`packCardWoH w-50 ${(className, isNight ? "packNightWoH" : "")
+              }`}
           >
             <div className={`contentCard bg-${className}`}>
               <p>ANTERIOR +</p>
@@ -82,9 +91,8 @@ function Item({ className, url, image1, image2, image3, image4, image5 }) {
         <Link to={`/tienda/${seasonUrl}/${url}`}>
           {className === "silver" ? (
             <div
-              className={`packCard w-50 ${
-                (className, isNight ? "packNight" : "")
-              }`}
+              className={`packCard w-50 ${(className, isNight ? "packNight" : "")
+                }`}
             >
               <div className={`contentCard`}>
                 <img className="productN1 imgInList" src={image1}></img>
@@ -114,9 +122,8 @@ function Item({ className, url, image1, image2, image3, image4, image5 }) {
             </div>
           ) : (
             <div
-              className={`packCard w-50 ${
-                (className, isNight ? "packNight" : "")
-              }`}
+              className={`packCard w-50 ${(className, isNight ? "packNight" : "")
+                }`}
             >
               <div className={`contentCard bg-${className}`}>
                 <p>ANTERIOR +</p>

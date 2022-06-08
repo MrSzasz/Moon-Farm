@@ -1,8 +1,21 @@
-import { useEffect, useState } from "react";
-import ItemCount from "../ItemCount/ItemCount";
+// =========================  STYLES  =========================
+
 import "./ChangeButton.scss";
-import ContinueShoppingButton from "../ContinueShoppingButton/ContinueShoppingButton";
+
+// =========================  LIBRARIES  =========================
+
+import { useState } from "react";
+
+// =========================  CUSTOM IMPORTS  =========================
+
 import { useCartContext } from "../../context/CartContext/CartContext";
+
+// ----------  COMPONENTS  ----------
+
+import ItemCount from "../ItemCount/ItemCount";
+import ContinueShoppingButton from "../ContinueShoppingButton/ContinueShoppingButton";
+
+
 
 const ChangeButton = ({ stockFromObject, selectedPack }) => {
   const [showButton, setShowButton] = useState(false);

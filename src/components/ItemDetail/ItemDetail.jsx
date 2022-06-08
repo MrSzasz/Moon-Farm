@@ -1,10 +1,23 @@
+// =========================  STYLES  =========================
+
+import "./ItemDetail.scss";
+
+// =========================  LIBRARIES  =========================
+
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
+
+// =========================  CUSTOM IMPORTS  =========================
+
 import { useNightContext } from "../../context/NightContext/NightContext";
+
+// ----------  COMPONENTS  ----------
+
+import ModalBase from "../ModalBase/ModalBase";
 import ChangeButton from "../changeButton/changeButton";
 import Item from "../Item/Item";
-import ModalBase from "../ModalBase/ModalBase";
-import "./ItemDetail.scss";
+
+
 
 const ItemDetail = ({ pack }) => {
   const { isNight } = useNightContext();

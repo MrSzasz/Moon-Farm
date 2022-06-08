@@ -1,9 +1,23 @@
+// =========================  STYLES  =========================
+
+import "./ModalBase.scss";
+
+// =========================  LIBRARIES  =========================
+
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
+
+// =========================  CUSTOM IMPORTS  =========================
+
 import { useNightContext } from "../../context/NightContext/NightContext";
-import "./ModalBase.scss";
+
+// ----------  COMPONENTS  ----------
+
 import FormContainer from "../FormContainer/FormContainer";
 import Recipes from "../Recipes/Recipes";
+
+
+
 
 const ModalBase = ({
   handleShow,

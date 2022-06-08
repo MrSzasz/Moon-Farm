@@ -1,9 +1,21 @@
+// =========================  STYLES  =========================
+
 import "./CartWidget.scss";
+
+// =========================  LIBRARIES  =========================
+
+import { Link } from "react-router-dom";
 import { BsFillBasket2Fill } from "react-icons/bs";
 import { CgSmileSad } from "react-icons/cg";
-import { Link } from "react-router-dom";
+
+// =========================  CUSTOM IMPORTS  =========================
+
 import { useCartContext } from "../../context/CartContext/CartContext";
 import { useNightContext } from "../../context/NightContext/NightContext";
+
+
+
+
 
 function CartWidget() {
   const { calculateTotalItemsOfCart } = useCartContext();

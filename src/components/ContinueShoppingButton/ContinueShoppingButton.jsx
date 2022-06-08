@@ -1,6 +1,17 @@
+// =========================  STYLES  =========================
+
 import "./ContinueShoppingButton.scss"
+
+// =========================  LIBRARIES  =========================
+
 import { Link, useParams } from "react-router-dom";
+
+// =========================  CUSTOM IMPORTS  =========================
+
 import { useNightContext } from "../../context/NightContext/NightContext";
+
+
+
 
 const ContinueShoppingButton = () => {
   const { seasonUrl } = useParams();

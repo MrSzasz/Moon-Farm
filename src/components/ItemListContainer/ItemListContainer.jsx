@@ -1,8 +1,11 @@
+// =========================  STYLES  =========================
+
+import "./ItemListContainer.scss";
+
+// =========================  LIBRARIES  =========================
+
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import ItemList from "../ItemList/ItemList";
-import "./ItemListContainer.scss";
-import { useNightContext } from "../../context/NightContext/NightContext";
 import {
   collection,
   getDocs,
@@ -11,6 +14,17 @@ import {
   query,
   where,
 } from "firebase/firestore";
+
+// =========================  CUSTOM IMPORTS  =========================
+
+import { useNightContext } from "../../context/NightContext/NightContext";
+
+// ----------  COMPONENTS  ----------
+
+import ItemList from "../ItemList/ItemList";
+
+
+
 
 const ItemListContainer = () => {
   const [filteredList, setFilteredList] = useState([]);
