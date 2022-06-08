@@ -32,7 +32,8 @@
                 -moz-appearance: textfield;
             }
         }
-        .cityInput{
+
+        .cityInput {
             width: 40%;
         }
     }
@@ -42,4 +43,11 @@
         font-style: italic;
         font-size: 10px;
     }
+}
+
+.toastStyle {
+    @include glassMorph(rgba(0, 156, 8, 0.35));
+    @include borderRadiusPreset;
+    @include svBorder;
+    color: $nightFont !important;
 }

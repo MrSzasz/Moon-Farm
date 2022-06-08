@@ -1,8 +1,14 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useCartContext } from "../../context/CartContext/CartContext";
 import { useNightContext } from "../../context/NightContext/NightContext";
 import FormInput from "../FormInput/FormInput";
 import "./FormContainer.scss";
+
+
+import { toast, Toaster } from 'react-hot-toast';
+
+
+
 
 const FormContainer = () => {
   const { isNight } = useNightContext();
@@ -22,7 +28,12 @@ const FormContainer = () => {
 
         emailjs.sendForm(serviceID, templateID, this)
           .then(() => {
-            btn.value = 'FINALIZAR COMPRA';
+            btn.value = 'FINALIZAR COMPRA',
+              toast.success('¡Gracias por comprar! Esté atento a su mailbox', {
+                className: "toastStyle",
+                duration: 4900,
+                position: "bottom-right"
+              })
           }, (err) => {
             btn.value = 'FINALIZAR COMPRA';
             alert(JSON.stringify(err));
@@ -81,6 +92,7 @@ const FormContainer = () => {
         </div>
       </form>
       <span>*requerido</span>
+      <Toaster />
     </div>
   );
 };
