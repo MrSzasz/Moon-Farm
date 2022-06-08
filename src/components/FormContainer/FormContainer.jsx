@@ -53,7 +53,6 @@ const FormContainer = () => {
 
         <FormInput htmlFor={"orderNumber"} label={"Numero"} id={"inputOrderNumber"} type={"number"} name={"orderNumber"} placeholder={"1123456789"} />
 
-
         <label htmlFor="orderHome">
           Region<span>*</span>
         </label>
