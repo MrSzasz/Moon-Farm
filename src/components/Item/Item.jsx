@@ -87,27 +87,27 @@ function Item({ className, url, image1, image2, image3, image4, image5 }) {
               }`}
             >
               <div className={`contentCard`}>
-                <img className="productN1" src={image1}></img>
+                <img className="productN1 imgInList" src={image1}></img>
+                <p className="textCardInList">x</p>
+                <p>20</p>
+              </div>
+              <div className="contentCard">
+                <img className="productN1 imgInList" src={image2}></img>
                 <p>x</p>
                 <p>20</p>
               </div>
               <div className="contentCard">
-                <img className="productN1" src={image2}></img>
+                <img className="productN1 imgInList" src={image3}></img>
                 <p>x</p>
                 <p>20</p>
               </div>
               <div className="contentCard">
-                <img className="productN1" src={image3}></img>
+                <img className="productN1 imgInList" src={image4}></img>
                 <p>x</p>
                 <p>20</p>
               </div>
               <div className="contentCard">
-                <img className="productN1" src={image4}></img>
-                <p>x</p>
-                <p>20</p>
-              </div>
-              <div className="contentCard">
-                <img className="productN1" src={image5}></img>
+                <img className="productN1 imgInList" src={image5}></img>
                 <p>x</p>
                 <p>20</p>
               </div>
@@ -122,22 +122,22 @@ function Item({ className, url, image1, image2, image3, image4, image5 }) {
                 <p>ANTERIOR +</p>
               </div>
               <div className="contentCard">
-                <img className="productN1" src={image1}></img>
+                <img className="productN1 imgInList" src={image1}></img>
                 <p>x</p>
                 <p>20</p>
               </div>
               <div className="contentCard">
-                <img className="productN1" src={image2}></img>
+                <img className="productN1 imgInList" src={image2}></img>
                 <p>x</p>
                 <p>20</p>
               </div>
               <div className="contentCard">
-                <img className="productN1" src={image3}></img>
+                <img className="productN1 imgInList" src={image3}></img>
                 <p>x</p>
                 <p>20</p>
               </div>
               <div className="contentCard">
-                <img className="productN1" src={image4}></img>
+                <img className="productN1 imgInList" src={image4}></img>
                 <p>x</p>
                 <p>20</p>
               </div>

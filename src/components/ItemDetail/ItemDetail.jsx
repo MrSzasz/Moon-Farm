@@ -91,6 +91,7 @@ const ItemDetail = ({ pack }) => {
               name={pack.seasonUrl}
               recipes={pack.recipes}
               buttonName="RECETAS"
+              idForKey={pack.id}
             />
           </div>
           <div className="collapse" id="collapseExample">

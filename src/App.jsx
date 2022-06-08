@@ -30,7 +30,6 @@ function App() {
               element={<ItemDetailContainer />}
             />
             <Route path="/carrito" element={<Cart />} />
-            <Route path="/finalizar-compra" element={<FormContainer />} />
             <Route path="/*" element={<Navigate to="/" replace />} />
           </Routes>
           {/* <Footer /> */}

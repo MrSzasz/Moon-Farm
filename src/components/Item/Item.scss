@@ -20,6 +20,8 @@
     margin: auto;
     @include svBorder;
 
+
+
     &:hover {
         transform: scale(1.05);
     }
@@ -37,6 +39,10 @@
         img {
             height: 100%;
             width: auto;
+        }
+
+        .imgInList {
+            height: 75%;
         }
 
         p {

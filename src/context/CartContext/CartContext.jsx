@@ -92,7 +92,6 @@ const CartContextProvider = ({ children }) => {
     const orderNumber = document.getElementById("inputOrderNumber").value;
     const orderCountry = document.getElementById("inputOrderCountry").value;
     const orderCity = document.getElementById("inputOrderCity").value;
-    const orderText = document.getElementById("inputOrderText").value;
 
 
     if (
@@ -114,7 +113,6 @@ const CartContextProvider = ({ children }) => {
           customerMail: orderMail,
           customerPhone: orderNumber,
           customerResidence: `${orderCity}, ${orderCountry}`,
-          customerExtra: orderText,
         },
         items: cartList.map((itemForOrder) => ({
           id: itemForOrder.id,

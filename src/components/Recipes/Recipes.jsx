@@ -1,10 +1,9 @@
 import React from "react";
 
-const Recipes = ({ recipeName, recipeIng, recipeSteps }) => {
-
+const Recipes = ({ recipeName, recipeIng, recipeSteps, recipeID }) => {
 
   return (
-    <div>
+    <div key={recipeID}>
       <img src="https://imgur.com/JfwEdwn" alt="" />
       <h4 className="text-center">= {recipeName} =</h4>
       <br />

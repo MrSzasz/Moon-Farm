@@ -87,10 +87,10 @@ const Cart = () => {
                 clearCart();
               }}
             >
-              Vaciar carrito
+             VACIAR CARRITO
             </button>
             <ModalBase
-              buttonName="Terminar compra"
+              buttonName="CONTINUAR"
               show={show}
               handleClose={handleClose}
               handleShow={handleShow}

@@ -12,6 +12,7 @@ const ModalBase = ({
   name,
   buttonName,
   recipes,
+  idForKey
 }) => {
   const { isNight } = useNightContext();
   return (
@@ -24,37 +25,22 @@ const ModalBase = ({
       </Button>
       <Modal show={show} onHide={handleClose} size="lg">
         <Modal.Header closeButton />
-        <Modal.Body>
-          {/* {buttonName==="RECETAS"?(<Recipes/>):<FormContainer />} */}
-          <h2 className="text-center">RECETAS</h2>
+        <Modal.Body className="pt-1">
+
           {buttonName === "RECETAS" ? (
-            //   recipes.forEach(element) => {
-            //   <Recipes recipe={element.recipes}/>
-            // }
-            recipes.map((element) => (
-              //   // <Recipes recipeName={element.recipeName} recipeIng={element.recipeIng} recipeSteps={element.recipeSteps}/>
-              // })
-
-              // <div>
-              //   <h2 className="text-center">RECETAS</h2>
-              //   <img src="https://imgur.com/JfwEdwn" alt="" />
-              //   <h4 className="text-center">= {element.recipeName} =</h4>
-              //   <br />
-              //   <p>{element.recipeIng}</p> <br />
-              //   <br />
-              //   <p>{element.recipeSteps} </p>
-              //   <br />
-              //   <hr />
-              // </div>
-
-              <>
-                <Recipes
-                  recipeName={element.recipeName}
-                  recipeIng={element.recipeIng}
-                  recipeSteps={element.recipeSteps}
-                />
-              </>
-            ))
+            <>
+              <h2 className="text-center">RECETAS</h2>
+              {recipes.map((element) => (
+                <div key={element.recipeID}>
+                  <Recipes
+                    recipeName={element.recipeName}
+                    recipeIng={element.recipeIng}
+                    recipeSteps={element.recipeSteps}
+                    recipeID={element.recipeID}
+                  />
+                </div>
+              ))}
+            </>
           ) : (
             <FormContainer />
           )}

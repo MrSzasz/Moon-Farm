@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useCartContext } from "../../context/CartContext/CartContext";
 import { useNightContext } from "../../context/NightContext/NightContext";
+import FormInput from "../FormInput/FormInput";
 import "./FormContainer.scss";
 
 const FormContainer = () => {
@@ -45,66 +46,26 @@ const FormContainer = () => {
         mínimo
       </p>
       <form id="form" className="d-flex flex-column">
-        <label htmlFor="inputOrderName">
-          Nombre completo<span>*</span>
-        </label>
-        <input
-          id="inputOrderName"
-          type="text"
-          name="inputOrderName"
-          placeholder="Ingrese su nombre"
-          required
-        />
-        <label htmlFor="inputOrderMail">
-          Mail<span>*</span>
-        </label>
-        <input
-          id="inputOrderMail"
-          type="mail"
-          name="inputOrderMail"
-          placeholder="ejemplo@mail.com"
-          required
-        />
-        <label htmlFor="orderNumber">
-          Numero<span>*</span>
-        </label>
-        <input
-          id="inputOrderNumber"
-          type="number"
-          name="orderNumber"
-          placeholder="+54 9 1123456789"
-          required
-        />
+        <FormInput htmlFor={"inputOrderName"} label={"Nombre completo"} id={"inputOrderName"} name={"inputOrderName"} placeholder={"Ingrese su nombre"} />
+
+        <FormInput htmlFor={"inputOrderMail"} label={"Mail"} id={"inputOrderMail"} type={"mail"} name={"inputOrderMail"} placeholder={"ejemplo@mail.com"} />
+
+
+        <FormInput htmlFor={"orderNumber"} label={"Numero"} id={"inputOrderNumber"} type={"number"} name={"orderNumber"} placeholder={"1123456789"} />
+
+
         <label htmlFor="orderHome">
           Region<span>*</span>
         </label>
         <div className="d-flex justify-content-around">
-          <input
-            className="cityInput"
-            id="inputOrderCountry"
-            type="text"
-            name="orderCountry"
-            placeholder="País"
-            required
-          />
-          <input
-            className="cityInput"
-            id="inputOrderCity"
-            type="text"
-            name="orderCity"
-            placeholder="Ciudad"
-            required
-          />
+
+          <FormInput className={"cityInput"} id={"inputOrderCountry"} name={"orderCountry"} placeholder={"País"} city={true} />
+
+
+          <FormInput className={"cityInput"} id={"inputOrderCity"} name={"orderCity"} placeholder={"Ciudad"} city={true} />
+
         </div>
-        <input
-          id="inputOrderText"
-          type="text"
-          name="orderExtra"
-          placeholder="¿Quiere agregar una nota?"
-          rows="2"
-          className="my-4"
-        />
-        <div className="d-flex align-items-center justify-content-center">
+        <div className="d-flex align-items-center justify-content-center my-3">
           <input className="mx-4" type="checkbox" name="orderNewsletter" />
           <label htmlFor="orderNewsletter" className="text-start">
             ¿Quiere suscribirse a nuestro newsletter?

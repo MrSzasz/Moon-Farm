@@ -50,7 +50,7 @@ function ItemCount({ stock, initial, onAdd, selectedPack }) {
             }`}
             onClick={() => onAdd(counter, selectedPack)}
           >
-            Agregar al carrito
+            AGREGAR AL CARRITO
           </button>
         </>
       )}
