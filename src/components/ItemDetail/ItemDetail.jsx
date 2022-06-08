@@ -89,7 +89,8 @@ const ItemDetail = ({ pack }) => {
               handleClose={handleClose}
               handleShow={handleShow}
               name={pack.seasonUrl}
-              recipe={pack.recipe}
+              recipes={pack.recipes}
+              buttonName="RECETAS"
             />
           </div>
           <div className="collapse" id="collapseExample">

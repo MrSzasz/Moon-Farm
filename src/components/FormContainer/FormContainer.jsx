@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import { useCartContext } from "../../context/CartContext/CartContext";
 import { useNightContext } from "../../context/NightContext/NightContext";
 import "./FormContainer.scss";
@@ -7,8 +7,36 @@ const FormContainer = () => {
   const { isNight } = useNightContext();
   const { getDataForOrder } = useCartContext();
 
+  useEffect(() => {
+    const btn = document.getElementById('button');
+
+    document.getElementById('form')
+      .addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        btn.value = 'CARGANDO...';
+
+        const serviceID = 'default_service';
+        const templateID = 'template_ncsighf';
+
+        emailjs.sendForm(serviceID, templateID, this)
+          .then(() => {
+            btn.value = 'FINALIZAR COMPRA';
+          }, (err) => {
+            btn.value = 'FINALIZAR COMPRA';
+            alert(JSON.stringify(err));
+          })
+          .finally(
+            getDataForOrder(),
+            setTimeout(() => {
+              window.location.reload()
+            }, 5000)
+          )
+      });
+    return
+  }, [])
+
   return (
-      
     <div className="orderContainer">
       <h2>SOLO UN PASO MAS...</h2>
       <p>
@@ -16,29 +44,32 @@ const FormContainer = () => {
         los pedidos se hacen en la noche, asi que llegaran al dia siguiente como
         mínimo
       </p>
-      <form className="d-flex flex-column">
-        <label htmlFor="orderName">
+      <form id="form" className="d-flex flex-column">
+        <label htmlFor="inputOrderName">
           Nombre completo<span>*</span>
         </label>
-        <input id="inputOrderName"
+        <input
+          id="inputOrderName"
           type="text"
-          name="orderName"
+          name="inputOrderName"
           placeholder="Ingrese su nombre"
           required
         />
-        <label htmlFor="orderMail">
+        <label htmlFor="inputOrderMail">
           Mail<span>*</span>
         </label>
-        <input id="inputOrderMail"
+        <input
+          id="inputOrderMail"
           type="mail"
-          name="orderMail"
+          name="inputOrderMail"
           placeholder="ejemplo@mail.com"
           required
         />
         <label htmlFor="orderNumber">
           Numero<span>*</span>
         </label>
-        <input id="inputOrderNumber"
+        <input
+          id="inputOrderNumber"
           type="number"
           name="orderNumber"
           placeholder="+54 9 1123456789"
@@ -48,10 +79,25 @@ const FormContainer = () => {
           Region<span>*</span>
         </label>
         <div className="d-flex justify-content-around">
-          <input className="cityInput" id="inputOrderCountry" type="text" name="orderCountry" placeholder="País" required />
-          <input className="cityInput" id="inputOrderCity" type="text" name="orderCity" placeholder="Ciudad" required />
+          <input
+            className="cityInput"
+            id="inputOrderCountry"
+            type="text"
+            name="orderCountry"
+            placeholder="País"
+            required
+          />
+          <input
+            className="cityInput"
+            id="inputOrderCity"
+            type="text"
+            name="orderCity"
+            placeholder="Ciudad"
+            required
+          />
         </div>
-        <input id="inputOrderText"
+        <input
+          id="inputOrderText"
           type="text"
           name="orderExtra"
           placeholder="¿Quiere agregar una nota?"
@@ -65,15 +111,12 @@ const FormContainer = () => {
           </label>
         </div>
         <div className="d-flex justify-content-around align-items-center">
-          <button
-            className={`mainButton ${
-              isNight ? "mainButtonNight" : ""
-            }`}
-            onClick={(e)=> getDataForOrder(e)}
+          <input
+            className={`mainButton ${isNight ? "mainButtonNight" : ""}`}
             type="submit"
-          >
-            FINALIZAR COMPRA
-          </button>
+            id="button"
+            value="FINALIZAR COMPRA"
+          />
         </div>
       </form>
       <span>*requerido</span>

@@ -14,10 +14,15 @@ const CartContext = createContext([]);
 
 export const useCartContext = () => useContext(CartContext);
 
+
+
 const CartContextProvider = ({ children }) => {
   const [cartList, setCartList] = useState([]);
   const [totalOfCart, setTotalOfCart] = useState();
-  const [customerOrder, setCustomerOrder] = useState({});
+
+
+
+
 
   function addToCartList(item) {
     const indexOfItemOnCart = cartList.findIndex(
@@ -31,6 +36,10 @@ const CartContextProvider = ({ children }) => {
     }
   }
 
+
+
+
+
   function removeFromCart(e) {
     const clickedButton = e.target;
     const getProdId = clickedButton.closest("tr").dataset.productid;
@@ -40,6 +49,9 @@ const CartContextProvider = ({ children }) => {
     cartList.splice(indexOfItemOnCart, 1);
     setCartList([...cartList]);
   }
+
+
+
 
   async function changeStock() {
     const db = getFirestore();
@@ -54,6 +66,8 @@ const CartContextProvider = ({ children }) => {
       )
     );
 
+
+
     const batch = writeBatch(db);
     await getDocs(queryChangeStock).then((res) =>
       res.docs.forEach((res) =>
@@ -66,6 +80,11 @@ const CartContextProvider = ({ children }) => {
     );
     batch.commit();
   }
+
+
+
+
+
   function getDataForOrder(e) {
     const todayDate = new Date();
     const orderName = document.getElementById("inputOrderName").value;
@@ -75,6 +94,7 @@ const CartContextProvider = ({ children }) => {
     const orderCity = document.getElementById("inputOrderCity").value;
     const orderText = document.getElementById("inputOrderText").value;
 
+
     if (
       orderName != "" &&
       orderMail != "" &&
@@ -82,8 +102,13 @@ const CartContextProvider = ({ children }) => {
       orderCountry != "" &&
       orderCity != ""
     ) {
-      e.preventDefault();
+      
+
+      
+
+
       let customerOrder = {
+
         buyer: {
           customerName: orderName,
           customerMail: orderMail,
@@ -99,15 +124,17 @@ const CartContextProvider = ({ children }) => {
         })),
         todayDate,
         totalOfCart,
+
       };
 
       changeStock();
 
       const db = getFirestore();
+
       const queryCollection = collection(db, "orders");
-      addDoc(queryCollection, customerOrder).then(
-        (res) => res && window.location.reload()
-      );
+
+
+      addDoc(queryCollection, customerOrder)
     }
   }
 
