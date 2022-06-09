@@ -36,6 +36,14 @@
         .cityInput {
             width: 40%;
         }
+
+        .mainButtonDisabled{
+            &:hover{
+                transform: scale(1);
+            }
+            color: darkgray !important;
+            filter: grayscale(70%);
+        }
     }
 
     span {

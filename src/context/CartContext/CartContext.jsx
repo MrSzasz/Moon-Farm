@@ -70,8 +70,6 @@ const CartContextProvider = ({ children }) => {
       )
     );
 
-
-
     const batch = writeBatch(db);
     await getDocs(queryChangeStock).then((res) =>
       res.docs.forEach((res) =>
@@ -85,17 +83,15 @@ const CartContextProvider = ({ children }) => {
     batch.commit();
   }
 
-
-
-
-
   function getDataForOrder(e) {
     const todayDate = new Date();
     const orderName = document.getElementById("inputOrderName").value;
     const orderMail = document.getElementById("inputOrderMail").value;
+    const confirmMail = document.getElementById("confirmMail").value;
     const orderNumber = document.getElementById("inputOrderNumber").value;
     const orderCountry = document.getElementById("inputOrderCountry").value;
     const orderCity = document.getElementById("inputOrderCity").value;
+
 
 
     if (
@@ -178,3 +174,7 @@ const CartContextProvider = ({ children }) => {
 };
 
 export default CartContextProvider;
+
+
+
+

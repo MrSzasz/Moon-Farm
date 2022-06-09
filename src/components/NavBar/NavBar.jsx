@@ -27,7 +27,7 @@ function NavBar() {
   }
 
   return (
-    <header className={isNight}>
+    <header className={isNight?"headerNight":""}>
       <Link
         to="/"
         className="logo text-center d-flex justify-content-center align-items-center gap-2 linkOnNavBar"

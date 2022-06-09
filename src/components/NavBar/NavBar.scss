@@ -100,7 +100,7 @@ header {
     color: $iridium !important;
 }
 
-.night {
+.headerNight {
     @include glassMorphNight;
     border: none;
 

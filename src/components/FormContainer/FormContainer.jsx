@@ -4,7 +4,8 @@ import "./FormContainer.scss";
 
 // =========================  LIBRARIES  =========================
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { toast, Toaster } from 'react-hot-toast';
 
 // =========================  CUSTOM IMPORTS  =========================
 
@@ -17,52 +18,71 @@ import FormInput from "../FormInput/FormInput";
 
 
 
-
-
-import { toast, Toaster } from 'react-hot-toast';
-
-
-
-
 const FormContainer = () => {
   const { isNight } = useNightContext();
   const { getDataForOrder } = useCartContext();
+  const [formValidation, setFormValidation] = useState(false)
+
+
+
+
+
+  let validateMail = (e) => {
+    let inputHere = document.getElementById("repeat")
+    let inputMail = document.getElementById('inputOrderMail').value
+    setFormValidation(inputMail === e.target.value && true)
+
+    if (inputMail != e.target.value) {
+      inputHere.setCustomValidity('El mail no coincide');
+    } else {
+      inputHere.setCustomValidity('');
+    }
+  }
+
 
   useEffect(() => {
-    const btn = document.getElementById('button');
 
-    document.getElementById('form')
-      .addEventListener('submit', function (e) {
-        e.preventDefault();
+    if (formValidation) {
+      const btn = document.getElementById('button');
+      document.getElementById('form')
 
-        btn.value = 'CARGANDO...';
 
-        const serviceID = 'default_service';
-        const templateID = 'template_ncsighf';
+        .addEventListener('submit', function (e) {
+          e.preventDefault();
 
-        emailjs.sendForm(serviceID, templateID, this)
-          .then(() => {
-            btn.value = 'FINALIZAR COMPRA',
-              toast.success('¡Gracias por comprar! Esté atento a su mailbox', {
-                className: "toastStyle",
-                duration: 4900,
-                position: "bottom-right"
-              })
-          }, (err) => {
-            btn.value = 'FINALIZAR COMPRA';
-            alert(JSON.stringify(err));
-          })
-          .finally(
-            getDataForOrder(),
-            setTimeout(() => {
-              window.location.reload()
-            }, 5000)
-          )
-      });
+          btn.value = 'CARGANDO...';
+
+          const serviceID = 'default_service';
+          const templateID = 'template_ncsighf';
+
+          emailjs.sendForm(serviceID, templateID, this)
+            .then(() => {
+              btn.value = 'FINALIZAR COMPRA',
+                toast.success('¡Gracias por comprar! Esté atento a su mailbox', {
+                  className: "toastStyle",
+                  duration: 4900,
+                  position: "bottom-right"
+                })
+            }, (err) => {
+              btn.value = 'FINALIZAR COMPRA';
+              alert(JSON.stringify(err));
+            })
+            .finally(
+              getDataForOrder(),
+              setTimeout(() => {
+                window.location.reload()
+              }, 5000)
+            )
+        })
+
+    }
     return
   }, [])
 
-  
+
+
+
+
   return (
     <div className="orderContainer">
       <h2>SOLO UN PASO MAS...</h2>
@@ -75,6 +95,18 @@ const FormContainer = () => {
         <FormInput htmlFor={"inputOrderName"} label={"Nombre completo"} id={"inputOrderName"} name={"inputOrderName"} placeholder={"Ingrese su nombre"} />
 
         <FormInput htmlFor={"inputOrderMail"} label={"Mail"} id={"inputOrderMail"} type={"mail"} name={"inputOrderMail"} placeholder={"ejemplo@mail.com"} />
+
+        <label htmlFor="confirmMail"> Repita el mail<span>*</span>
+        </label>
+        <input
+          id="repeat"
+          type="mail"
+          name="confirmMail"
+          placeholder="ejemplo@mail.com"
+          onChange={validateMail}
+          required
+        />
+
 
 
         <FormInput htmlFor={"orderNumber"} label={"Numero"} id={"inputOrderNumber"} type={"number"} name={"orderNumber"} placeholder={"1123456789"} />

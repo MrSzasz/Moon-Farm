@@ -12,7 +12,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useNightContext } from "./context/NightContext/NightContext";
 import CartContextProvider from "./context/CartContext/CartContext";
 
-// ----------  COMPONENTS  ----------
+// ----------  COMPONENTS  ---------- 
 
 import NavBar from "./components/NavBar/NavBar";
 import IndexContent from "./components/IndexContent/IndexContent";
