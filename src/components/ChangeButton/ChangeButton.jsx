@@ -18,15 +18,21 @@ import ContinueShoppingButton from "../ContinueShoppingButton/ContinueShoppingBu
 
 
 const ChangeButton = ({ stockFromObject, selectedPack }) => {
+
   const [showButton, setShowButton] = useState(false);
 
   const { addToCartList } = useCartContext();
+
+
+  // ==========  ADD ITEMS TO CART  ========== //
 
   const changeOnClick = (counter, itemForCart) => {
     setShowButton(true);
     addToCartList({ ...itemForCart, qtyOnCart: counter });
   };
 
+
+  // ==========  RETURN  ========== //
 
   return (
     <>

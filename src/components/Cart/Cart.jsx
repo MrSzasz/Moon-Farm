@@ -18,7 +18,6 @@ import ModalBase from "../ModalBase/ModalBase";
 
 
 
-
 const Cart = () => {
 
   const { isNight } = useNightContext();

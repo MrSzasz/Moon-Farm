@@ -13,9 +13,14 @@ import { useNightContext } from "../../context/NightContext/NightContext";
 
 
 
-
 function ItemCount({ stock, initial, onAdd, selectedPack }) {
+
+  const { isNight } = useNightContext();
+
   const [counter, setCounter] = useState(initial);
+
+
+  // ==========  COUNTERS  ========== //
 
   function addCounter() {
     if (counter < stock) {
@@ -28,7 +33,9 @@ function ItemCount({ stock, initial, onAdd, selectedPack }) {
       setCounter(counter - 1);
     }
   }
-  const { isNight } = useNightContext();
+
+
+  // ==========  RETURN  ========== //
 
   return (
     <div className="counterContainer">
@@ -56,9 +63,8 @@ function ItemCount({ stock, initial, onAdd, selectedPack }) {
             </button>
           </div>
           <button
-            className={`btn mainButton ${
-              isNight && "mainButtonNight addToCartNight"
-            }`}
+            className={`btn mainButton ${isNight && "mainButtonNight addToCartNight"
+              }`}
             onClick={() => onAdd(counter, selectedPack)}
           >
             AGREGAR AL CARRITO
