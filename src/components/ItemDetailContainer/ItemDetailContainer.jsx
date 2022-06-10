@@ -22,9 +22,10 @@ const ItemDetailContainer = () => {
   
   const { isNight } = useNightContext();
   
+  const { packDetail } = useParams();
+  
   const [filteredList, setFilteredList] = useState({});
   const [loading, setLoading] = useState(true);
-  const { packDetail } = useParams();
 
 
   // ==========  GET DATA FROM DATABASE  ========== //

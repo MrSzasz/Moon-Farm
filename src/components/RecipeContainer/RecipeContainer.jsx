@@ -1,14 +1,31 @@
-import React from 'react'
+// =========================  LIBRARIES  =========================
+
+import { useEffect, useState } from 'react'
+
+// =========================  CUSTOM IMPORTS  =========================
+
 import Recipes from '../Recipes/Recipes'
+
+
 
 const RecipeContainer = ({ recipes }) => {
 
-    const recipeProp = recipes
+    const [recipeFromProp, setRecipeFromProp] = useState()
+
+
+    // ==========  SET RECIPE FROM PROP  ========== //
+
+    useEffect(() => {
+        setRecipeFromProp(recipes)
+    }, [])
+
+
+    // ==========  RETURN  ========== //
 
     return (
         <>
             <h2 className="text-center">RECETAS</h2>
-            {recipeProp.map((element) => (
+            {recipeFromProp.map((element) => (
                 <div key={element.recipeID}>
                     <Recipes
                         recipeName={element.recipeName}

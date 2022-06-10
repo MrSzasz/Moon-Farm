@@ -21,7 +21,6 @@ import ModalBase from "../ModalBase/ModalBase";
 const Cart = () => {
 
   const { isNight } = useNightContext();
-
   const { cartList, clearCart, removeFromCart, totalOfCart } = useCartContext();
 
   const [show, setShow] = useState(false);

@@ -17,8 +17,8 @@ import { useNightContext } from "../../context/NightContext/NightContext";
 
 function CartWidget() {
 
-  const { calculateTotalItemsOfCart } = useCartContext();
   const { isNight } = useNightContext();
+  const { calculateTotalItemsOfCart } = useCartContext();
 
 
   // ==========  RETURN  ========== //

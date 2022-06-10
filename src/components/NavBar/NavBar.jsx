@@ -21,8 +21,9 @@ import DropDown from "../DropDown/DropDown";
 
 function NavBar() {
 
-  const [show, setShow] = useState(false);
   const { isNight } = useNightContext();
+
+  const [show, setShow] = useState(false);
 
 
   // ==========  SHOW DROPDOWN  ========== //

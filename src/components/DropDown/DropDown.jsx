@@ -1,9 +1,19 @@
+// =========================  LIBRARIES  =========================
+
 import { Link } from "react-router-dom";
+
+// =========================  CUSTOM IMPORTS  =========================
+
 import { useNightContext } from "../../context/NightContext/NightContext";
 
+
+
 const DropDown = ({ showFn }) => {
-    
-    const {isNight} = useNightContext();
+
+    const { isNight } = useNightContext();
+
+
+    // ========== RETURN  ========== //
 
     return (
         <div

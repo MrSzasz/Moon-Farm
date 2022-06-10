@@ -29,10 +29,10 @@ const ItemListContainer = () => {
 
   const { isNight } = useNightContext();
   
+  const { seasonUrl } = useParams();
+  
   const [filteredList, setFilteredList] = useState([]);
   const [loading, setLoading] = useState(true);
-  
-  const { seasonUrl } = useParams();
 
 
   // ==========  GET DATA FROM DATABASE  ========== //

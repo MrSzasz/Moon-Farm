@@ -1,4 +1,8 @@
-const ItemDescription = ( { prodName, prodDesc } ) => {
+const ItemDescription = ({ prodName, prodDesc }) => {
+
+
+    // ==========  RETURN  ========== //
+
     return (
         <>
             <li className="nameLi mb-2">&gt; {prodName}:</li>
