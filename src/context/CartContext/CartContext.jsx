@@ -24,25 +24,17 @@ const CartContextProvider = ({ children }) => {
   const [cartList, setCartList] = useState([]);
   const [totalOfCart, setTotalOfCart] = useState();
 
-
-
-
-
   function addToCartList(item) {
     const indexOfItemOnCart = cartList.findIndex(
       (itemOnCart) => itemOnCart.id === item.id
     );
     if (indexOfItemOnCart !== -1) {
       cartList[indexOfItemOnCart].qtyOnCart += item.qtyOnCart;
-      setCartList([...cartList]);
+      setCartList([...cartList])
     } else {
       setCartList([...cartList, item]);
     }
   }
-
-
-
-
 
   function removeFromCart(e) {
     const clickedButton = e.target;
@@ -53,9 +45,6 @@ const CartContextProvider = ({ children }) => {
     cartList.splice(indexOfItemOnCart, 1);
     setCartList([...cartList]);
   }
-
-
-
 
   async function changeStock() {
     const db = getFirestore();
@@ -87,12 +76,9 @@ const CartContextProvider = ({ children }) => {
     const todayDate = new Date();
     const orderName = document.getElementById("inputOrderName").value;
     const orderMail = document.getElementById("inputOrderMail").value;
-    const confirmMail = document.getElementById("confirmMail").value;
     const orderNumber = document.getElementById("inputOrderNumber").value;
     const orderCountry = document.getElementById("inputOrderCountry").value;
     const orderCity = document.getElementById("inputOrderCity").value;
-
-
 
     if (
       orderName != "" &&
@@ -101,10 +87,6 @@ const CartContextProvider = ({ children }) => {
       orderCountry != "" &&
       orderCity != ""
     ) {
-
-
-
-
 
       let customerOrder = {
 
@@ -165,7 +147,7 @@ const CartContextProvider = ({ children }) => {
         totalOfCart,
         calculateTotalItemsOfCart,
         getDataForOrder,
-        changeStock,
+        changeStock
       }}
     >
       {children}
