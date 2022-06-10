@@ -1,5 +1,6 @@
 import "./Recipes.scss"
 
+
 const Recipes = ({ recipeName, recipeIng, recipeSteps, recipeID, recipeImg }) => {
 
 
