@@ -18,17 +18,13 @@ import Recipes from "../Recipes/Recipes";
 
 
 
+const ModalBase = ({ handleShow, handleClose, show, name, buttonName, recipes, idForKey }) => {
 
-const ModalBase = ({
-  handleShow,
-  handleClose,
-  show,
-  name,
-  buttonName,
-  recipes,
-  idForKey
-}) => {
   const { isNight } = useNightContext();
+
+
+  // ==========  RETURN  ========== //
+
   return (
     <>
       <Button

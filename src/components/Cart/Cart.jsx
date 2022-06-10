@@ -20,15 +20,21 @@ import ModalBase from "../ModalBase/ModalBase";
 
 
 const Cart = () => {
-  const { cartList, clearCart, removeFromCart, totalOfCart } = useCartContext();
 
   const { isNight } = useNightContext();
 
+  const { cartList, clearCart, removeFromCart, totalOfCart } = useCartContext();
+
   const [show, setShow] = useState(false);
+
+
+  // ==========  FUNCTION FOR MODALS  ========== //
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+
+  // ==========  RETURN  ========== //
 
   return (
     <div
@@ -37,15 +43,14 @@ const Cart = () => {
     >
       {cartList.length === 0 ? (
         <>
-          {" "}
-          <h2>Tal vez deberías ir a buscar algo a la tienda...</h2>{" "}
+          <h2>Tal vez deberías ir a buscar algo a la tienda...</h2>
           <Link
             to="/tienda"
             className={`btn mainButton w-25 m-auto ${isNight ? "mainButtonNight" : ""
               }`}
           >
             TIENDA &gt;
-          </Link>{" "}
+          </Link>
         </>
       ) : (
         <>

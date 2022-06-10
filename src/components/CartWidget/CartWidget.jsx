@@ -15,12 +15,13 @@ import { useNightContext } from "../../context/NightContext/NightContext";
 
 
 
-
-
 function CartWidget() {
-  const { calculateTotalItemsOfCart } = useCartContext();
 
+  const { calculateTotalItemsOfCart } = useCartContext();
   const { isNight } = useNightContext();
+
+
+  // ==========  RETURN  ========== //
 
   return (
     <Link to="/carrito" className="linkOnNavBar">

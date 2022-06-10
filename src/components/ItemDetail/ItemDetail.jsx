@@ -29,6 +29,9 @@ const ItemDetail = ({ pack }) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+
+  // ==========  RETURN  ========== //
+
   return (
     <div className={`infoCard ${isNight ? "infoCardNight" : ""}`}>
       <h2 className="text-uppercase text-center">{`${seasonUrl}, Bundle ${pack.detailUrl}`}</h2>

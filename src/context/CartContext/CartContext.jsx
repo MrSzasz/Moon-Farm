@@ -18,11 +18,13 @@ const CartContext = createContext([]);
 
 export const useCartContext = () => useContext(CartContext);
 
-
-
 const CartContextProvider = ({ children }) => {
+
   const [cartList, setCartList] = useState([]);
   const [totalOfCart, setTotalOfCart] = useState();
+
+
+  // ==========  ADD TO CART  ========== //
 
   function addToCartList(item) {
     const indexOfItemOnCart = cartList.findIndex(
@@ -36,6 +38,9 @@ const CartContextProvider = ({ children }) => {
     }
   }
 
+
+  // ==========  REMOVE FROM CART  ========== //
+
   function removeFromCart(e) {
     const clickedButton = e.target;
     const getProdId = clickedButton.closest("tr").dataset.productid;
@@ -45,6 +50,9 @@ const CartContextProvider = ({ children }) => {
     cartList.splice(indexOfItemOnCart, 1);
     setCartList([...cartList]);
   }
+
+
+  // ==========  CHANGE STOCK FROM CART  ========== //
 
   async function changeStock() {
     const db = getFirestore();
@@ -71,6 +79,9 @@ const CartContextProvider = ({ children }) => {
     );
     batch.commit();
   }
+
+
+  // ==========  SET & PUSH ORDER  ========== //
 
   function getDataForOrder(e) {
     const todayDate = new Date();
@@ -118,9 +129,15 @@ const CartContextProvider = ({ children }) => {
     }
   }
 
+
+  // ==========  CLEAR ITEMS ON CART  ========== //
+
   function clearCart() {
     setCartList([]);
   }
+
+
+  // ==========  CALCULATE TOTAL PRICE OF CART  ========== //
 
   function calculateTotalItemsOfCart() {
     return cartList.reduce(
@@ -128,6 +145,9 @@ const CartContextProvider = ({ children }) => {
       0
     );
   }
+
+
+  // ==========  SET TOTAL OF CART  ========== //
 
   useEffect(() => {
     const calculatedTotal = cartList.reduce(
@@ -137,17 +157,20 @@ const CartContextProvider = ({ children }) => {
     setTotalOfCart(calculatedTotal);
   });
 
+
+  // ==========  RETURN  ========== //
+
   return (
     <CartContext.Provider
       value={{
         cartList,
-        addToCartList,
-        clearCart,
-        removeFromCart,
-        totalOfCart,
-        calculateTotalItemsOfCart,
         getDataForOrder,
-        changeStock
+        calculateTotalItemsOfCart,
+        changeStock,
+        totalOfCart,
+        removeFromCart,
+        addToCartList,
+        clearCart
       }}
     >
       {children}

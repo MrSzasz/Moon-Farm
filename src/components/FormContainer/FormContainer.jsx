@@ -19,13 +19,14 @@ import FormInput from "../FormInput/FormInput";
 
 
 const FormContainer = () => {
+
   const { isNight } = useNightContext();
   const { getDataForOrder } = useCartContext();
+
   const [formValidation, setFormValidation] = useState(false)
 
 
-
-
+  // ==========  VALIDATION FOR MAIL  ========== //
 
   let validateMail = (e) => {
     let inputHere = document.getElementById("repeat")
@@ -40,48 +41,48 @@ const FormContainer = () => {
   }
 
 
+  // ==========  EMAILJS & ORDER  ========== //
+
   useEffect(() => {
 
     if (formValidation) {
       const btn = document.getElementById('button');
-      document.getElementById('form')
 
+      document.getElementById('form').addEventListener('submit', function (e) {
 
-        .addEventListener('submit', function (e) {
-          e.preventDefault();
+        e.preventDefault();
 
-          btn.value = 'CARGANDO...';
+        btn.value = 'CARGANDO...';
 
-          const serviceID = 'default_service';
-          const templateID = 'template_ncsighf';
+        const serviceID = 'default_service';
+        const templateID = 'template_ncsighf';
 
-          emailjs.sendForm(serviceID, templateID, this)
-            .then(() => {
-              btn.value = 'FINALIZAR COMPRA',
-                toast.success('¡Gracias por comprar! Esté atento a su mailbox', {
-                  className: "toastStyle",
-                  duration: 4900,
-                  position: "bottom-right"
-                })
-            }, (err) => {
-              btn.value = 'FINALIZAR COMPRA';
-              alert(JSON.stringify(err));
-            })
-            .finally(
-              getDataForOrder(),
-              setTimeout(() => {
-                window.location.reload()
-              }, 5000)
-            )
-        })
+        emailjs.sendForm(serviceID, templateID, this)
+          .then(() => {
+            btn.value = 'FINALIZAR COMPRA',
+              toast.success('¡Gracias por comprar! Esté atento a su mailbox', {
+                className: "toastStyle",
+                duration: 4900,
+                position: "bottom-right"
+              })
+          }, (err) => {
+            btn.value = 'FINALIZAR COMPRA';
+            alert(JSON.stringify(err));
+          })
+          .finally(
+            getDataForOrder(),
+            setTimeout(() => {
+              window.location.reload()
+            }, 5000)
+          )
+      })
 
     }
     return
   }, [])
 
 
-
-
+  // ==========  RETURN  ========== //
 
   return (
     <div className="orderContainer">
@@ -93,9 +94,7 @@ const FormContainer = () => {
       </p>
       <form id="form" className="d-flex flex-column">
         <FormInput htmlFor={"inputOrderName"} label={"Nombre completo"} id={"inputOrderName"} name={"inputOrderName"} placeholder={"Ingrese su nombre"} />
-
         <FormInput htmlFor={"inputOrderMail"} label={"Mail"} id={"inputOrderMail"} type={"mail"} name={"inputOrderMail"} placeholder={"ejemplo@mail.com"} />
-
         <label htmlFor="confirmMail"> Repita el mail<span>*</span>
         </label>
         <input
@@ -106,21 +105,13 @@ const FormContainer = () => {
           onChange={validateMail}
           required
         />
-
-
-
         <FormInput htmlFor={"orderNumber"} label={"Numero"} id={"inputOrderNumber"} type={"number"} name={"orderNumber"} placeholder={"1123456789"} />
-
         <label htmlFor="orderHome">
           Region<span>*</span>
         </label>
         <div className="d-flex justify-content-around">
-
           <FormInput className={"cityInput"} id={"inputOrderCountry"} name={"orderCountry"} placeholder={"País"} city={true} />
-
-
           <FormInput className={"cityInput"} id={"inputOrderCity"} name={"orderCity"} placeholder={"Ciudad"} city={true} />
-
         </div>
         <div className="d-flex align-items-center justify-content-center my-3">
           <input className="mx-4" type="checkbox" name="orderNewsletter" />

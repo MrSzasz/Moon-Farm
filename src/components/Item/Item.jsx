@@ -12,15 +12,19 @@ import { useNightContext } from "../../context/NightContext/NightContext";
 
 
 
-
 function Item({ className, url, image1, image2, image3, image4, image5 }) {
-  const { seasonUrl } = useParams();
-  const { packDetail } = useParams();
 
   const { isNight } = useNightContext();
 
+  const { seasonUrl } = useParams();
+  const { packDetail } = useParams();
+
+
+  // ==========  RETURN  ========== //
+
   return (
     <div>
+
       {/* =========================  ITEM DETAILS  ========================= */}
 
       {packDetail ? (
@@ -86,6 +90,7 @@ function Item({ className, url, image1, image2, image3, image4, image5 }) {
           </div>
         )
       ) : (
+
         // =========================  ITEM IN LIST =========================
 
         <Link to={`/tienda/${seasonUrl}/${url}`}>

@@ -24,12 +24,15 @@ import CategoriesCard from "../CategoriesCard/CategoriesCard";
 
 
 
-
 const Categories = () => {
+
+  const { isNight } = useNightContext();
+
   const [seasonListFetched, setSeasonListFetched] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const { isNight } = useNightContext();
+
+  // ==========  GET DATA FROM DATABASE  ========== //
 
   useEffect(() => {
     const db = getFirestore();
@@ -47,6 +50,9 @@ const Categories = () => {
       .finally(() => setLoading(false));
 
   }, []);
+
+
+  // ==========  RETURN  ========== //
 
   return (
     <div className="shopContainer">

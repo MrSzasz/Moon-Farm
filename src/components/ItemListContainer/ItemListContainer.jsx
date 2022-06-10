@@ -25,13 +25,17 @@ import ItemList from "../ItemList/ItemList";
 
 
 
-
 const ItemListContainer = () => {
-  const [filteredList, setFilteredList] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const { seasonUrl } = useParams();
 
   const { isNight } = useNightContext();
+  
+  const [filteredList, setFilteredList] = useState([]);
+  const [loading, setLoading] = useState(true);
+  
+  const { seasonUrl } = useParams();
+
+
+  // ==========  GET DATA FROM DATABASE  ========== //
 
   useEffect(() => {
     const db = getFirestore();
@@ -56,6 +60,9 @@ const ItemListContainer = () => {
       .catch((err) => console.log(err))
       .finally(() => setLoading(false));
   }, [seasonUrl]);
+
+
+  // ==========  RETURN  ========== //
 
   return (
     <div

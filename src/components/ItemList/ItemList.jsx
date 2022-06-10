@@ -9,6 +9,10 @@ import Item from "../Item/Item";
 
 
 function ItemList({ packs }) {
+
+
+  // ==========  RETURN  ========== //
+
   return (
     <div className="d-flex flex-wrap w-100 justify-content-around gap-4 p-4">
       {packs.map((mappedItems) => (

@@ -19,15 +19,22 @@ import CartWidget from "../CartWidget/CartWidget";
 
 
 function NavBar() {
-  const { isNight } = useNightContext();
+
   const [show, setShow] = useState(false);
+  const { isNight } = useNightContext();
+
+
+  // ==========  SHOW DROPDOWN  ========== //
 
   function changeDisplay() {
     setShow((prev) => !prev);
   }
 
+
+  // ==========  RETURN  ========== //
+
   return (
-    <header className={isNight?"headerNight":""}>
+    <header className={isNight ? "headerNight" : ""}>
       <Link
         to="/"
         className="logo text-center d-flex justify-content-center align-items-center gap-2 linkOnNavBar"
@@ -70,10 +77,6 @@ function NavBar() {
               </div>
             )}
           </div>
-
-          {/* <Link to="/tienda" className="linkOnNavBar">
-            <li className="liWithHover">TIENDA</li>
-          </Link> */}
           <CartWidget />
         </ul>
       </nav>

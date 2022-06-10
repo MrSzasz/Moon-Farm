@@ -12,11 +12,12 @@ import { useNightContext } from "../../context/NightContext/NightContext";
 
 
 
-
-
 const IndexContent = () => {
 
   const { isNight } = useNightContext();
+
+
+  // ==========  RETURN  ========== //
 
   return (
     <div className="indexContainer">
@@ -30,7 +31,7 @@ const IndexContent = () => {
         Asi que, ¿Que esperas para poder disfrutar de todos los sabores que el Pueblo Pelícano tiene para ofrecerte? ¡Haz click en el botón que se encuentra debajo para ver todos los productos disponibles!
       </p>
       <Link className={`btn mainButton ${isNight && 'mainButtonNight'}`} to="/tienda">
-        TIENDA &gt;{" "}
+        TIENDA &gt;
       </Link>
     </div>
   );

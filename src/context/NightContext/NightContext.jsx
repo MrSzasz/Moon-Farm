@@ -1,11 +1,19 @@
+// =========================  LIBRARIES  =========================
+
 import { createContext, useContext, useEffect, useState } from "react";
+
 
 const NightContext = createContext();
 
 export const useNightContext = () => useContext(NightContext);
 
+
 const NightContextProvider = ({ children }) => {
+
   const [isNight, setIsNight] = useState("");
+
+
+  // ==========  GET TIME  ========== //
 
   useEffect(() => {
     const today = new Date();
@@ -17,6 +25,9 @@ const NightContextProvider = ({ children }) => {
       setIsNight("night");
     }
   }, []);
+
+
+  // ==========  RETURN  ========== //
 
   return (
     <NightContext.Provider

@@ -19,11 +19,15 @@ import ItemDetail from "../ItemDetail/ItemDetail";
 
 
 const ItemDetailContainer = () => {
+  
+  const { isNight } = useNightContext();
+  
   const [filteredList, setFilteredList] = useState({});
   const [loading, setLoading] = useState(true);
   const { packDetail } = useParams();
 
-  const { isNight } = useNightContext();
+
+  // ==========  GET DATA FROM DATABASE  ========== //
 
   useEffect(() => {
     const db = getFirestore();
@@ -35,6 +39,9 @@ const ItemDetailContainer = () => {
       .catch((err) => console.log(err))
       .finally(() => setLoading(false));
   }, []);
+
+
+  // ==========  RETURN  ========== //
 
   return (
     <div className="d-flex flex-wrap w-100 justify-content-around gap-4 p-4 containerDetails">

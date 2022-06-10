@@ -12,6 +12,9 @@ const CategoriesCard = ({ name, className }) => {
 
   const { isNight } = useNightContext();
 
+
+  // ==========  RETURN  ========== //
+
   return (
     <div className={`shopCard ${isNight ? "shopCardNight" : ""}`}>
       <div className="mainShopCardTitle text-center">{name}</div>

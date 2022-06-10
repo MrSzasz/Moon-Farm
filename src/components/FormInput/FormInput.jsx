@@ -1,5 +1,9 @@
 
 const FormInput = ({ className, htmlFor, label, id, type = 'text', name, placeholder, nr, city }) => {
+
+
+    // ==========  RETURN  ========== //
+
     return (
         <>
             {city ?
@@ -10,8 +14,8 @@ const FormInput = ({ className, htmlFor, label, id, type = 'text', name, placeho
                     name={name}
                     placeholder={placeholder}
                     required
-                /> :
-
+                />
+                :
                 <>
                     <label htmlFor={htmlFor}>
                         {label}{nr ? '' : <span>*</span>}
@@ -25,7 +29,6 @@ const FormInput = ({ className, htmlFor, label, id, type = 'text', name, placeho
                         required
                     />
                 </>
-
             }
         </>
     )
