@@ -16,6 +16,7 @@ import { useNightContext } from "../../context/NightContext/NightContext";
 import ModalBase from "../ModalBase/ModalBase";
 import ChangeButton from "../changeButton/changeButton";
 import Item from "../Item/Item";
+import ItemDescription from "../ItemDescription/ItemDescription";
 
 
 
@@ -51,27 +52,18 @@ const ItemDetail = ({ pack }) => {
             <div className="itemListDescription my-4">
               {pack.prodName5 ? (
                 <ul>
-                  <li className="nameLi mb-2">&gt; {pack.prodName1}:</li>
-                  <p className="mb-4">{pack.prodDesc1}</p>
-                  <li className="nameLi mb-2">&gt; {pack.prodName2}:</li>
-                  <p className="mb-4">{pack.prodDesc2}</p>
-                  <li className="nameLi mb-2">&gt; {pack.prodName3}:</li>
-                  <p className="mb-4">{pack.prodDesc3}</p>
-                  <li className="nameLi mb-2">&gt; {pack.prodName4}:</li>
-                  <p className="mb-4">{pack.prodDesc4}</p>
-                  <li className="nameLi mb-2">&gt; {pack.prodName5}:</li>
-                  <p>{pack.prodDesc5}</p>
+                  <ItemDescription prodName={pack.prodName1} prodDesc={pack.prodDesc1} />
+                  <ItemDescription prodName={pack.prodName2} prodDesc={pack.prodDesc2} />
+                  <ItemDescription prodName={pack.prodName3} prodDesc={pack.prodDesc3} />
+                  <ItemDescription prodName={pack.prodName4} prodDesc={pack.prodDesc4} />
+                  <ItemDescription prodName={pack.prodName5} prodDesc={pack.prodDesc5} />
                 </ul>
               ) : (
                 <ul>
-                  <li className="nameLi mb-2">&gt; {pack.prodName1}:</li>
-                  <p className="mb-4">{pack.prodDesc1}</p>
-                  <li className="nameLi mb-2">&gt; {pack.prodName2}:</li>
-                  <p className="mb-4">{pack.prodDesc2}</p>
-                  <li className="nameLi mb-2">&gt; {pack.prodName3}:</li>
-                  <p className="mb-4">{pack.prodDesc3}</p>
-                  <li className="nameLi mb-2">&gt; {pack.prodName4}:</li>
-                  <p className="mb-4">{pack.prodDesc4}</p>
+                  <ItemDescription prodName={pack.prodName1} prodDesc={pack.prodDesc1} />
+                  <ItemDescription prodName={pack.prodName2} prodDesc={pack.prodDesc2} />
+                  <ItemDescription prodName={pack.prodName3} prodDesc={pack.prodDesc3} />
+                  <ItemDescription prodName={pack.prodName4} prodDesc={pack.prodDesc4} />
                 </ul>
               )}
               <hr></hr>

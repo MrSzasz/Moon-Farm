@@ -14,7 +14,7 @@ import { useNightContext } from "../../context/NightContext/NightContext";
 // ----------  COMPONENTS  ----------
 
 import FormContainer from "../FormContainer/FormContainer";
-import Recipes from "../Recipes/Recipes";
+import RecipeContainer from "../RecipeContainer/RecipeContainer";
 
 
 
@@ -38,19 +38,7 @@ const ModalBase = ({ handleShow, handleClose, show, name, buttonName, recipes, i
         <Modal.Body className="pt-1">
 
           {buttonName === "RECETAS" ? (
-            <>
-              <h2 className="text-center">RECETAS</h2>
-              {recipes.map((element) => (
-                <div key={element.recipeID}>
-                  <Recipes
-                    recipeName={element.recipeName}
-                    recipeIng={element.recipeIng}
-                    recipeSteps={element.recipeSteps}
-                    recipeID={element.recipeID}
-                  />
-                </div>
-              ))}
-            </>
+            <RecipeContainer recipes={recipes} />
           ) : (
             <FormContainer />
           )}

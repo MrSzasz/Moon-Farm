@@ -15,6 +15,7 @@ import { useNightContext } from "../../context/NightContext/NightContext";
 // ----------  COMPONENTS  ----------
 
 import CartWidget from "../CartWidget/CartWidget";
+import DropDown from "../DropDown/DropDown";
 
 
 
@@ -58,23 +59,7 @@ function NavBar() {
               <AiOutlineDown className="liWithHover" size={20} />
             </button>
             {show && (
-              <div
-                className={`dropDownNavBar ${isNight ? "dropDownNavBarNight" : ""
-                  }`}
-              >
-                <Link onClick={() => changeDisplay()} to="/tienda/primavera">
-                  PRIMAVERA
-                </Link>
-                <Link onClick={() => changeDisplay()} to="/tienda/verano">
-                  VERANO
-                </Link>
-                <Link onClick={() => changeDisplay()} to="/tienda/otoño">
-                  OTOÑO
-                </Link>
-                <Link onClick={() => changeDisplay()} to="/tienda/especiales">
-                  ESPECIALES
-                </Link>
-              </div>
+              <DropDown showFn={changeDisplay} />
             )}
           </div>
           <CartWidget />
