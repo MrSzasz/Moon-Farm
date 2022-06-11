@@ -44,9 +44,9 @@ const FormContainer = () => {
   // ==========  EMAILJS & ORDER  ========== //
 
   useEffect(() => {
+    const btn = document.getElementById('button');
 
     if (formValidation) {
-      const btn = document.getElementById('button');
 
       document.getElementById('form').addEventListener('submit', function (e) {
 
@@ -76,10 +76,9 @@ const FormContainer = () => {
             }, 5000)
           )
       })
-
     }
     return
-  }, [])
+  }, [formValidation])
 
 
   // ==========  RETURN  ========== //
