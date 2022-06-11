@@ -5,12 +5,11 @@
 
 Moon Farm es un e-commerce basado en el juego [Stardew Valley®](https://www.stardewvalley.net/), en el mismo hice una simulación de venta de productos que aparecen en el mismo, generando un sitio completamente funcional con base en React.
 
-
 <img src="https://i.imgur.com/p1ll3fX.gif" width="550"/>
 
-----------------------------------------------------------------------------
-
+[DEMO](https://streamable.com/12etwk) 🎬
 ## = Paginas = 📄
+
 La pagina se divide en las siguientes secciones:
 
 - _Index_: 
@@ -29,7 +28,6 @@ La pagina se divide en las siguientes secciones:
     Cuando se eligen los objetos se habilita el formulario, este procede a armar una orden de compra que es subida a la base de datos y modifica la lista de productos en la misma.
     El formulario es funcional, dado que se usan los datos para enviar un mail al usuario a través de la librería de EmailJS.
 
-----------------------------------------------------------------------------
 
 ## = Librerías = 📚
 Para la realización de la misma hice uso de las siguientes librerías
@@ -43,15 +41,12 @@ Para la realización de la misma hice uso de las siguientes librerías
 | [Sass](https://sass-lang.com/documentation/) | v1.51.0 | Preprocesador de CSS, utilizado para darle más funcionalidades a CSS, el cual use para crear y reutilizar estilos |
 | [React Hot Toast](https://react-hot-toast.com/docs) | v2.2.0 | Paquete que facilita la creación, estilizado y utilización de alertas, el cual utilice para las alertas de la orden de compra |
 | [EmailJS](https://www.emailjs.com/docs/) | v3.6.2 | API utilizada para enviar Emails automáticamente con base en JS, utilizado para darle una utilidad al formulario más allá de generar la orden de compra |
-
-----------------------------------------------------------------------------
-
+ 
 ## = Deploy = ✔️
 El deploy de la misma está hecha gracias a [Netlify](https://www.netlify.com/) y se puede acceder desde el siguiente link:
 https://moon-farm-coder.netlify.app/
 
 ----------------------------------------------------------------------------
-
 ¡Gracias por visitar mi página! Espero que la disfrutes.
 
 ## = Tomas Lugo = 📝
