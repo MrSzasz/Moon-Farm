@@ -1,142 +1,140 @@
-// ======================================================================================================================== //
+ @mixin glassMorph ($bg:rgba(255, 255, 255, 0.35)) {
+     background-color: $bg !important;
+     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37) !important;
+     backdrop-filter: blur(8.5px) !important;
+     -webkit-backdrop-filter: blur(8.5px) !important;
+     border: 1px solid rgba(255, 255, 255, 0.18) !important;
+ }
 
-@mixin glassMorph ($bg:rgba(255, 255, 255, 0.35)) {
-    background-color: $bg !important;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37) !important;
-    backdrop-filter: blur(8.5px) !important;
-    -webkit-backdrop-filter: blur(8.5px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.18) !important;
-}
+ @mixin glassMorphNight ($bgNight: rgba(14, 15, 94, 0.35)) {
+     background-color: $bgNight !important;
+     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37) !important;
+     backdrop-filter: blur(8.5px) !important;
+     -webkit-backdrop-filter: blur(8.5px) !important;
+     border: 1px solid rgba(14, 15, 94, 0.18) !important;
+ }
 
-@mixin glassMorphNight ($bgNight: rgba(14, 15, 94, 0.35)) {
-    background-color: $bgNight !important;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37) !important;
-    backdrop-filter: blur(8.5px) !important;
-    -webkit-backdrop-filter: blur(8.5px) !important;
-    border: 1px solid rgba(14, 15, 94, 0.18) !important;
-}
+ @mixin borderRadiusPreset {
+     border-radius: 5px !important;
+ }
 
-@mixin borderRadiusPreset {
-    border-radius: 5px !important;
-}
+ @mixin shadowPreset {
+     box-shadow: 11px 11px 30px 0px rgba(0, 0, 0, 0.75) !important;
+ }
 
-@mixin shadowPreset {
-    box-shadow: 11px 11px 30px 0px rgba(0, 0, 0, 0.75) !important;
-}
+ @mixin svBorder {
+     box-shadow:
+         0 0 0 3px #5B2B2A,
+         0 0 0 6px #FA9305,
+         0 0 0 9px #853605 !important;
+ }
 
-@mixin svBorder {
-    box-shadow:
-        0 0 0 3px #5B2B2A,
-        0 0 0 6px #FA9305,
-        0 0 0 9px #853605 !important;
-}
+ // ================================================================================ //
 
-// ======================================================================================================================== //
+ $silver: #A0A0A0;
+ $gold: #EFC90B;
+ $iridium: #801FE2;
+ $font: #1e1e1e;
+ $nightFont: #e1e1e1;
 
-$silver: #A0A0A0;
-$gold: #EFC90B;
-$iridium: #801FE2;
-$font: #1e1e1e;
-$nightFont: #e1e1e1;
+ // ================================================================================ //
 
-// ======================================================================================================================== //
+ .loadingDiv {
 
-.loadingDiv {
+     @include glassMorph();
+     @include borderRadiusPreset();
+     @include shadowPreset();
+     @include svBorder();
+     padding: 15px 50px;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
 
-    @include glassMorph();
-    @include borderRadiusPreset();
-    @include shadowPreset();
-    @include svBorder();
-    padding: 15px 50px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+     .loader {
+         display: inline-block;
+         width: 50px;
+         height: 50px;
+         position: relative;
+         border: 6px solid $font;
+         top: 50%;
+         animation: loader 2s infinite ease;
 
-    .loader {
-        display: inline-block;
-        width: 50px;
-        height: 50px;
-        position: relative;
-        border: 6px solid $font;
-        top: 50%;
-        animation: loader 2s infinite ease;
+         .loader-inner {
+             vertical-align: top;
+             display: inline-block;
+             width: 100%;
+             background-color: $iridium;
+             animation: loader-inner 2s infinite ease-in;
+         }
+     }
+ }
 
-        .loader-inner {
-            vertical-align: top;
-            display: inline-block;
-            width: 100%;
-            background-color: $iridium;
-            animation: loader-inner 2s infinite ease-in;
-        }
-    }
-}
+ @keyframes loader {
+     0% {
+         transform: rotate(0deg);
+     }
 
-@keyframes loader {
-    0% {
-        transform: rotate(0deg);
-    }
+     25% {
+         transform: rotate(180deg);
+     }
 
-    25% {
-        transform: rotate(180deg);
-    }
+     50% {
+         transform: rotate(180deg);
+     }
 
-    50% {
-        transform: rotate(180deg);
-    }
+     75% {
+         transform: rotate(360deg);
+     }
 
-    75% {
-        transform: rotate(360deg);
-    }
+     100% {
+         transform: rotate(360deg);
+     }
+ }
 
-    100% {
-        transform: rotate(360deg);
-    }
-}
+ @keyframes loader-inner {
+     0% {
+         height: 0%;
+     }
 
-@keyframes loader-inner {
-    0% {
-        height: 0%;
-    }
+     25% {
+         height: 0%;
+     }
 
-    25% {
-        height: 0%;
-    }
+     50% {
+         height: 100%;
+     }
 
-    50% {
-        height: 100%;
-    }
+     75% {
+         height: 100%;
+     }
 
-    75% {
-        height: 100%;
-    }
+     100% {
+         height: 0%;
+     }
+ }
 
-    100% {
-        height: 0%;
-    }
-}
+ .loadingNight {
+     @include glassMorphNight();
+     @include borderRadiusPreset();
+     @include shadowPreset();
+     @include svBorder();
 
-.loadingNight {
-    @include glassMorphNight();
-    @include borderRadiusPreset();
-    @include shadowPreset();
-    @include svBorder();
+     .loader {
+         border: 6px solid $nightFont;
+     }
+ }
 
-    .loader {
-        border: 6px solid $nightFont;
-    }
-}
+ //========================================  SCROLLBAR  ========================================//
 
-//========================================  SCROLLBAR  ========================================//
+ ::-webkit-scrollbar {
+     width: 14px;
+ }
 
-::-webkit-scrollbar {
-    width: 14px;
-}
+ ::-webkit-scrollbar-track {
+     background: $font;
+ }
 
-::-webkit-scrollbar-track {
-    background: $font;
-}
-
-::-webkit-scrollbar-thumb {
-    background: $iridium;
-}
+ ::-webkit-scrollbar-thumb {
+     background: $iridium;
+ }
