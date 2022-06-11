@@ -5,9 +5,9 @@
 
 Moon Farm es un e-commerce basado en el juego [Stardew Valley®](https://www.stardewvalley.net/), en el mismo hice una simulación de venta de productos que aparecen en el mismo, generando un sitio completamente funcional con base en React.
 
-<img src="https://i.imgur.com/p1ll3fX.gif" width="550"/>
+<img src="src/resources/gif/moonFarm.gif" alt="NavigationDemo" width="550"/>
 
-[DEMO](https://streamable.com/12etwk) 🎬
+[HD DEMO](https://streamable.com/12etwk) 🎬
 ## = Paginas = 📄
 
 La pagina se divide en las siguientes secciones:
