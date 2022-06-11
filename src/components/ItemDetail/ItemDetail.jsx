@@ -21,7 +21,7 @@ import ItemDescription from "../ItemDescription/ItemDescription";
 
 
 const ItemDetail = ({ pack }) => {
-  
+
   const { isNight } = useNightContext();
 
   const { seasonUrl } = useParams();

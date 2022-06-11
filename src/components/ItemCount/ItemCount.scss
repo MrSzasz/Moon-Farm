@@ -1,37 +1,45 @@
-@import "/src/resources/style/props.scss";
+ @import "/src/resources/style/props.scss";
 
-.counterContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
 
-    .counterControl {
-        width: 30%;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
+ // ================================================================================ //
 
-        .counterStatus {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            text-align: center;
-            font-size: 22px;
-            @include glassMorph;
-            @include svBorder;
-        }
+ .counterContainer {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     gap: 20px;
 
-        .counterNight {
-            @include glassMorphNight;
-            @include svBorder;
-        }
+     .counterControl {
+         width: 30%;
+         display: flex;
+         justify-content: space-around;
+         align-items: center;
 
-        .addToCartNight {
-            &:hover {
-                color: $nightFont !important;
-            }
-        }
-    }
-}
+         .counterStatus {
+             width: 100%;
+             height: 100%;
+             margin: 0;
+             text-align: center;
+             font-size: 22px;
+             @include glassMorph;
+             @include svBorder;
+         }
+     }
+ }
+
+
+ // ============================== NIGHT MODE ============================== //
+
+ .counterControl {
+     .counterNight {
+         @include glassMorphNight;
+         @include svBorder;
+     }
+
+     .addToCartNight {
+         &:hover {
+             color: $nightFont !important;
+         }
+     }
+ }

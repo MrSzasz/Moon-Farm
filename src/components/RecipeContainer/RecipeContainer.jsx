@@ -1,7 +1,3 @@
-// =========================  LIBRARIES  =========================
-
-import { useEffect, useState } from 'react'
-
 // =========================  CUSTOM IMPORTS  =========================
 
 import Recipes from '../Recipes/Recipes'
@@ -10,22 +6,12 @@ import Recipes from '../Recipes/Recipes'
 
 const RecipeContainer = ({ recipes }) => {
 
-    const [recipeFromProp, setRecipeFromProp] = useState()
-
-
-    // ==========  SET RECIPE FROM PROP  ========== //
-
-    useEffect(() => {
-        setRecipeFromProp(recipes)
-    }, [])
-
-
     // ==========  RETURN  ========== //
 
     return (
         <>
             <h2 className="text-center">RECETAS</h2>
-            {recipeFromProp.map((element) => (
+            {(recipes).map((element) => (
                 <div key={element.recipeID}>
                     <Recipes
                         recipeName={element.recipeName}

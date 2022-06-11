@@ -1,203 +1,206 @@
-@font-face {
-    font-family: pixel;
-    src: url(/src/resources/fonts/pixel.ttf);
-}
+ @font-face {
+     font-family: pixel;
+     src: url(/src/resources/fonts/pixel.ttf);
+ }
 
-@font-face {
-    font-family: logo;
-    src: url(/src/resources/fonts/StardewValleyALLCAPS.ttf);
-}
+ @font-face {
+     font-family: logo;
+     src: url(/src/resources/fonts/StardewValleyALLCAPS.ttf);
+ }
 
-@import "/src/resources/style/props.scss";
+ @import "/src/resources/style/props.scss";
 
-// ======================================================================================================================== //
+ // ================================================================================ //
 
-.mainButton {
-    @include glassMorph;
-    @include borderRadiusPreset;
-    @include shadowPreset;
-    padding: 10px 20px 10px 20px;
-    border: 2px solid #1e1e1e;
-    color: $font !important;
-}
+ .mainButton {
+     @include glassMorph;
+     @include borderRadiusPreset;
+     @include shadowPreset;
+     padding: 10px 20px 10px 20px;
+     border: 2px solid #1e1e1e;
+     color: $font !important;
+ }
 
-.body {
-    min-height: 100vh;
-    height: 100%;
-    background-image: url("https://i.imgur.com/tbrDobe.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    font-family: pixel;
-    font-size: 14px;
-    letter-spacing: 0.5px;
-    word-spacing: 1px;
-    line-height: 27px;
-    color: $font;
+ .body {
+     min-height: 100vh;
+     height: 100%;
+     background-image: url("https://i.imgur.com/tbrDobe.jpg");
+     background-position: center;
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     font-family: pixel;
+     font-size: 14px;
+     letter-spacing: 0.5px;
+     word-spacing: 1px;
+     line-height: 27px;
+     color: $font;
 
-    main {
-        display: grid;
-        grid-template-columns: 10% auto 10%;
-        height: min-content;
+     main {
+         display: grid;
+         grid-template-columns: 10% auto 10%;
+         height: min-content;
 
-        .indexContainer {
-            grid-column: 2/3;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            padding: 20px 0 20px 0;
-            margin-bottom: 0;
+         .indexContainer {
+             grid-column: 2/3;
+             display: flex;
+             flex-direction: column;
+             justify-content: center;
+             align-items: center;
+             gap: 20px;
+             padding: 20px 0 20px 0;
+             margin-bottom: 0;
 
-            .mainImg {
-                grid-column: 2/3;
-                height: 400px;
-                width: 80%;
-                margin: auto;
-                background-image: url('https://i.imgur.com/G90EP54.jpg');
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-                @include borderRadiusPreset;
-                @include shadowPreset;
-            }
-            .mainImg {
-                background-image: url('https://i.imgur.com/7AHKCAK.jpg');
-            }
+             .mainImg {
+                 grid-column: 2/3;
+                 height: 400px;
+                 width: 80%;
+                 margin: auto;
+                 background-image: url('https://i.imgur.com/G90EP54.jpg');
+                 background-size: cover;
+                 background-position: center;
+                 background-repeat: no-repeat;
+                 @include borderRadiusPreset;
+                 @include shadowPreset;
+             }
 
-            p {
-                text-align: justify;
-                padding: 25px;
-                @include glassMorph;
-                @include borderRadiusPreset;
-                @include shadowPreset;
-            }
-        }
+             .mainImg {
+                 background-image: url('https://i.imgur.com/7AHKCAK.jpg');
+             }
 
-
-        // ======================== //
-
-        .mainShop {
-            grid-column: 2/3;
-            height: min-content;
-            width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: space-around;
-            align-items: center;
-
-            .card {
-                height: 300px;
-                min-width: 200px;
-                border: 2px solid blue;
-                background-color: antiquewhite;
-            }
-        }
-
-        // ======================== //
-
-        .mainPacks {
-            grid-column: 2/3;
-            height: min-content;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-            .packContainer {
-                height: min-content;
-                width: 100%;
-                display: flex;
-                flex-wrap: wrap;
-                gap: 20px;
-                justify-content: space-around;
-                align-items: center;
-
-                .packCard {
-                    height: 300px;
-                    min-width: 200px;
-                    background-color: antiquewhite;
-                    @include glassMorph;
-                }
-
-                .silver {
-                    border: 6px solid black hsl(0, 100%, 50%);
-                    box-shadow:
-                        0 0 0 10px hsl(0, 0%, 80%),
-                        0 0 0 15px hsl(0, 0%, 90%);
-                }
-
-                .gold {
-                    border: 4px solid $gold;
-                    border: 4px solid $gold;
-                }
-
-                .iridium {
-                    border: 4px solid $iridium;
-                    border: 4px solid $iridium;
-                }
-            }
-        }
-
-        // ======================== //
-
-        .infoCard {
-            grid-column: 2/3;
-            height: min-content;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            justify-content: space-around;
-            align-items: center;
-
-            .prodInfo {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                .infoCardModal {
-                    display: flex;
-                    flex-direction: row;
-                    height: 300px;
-                    min-width: 200px;
-                    border: 2px solid blue;
-                    background-color: antiquewhite;
-                }
-
-                p {
-                    width: auto;
-                }
-            }
+             p {
+                 text-align: justify;
+                 padding: 25px;
+                 @include glassMorph;
+                 @include borderRadiusPreset;
+                 @include shadowPreset;
+             }
+         }
 
 
-        }
+         // ======================== //
 
-        // ======================== //
+         .mainShop {
+             grid-column: 2/3;
+             height: min-content;
+             width: 100%;
+             display: flex;
+             flex-wrap: wrap;
+             gap: 20px;
+             justify-content: space-around;
+             align-items: center;
 
-    }
+             .card {
+                 height: 300px;
+                 min-width: 200px;
+                 border: 2px solid blue;
+                 background-color: antiquewhite;
+             }
+         }
 
-    footer {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        height: 80px;
-        @include glassMorph;
-    }
-}
+         // ======================== //
 
-.night {
-    background-image: url("https://i.imgur.com/SBXIJOp.jpg");
-    color: $nightFont;
-}
+         .mainPacks {
+             grid-column: 2/3;
+             height: min-content;
+             width: 100%;
+             display: flex;
+             flex-direction: column;
+             justify-content: center;
+             align-items: center;
 
-a {
-    height: min-content !important;
-    text-decoration: none !important;
-    color: $font !important;
-}
+             .packContainer {
+                 height: min-content;
+                 width: 100%;
+                 display: flex;
+                 flex-wrap: wrap;
+                 gap: 20px;
+                 justify-content: space-around;
+                 align-items: center;
 
+                 .packCard {
+                     height: 300px;
+                     min-width: 200px;
+                     background-color: antiquewhite;
+                     @include glassMorph;
+                 }
+
+                 .silver {
+                     border: 6px solid black hsl(0, 100%, 50%);
+                     box-shadow:
+                         0 0 0 10px hsl(0, 0%, 80%),
+                         0 0 0 15px hsl(0, 0%, 90%);
+                 }
+
+                 .gold {
+                     border: 4px solid $gold;
+                     border: 4px solid $gold;
+                 }
+
+                 .iridium {
+                     border: 4px solid $iridium;
+                     border: 4px solid $iridium;
+                 }
+             }
+         }
+
+         // ======================== //
+
+         .infoCard {
+             grid-column: 2/3;
+             height: min-content;
+             width: 100%;
+             display: flex;
+             flex-direction: column;
+             gap: 20px;
+             justify-content: space-around;
+             align-items: center;
+
+             .prodInfo {
+                 display: flex;
+                 justify-content: center;
+                 align-items: center;
+
+                 .infoCardModal {
+                     display: flex;
+                     flex-direction: row;
+                     height: 300px;
+                     min-width: 200px;
+                     border: 2px solid blue;
+                     background-color: antiquewhite;
+                 }
+
+                 p {
+                     width: auto;
+                 }
+             }
+
+
+         }
+
+         // ======================== //
+
+     }
+
+     footer {
+         position: fixed;
+         bottom: 0;
+         width: 100%;
+         height: 80px;
+         @include glassMorph;
+     }
+ }
+
+ a {
+     height: min-content !important;
+     text-decoration: none !important;
+     color: $font !important;
+ }
+
+
+ // ============================== NIGHT MODE ============================== //
+
+ .night {
+     background-image: url("https://i.imgur.com/SBXIJOp.jpg");
+     color: $nightFont;
+ }

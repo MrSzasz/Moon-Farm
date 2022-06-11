@@ -67,7 +67,7 @@ const FormContainer = () => {
               })
           }, (err) => {
             btn.value = 'FINALIZAR COMPRA';
-            alert(JSON.stringify(err));
+            console.log(JSON.stringify(err));
           })
           .finally(
             getDataForOrder(),

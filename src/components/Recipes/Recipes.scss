@@ -1,15 +1,18 @@
-@import "/src/resources/style/props.scss";
+ @import "/src/resources/style/props.scss";
 
-.imgFromRecipe {
-    @include glassMorph;
-    @include svBorder;
-    @include borderRadiusPreset;
-    height: auto;
-    width: 120px;
-    padding: 20px;
-    transition: ease all .20s;
 
-    &:hover {
-        transform: scale(1.1);
-    }
-}
+ // ================================================================================ //
+
+ .imgFromRecipe {
+     @include glassMorph;
+     @include svBorder;
+     @include borderRadiusPreset;
+     height: auto;
+     width: 120px;
+     padding: 20px;
+     transition: ease all .20s;
+
+     &:hover {
+         transform: scale(1.1);
+     }
+ }

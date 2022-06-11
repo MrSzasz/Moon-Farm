@@ -1,14 +1,16 @@
-@import "/src/resources/style/props.scss";
+ @import "/src/resources/style/props.scss";
 
 
-.shopContainer {
-    grid-column: 2/3;
-    height: min-content;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-around;
-    align-items: center;
-    padding: 30px;
-}
+ // ================================================================================ //
+
+ .shopContainer {
+     grid-column: 2/3;
+     height: min-content;
+     width: 100%;
+     display: flex;
+     flex-wrap: wrap;
+     gap: 20px;
+     justify-content: space-around;
+     align-items: center;
+     padding: 30px;
+ }

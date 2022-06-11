@@ -1,7 +1,3 @@
-// =========================  STYLES  =========================
-
-import "./ChangeButton.scss";
-
 // =========================  LIBRARIES  =========================
 
 import { useState } from "react";
@@ -18,9 +14,9 @@ import ContinueShoppingButton from "../ContinueShoppingButton/ContinueShoppingBu
 
 
 const ChangeButton = ({ stockFromObject, selectedPack }) => {
-  
+
   const { addToCartList } = useCartContext();
-  
+
   const [showButton, setShowButton] = useState(false);
 
 

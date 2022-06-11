@@ -1,7 +1,3 @@
-// =========================  STYLES  =========================
-
-import "./ContinueShoppingButton.scss"
-
 // =========================  LIBRARIES  =========================
 
 import { Link, useParams } from "react-router-dom";

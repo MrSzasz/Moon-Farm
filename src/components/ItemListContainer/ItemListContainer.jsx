@@ -28,9 +28,9 @@ import ItemList from "../ItemList/ItemList";
 const ItemListContainer = () => {
 
   const { isNight } = useNightContext();
-  
+
   const { seasonUrl } = useParams();
-  
+
   const [filteredList, setFilteredList] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -66,9 +66,8 @@ const ItemListContainer = () => {
 
   return (
     <div
-      className={`d-flex flex-wrap w-100 justify-content-center align-items-center containerPacks ${
-        isNight ? "nightContainer" : ""
-      }`}
+      className={`d-flex flex-wrap w-100 justify-content-center align-items-center containerPacks ${isNight ? "nightContainer" : ""
+        }`}
     >
       {loading ? (
         <div

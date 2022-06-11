@@ -18,7 +18,7 @@ import RecipeContainer from "../RecipeContainer/RecipeContainer";
 
 
 
-const ModalBase = ({ handleShow, handleClose, show, name, buttonName, recipes, idForKey }) => {
+const ModalBase = ({ handleShow, handleClose, show, name, buttonName, recipes }) => {
 
   const { isNight } = useNightContext();
 

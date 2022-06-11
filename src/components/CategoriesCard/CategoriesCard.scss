@@ -1,101 +1,110 @@
-@import "/src/resources/style/props.scss";
-
-// ======================================================================================================================== //
+ @import "/src/resources/style/props.scss";
 
 
-.shopCard {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 300px;
-    min-width: 200px;
-    transition: ease all .20s;
-    margin: 10px 0 10px 0;
-    cursor: pointer;
-    @include glassMorph;
-    border-radius: 5px;
-    @include svBorder;
+ // ================================================================================ //
 
-    &:hover {
-        transform: scale(1.05);
-    }
+ .shopCard {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     height: 300px;
+     min-width: 200px;
+     transition: ease all .20s;
+     margin: 10px 0 10px 0;
+     cursor: pointer;
+     @include glassMorph;
+     border-radius: 5px;
+     @include svBorder;
 
-    .mainShopCardTitle {
-        height: 10%;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
-        @include glassMorph(rgba(128, 31, 226,.65));
-        @include glassMorph(rgba(253, 193, 117,.65));
-        border-radius: 5px 5px 0 0;
-        border: 1.5px solid black;
-    }
+     &:hover {
+         transform: scale(1.05);
+     }
 
-    .backCard {
-        height: 90%;
-        width: 100%;
+     .mainShopCardTitle {
+         height: 10%;
+         width: 100%;
+         display: flex;
+         justify-content: center;
+         align-items: flex-end;
+         @include glassMorph(rgba(128, 31, 226, .65));
+         @include glassMorph(rgba(253, 193, 117, .65));
+         border-radius: 5px 5px 0 0;
+         border: 1.5px solid black;
+     }
 
-    }
+     .backCard {
+         height: 90%;
+         width: 100%;
 
-    .spring {
-        background-image: url("https://i.imgur.com/ZwO9zgb.jpg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: 300%;
-    }
-    .springNight {
-        background-image: url("https://i.imgur.com/dH4nwBF.jpg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: 300%;
-    }
+     }
 
-    .summer {
-        background-image: url("https://i.imgur.com/T9q4AdE.jpg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: 300%;
-    }
-    .summerNight {
-        background-image: url("https://i.imgur.com/FttI1aL.jpg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: 300%;
-    }
+     .spring {
+         background-image: url("https://i.imgur.com/ZwO9zgb.jpg");
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: 300%;
+     }
 
-    .autumn {
-        background-image: url("https://i.imgur.com/oUy0sWP.jpg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: 300%;
-    }
-    .autumnNight {
-        background-image: url("https://i.imgur.com/4EMJDCW.jpg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: 300%;
-    }
+     .summer {
+         background-image: url("https://i.imgur.com/T9q4AdE.jpg");
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: 300%;
+     }
 
-    .specials {
-        background-image: url("https://i.imgur.com/O3U44E8.jpg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: 300%;
-    }
-    .specialsNight {
-        background-image: url("https://i.imgur.com/HYKlMYE.jpg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: 300%;
-    }
-}
+     .autumn {
+         background-image: url("https://i.imgur.com/oUy0sWP.jpg");
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: 300%;
+     }
 
-.night {
-    @include glassMorphNight;
-    
-    .mainShopCardTitle {
-        @include glassMorph(rgba(104, 72, 31, 0.65));
-    }
-}
+     .specials {
+         background-image: url("https://i.imgur.com/O3U44E8.jpg");
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: 300%;
+     }
+ }
+
+
+ // ============================== NIGHT MODE ============================== //
+
+ .night {
+     @include glassMorphNight;
+
+     .mainShopCardTitle {
+         @include glassMorph(rgba(104, 72, 31, 0.65));
+     }
+ }
+
+ .shopCard {
+     .springNight {
+         background-image: url("https://i.imgur.com/dH4nwBF.jpg");
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: 300%;
+     }
+
+     .summerNight {
+         background-image: url("https://i.imgur.com/FttI1aL.jpg");
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: 300%;
+     }
+
+     .autumnNight {
+         background-image: url("https://i.imgur.com/4EMJDCW.jpg");
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: 300%;
+     }
+
+     .specialsNight {
+         background-image: url("https://i.imgur.com/HYKlMYE.jpg");
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: 300%;
+     }
+ }

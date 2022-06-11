@@ -1,150 +1,146 @@
-@import "/src/resources/style/props.scss";
+ @import "/src/resources/style/props.scss";
 
 
-// ======================================================================================================================== //
+ // ================================================================================ //
+
+ .packCard {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     min-height: 300px;
+     height: 350px;
+     min-width: 200px;
+     transition: ease all .20s;
+     margin: 10px 0 10px 0;
+     cursor: pointer;
+     border-radius: 5px;
+     margin: auto;
+     @include glassMorph;
+     @include svBorder;
+
+     &:hover {
+         transform: scale(1.05);
+     }
+
+     .contentCard {
+         height: 20%;
+         width: 100%;
+         border: 1px solid black;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         gap: 10%;
+         padding: 10px;
+
+         img {
+             height: 100%;
+             width: auto;
+         }
+
+         .imgInList {
+             height: 75%;
+         }
+
+         p {
+             margin: 0;
+             font-size: 16px;
+         }
+
+     }
+
+     .bg-gold {
+         @include glassMorph(rgba(160, 160, 160, 0.800));
+         border: 1px solid black;
+         background: linear-gradient(110deg, rgb(150, 150, 150) 50%, rgb(160, 160, 160) 50%);
+         color: $font;
+     }
+
+     .bg-iridium {
+         @include glassMorph(rgba(239, 201, 11, 0.800));
+         border: 1px solid black;
+         background: linear-gradient(110deg, rgb(223, 187, 11) 50%, rgb(239, 201, 11) 50%);
+         color: $font;
+     }
+ }
+
+ .packCardWoH {
+     @extend .packCard;
+     cursor: default;
+
+     &:hover {
+         transform: scale(1);
+     }
+
+ }
+
+ .silver {
+     border: 3px solid $silver;
+
+     &::after {
+         content: '';
+         position: absolute;
+         top: -42px;
+         height: 24px;
+         width: 24px;
+         background-image: url("https://i.imgur.com/9nmOzyF.png");
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: cover;
+         @include glassMorph;
+         border-radius: 5px;
+         @include svBorder;
+     }
+ }
+
+ .gold {
+     border: 3px solid $gold;
+
+     &::after {
+         content: '';
+         position: absolute;
+         top: -42px;
+         height: 24px;
+         width: 24px;
+         background-image: url("https://i.imgur.com/75UVLpj.png");
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: cover;
+         @include glassMorph;
+         border-radius: 5px;
+         @include svBorder;
+     }
+ }
+
+ .iridium {
+     border: 3px solid $iridium;
+
+     &::after {
+         content: '';
+         position: absolute;
+         top: -42px;
+         height: 24px;
+         width: 24px;
+         background-image: url("https://i.imgur.com/k9noXH7.png");
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: cover;
+         @include glassMorph;
+         border-radius: 5px;
+         @include svBorder;
+     }
+ }
 
 
-.packCard {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 300px;
-    height: 350px;
-    min-width: 200px;
-    transition: ease all .20s;
-    margin: 10px 0 10px 0;
-    cursor: pointer;
-    @include glassMorph;
-    border-radius: 5px;
-    margin: auto;
-    @include svBorder;
+ // ============================== NIGHT MODE ============================== //
 
+ .packNight {
+     @include glassMorphNight;
+     @include svBorder;
+     color: $nightFont;
+ }
 
-
-    &:hover {
-        transform: scale(1.05);
-    }
-
-    .contentCard {
-        height: 20%;
-        width: 100%;
-        border: 1px solid black;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 10%;
-        padding: 10px;
-
-        img {
-            height: 100%;
-            width: auto;
-        }
-
-        .imgInList {
-            height: 75%;
-        }
-
-        p {
-            margin: 0;
-            font-size: 16px;
-        }
-
-    }
-
-    .bg-gold {
-        @include glassMorph(rgba(160, 160, 160, 0.800));
-        border: 1px solid black;
-        background: linear-gradient(110deg, rgb(150, 150, 150) 50%, rgb(160, 160, 160) 50%);
-        color: $font;
-    }
-
-    .bg-iridium {
-        @include glassMorph(rgba(239, 201, 11, 0.800));
-        border: 1px solid black;
-        background: linear-gradient(110deg, rgb(223, 187, 11) 50%, rgb(239, 201, 11) 50%);
-        color: $font;
-    }
-}
-
-.packNight {
-
-    @include glassMorphNight;
-    @include svBorder;
-
-}
-
-.packNightWoH {
-
-    @include glassMorphNight;
-    @include svBorder;
-
-}
-
-
-.packCardWoH {
-    @extend .packCard;
-    cursor: default;
-
-    &:hover {
-        transform: scale(1);
-    }
-
-}
-
-.silver {
-    border: 3px solid $silver;
-
-    &::after {
-        content: '';
-        position: absolute;
-        top: -42px;
-        height: 24px;
-        width: 24px;
-        background-image: url("https://i.imgur.com/9nmOzyF.png");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        @include glassMorph;
-        border-radius: 5px;
-        @include svBorder;
-    }
-}
-
-.gold {
-    border: 3px solid $gold;
-
-    &::after {
-        content: '';
-        position: absolute;
-        top: -42px;
-        height: 24px;
-        width: 24px;
-        background-image: url("https://i.imgur.com/75UVLpj.png");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        @include glassMorph;
-        border-radius: 5px;
-        @include svBorder;
-    }
-}
-
-.iridium {
-    border: 3px solid $iridium;
-
-    &::after {
-        content: '';
-        position: absolute;
-        top: -42px;
-        height: 24px;
-        width: 24px;
-        background-image: url("https://i.imgur.com/k9noXH7.png");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        @include glassMorph;
-        border-radius: 5px;
-        @include svBorder;
-    }
-}
+ .packNightWoH {
+     @include glassMorphNight;
+     @include svBorder;
+ }

@@ -5,7 +5,7 @@ import "./ItemDetailContainer.scss";
 // =========================  LIBRARIES  =========================
 
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
 
 // =========================  CUSTOM IMPORTS  =========================
@@ -19,11 +19,12 @@ import ItemDetail from "../ItemDetail/ItemDetail";
 
 
 const ItemDetailContainer = () => {
-  
+
   const { isNight } = useNightContext();
-  
+
   const { packDetail } = useParams();
-  
+  const idNotFound = useNavigate();
+
   const [filteredList, setFilteredList] = useState({});
   const [loading, setLoading] = useState(true);
 
@@ -36,10 +37,13 @@ const ItemDetailContainer = () => {
     const dbQuery = doc(db, "products", packDetail);
 
     getDoc(dbQuery)
-      .then((res) => setFilteredList({ ...res.data(), id: res.id }))
+      .then((res) => {
+        !res.data() && idNotFound("Id not found", { replace: true });
+        setFilteredList({ ...res.data(), id: res.id })
+      })
       .catch((err) => console.log(err))
       .finally(() => setLoading(false));
-  }, []);
+  }, [idNotFound]);
 
 
   // ==========  RETURN  ========== //

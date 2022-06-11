@@ -1,61 +1,65 @@
-@import "/src/resources/style/props.scss";
+ @import "/src/resources/style/props.scss";
 
-.orderContainer {
-    grid-column: 2/3;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    height: min-content;
-    margin: 20px;
-    text-align: center;
 
-    form {
-        gap: 20px;
+ // ================================================================================ //
 
-        input {
-            @include glassMorph;
-            @include borderRadiusPreset;
-            @include svBorder;
-            text-align: center;
+ .orderContainer {
+     grid-column: 2/3;
+     display: flex;
+     flex-direction: column;
+     gap: 20px;
+     height: min-content;
+     margin: 20px;
+     text-align: center;
 
-            &::placeholder {
-                color: $nightFont;
-            }
+     form {
+         gap: 20px;
 
-            &::-webkit-outer-spin-button,
-            &::-webkit-inner-spin-button {
-                -webkit-appearance: none;
-                margin: 0;
-            }
+         input {
+             @include glassMorph;
+             @include borderRadiusPreset;
+             @include svBorder;
+             text-align: center;
 
-            &[type=number] {
-                -moz-appearance: textfield;
-            }
-        }
+             &::placeholder {
+                 color: $nightFont;
+             }
 
-        .cityInput {
-            width: 40%;
-        }
+             &::-webkit-outer-spin-button,
+             &::-webkit-inner-spin-button {
+                 -webkit-appearance: none;
+                 margin: 0;
+             }
 
-        .mainButtonDisabled{
-            &:hover{
-                transform: scale(1);
-            }
-            color: darkgray !important;
-            filter: grayscale(70%);
-        }
-    }
+             &[type=number] {
+                 -moz-appearance: textfield;
+             }
+         }
 
-    span {
-        color: red;
-        font-style: italic;
-        font-size: 10px;
-    }
-}
+         .cityInput {
+             width: 40%;
+         }
 
-.toastStyle {
-    @include glassMorph(rgba(0, 156, 8, 0.35));
-    @include borderRadiusPreset;
-    @include svBorder;
-    color: $nightFont !important;
-}
+         .mainButtonDisabled {
+             &:hover {
+                 transform: scale(1);
+             }
+
+             color: darkgray !important;
+             filter: grayscale(70%);
+         }
+     }
+
+     span {
+         color: red;
+         font-style: italic;
+         font-size: 10px;
+     }
+ }
+
+ .toastStyle {
+     @include glassMorph(rgba(0, 156, 8, 0.35));
+     @include borderRadiusPreset;
+     @include svBorder;
+     color: $nightFont !important;
+ }
