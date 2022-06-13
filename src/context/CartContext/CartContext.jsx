@@ -23,7 +23,6 @@ const CartContextProvider = ({ children }) => {
 
   const [cartList, setCartList] = useState([]);
   const [totalOfCart, setTotalOfCart] = useState();
-  const [orderId, setOrderId] = useState("")
 
 
   // ==========  ADD TO CART  ========== //
@@ -176,12 +175,11 @@ Esté atento a su mailbox`, {
   return (
     <CartContext.Provider
       value={{
-        orderId,
         cartList,
+        totalOfCart,
         getDataForOrder,
         calculateTotalItemsOfCart,
         changeStock,
-        totalOfCart,
         removeFromCart,
         addToCartList,
         clearCart
