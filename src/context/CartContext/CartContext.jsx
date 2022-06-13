@@ -50,7 +50,7 @@ const CartContextProvider = ({ children }) => {
   }, [])
 
 
-  // ==========  ADD TO CART  ========== //
+  // ==========  ADD TO CART  ========== // 
 
   function addToCartList(item) {
     const indexOfItemOnCart = cartList.findIndex(
