@@ -25,7 +25,32 @@ const CartContextProvider = ({ children }) => {
   const [totalOfCart, setTotalOfCart] = useState();
 
 
-  // ==========  ADD TO CART  ========== //
+  // ==========  SAVE CART ON LOCALSTORAGE  ========== //
+
+  function setCartToLocalStorage(cart) {
+    localStorage.setItem('localCartList', JSON.stringify(cart));
+  }
+
+
+  // ==========  GET CART FROM LOCALSTORAGE  ========== //
+
+  function getCartFromLocalStorage() {
+    let cartOnLocalStorage = JSON.parse(localStorage.getItem('localCartList'));
+    cartOnLocalStorage ? setCartList(cartOnLocalStorage) : setCartToLocalStorage([])
+  }
+
+
+  // ==========  GET CART ON START  ========== //
+
+  useEffect(() => {
+
+    getCartFromLocalStorage()
+
+    return
+  }, [])
+
+
+  // ==========  ADD TO CART  ========== // 
 
   function addToCartList(item) {
     const indexOfItemOnCart = cartList.findIndex(
@@ -33,9 +58,13 @@ const CartContextProvider = ({ children }) => {
     );
     if (indexOfItemOnCart !== -1) {
       cartList[indexOfItemOnCart].qtyOnCart += item.qtyOnCart;
-      setCartList([...cartList])
+      let cart = [...cartList];
+      setCartList(cart);
+      setCartToLocalStorage(cart)
     } else {
-      setCartList([...cartList, item]);
+      let cart = [...cartList, item];
+      setCartList(cart);
+      setCartToLocalStorage(cart)
     }
   }
 
@@ -49,7 +78,9 @@ const CartContextProvider = ({ children }) => {
       (itemOnCart) => itemOnCart.id === getProdId
     );
     cartList.splice(indexOfItemOnCart, 1);
-    setCartList([...cartList]);
+    let cart = [...cartList];
+    setCartList(cart);
+    setCartToLocalStorage(cart)
   }
 
 
@@ -137,7 +168,9 @@ Esté atento a su mailbox`, {
           },
           duration: 6900,
           position: "bottom-right"
-        })))
+        })),
+        )
+        .then(localStorage.clear())
     }
   }
 
@@ -146,6 +179,7 @@ Esté atento a su mailbox`, {
 
   function clearCart() {
     setCartList([]);
+    localStorage.clear();
   }
 
 
