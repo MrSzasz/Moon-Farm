@@ -26,6 +26,7 @@ La pagina se divide en las siguientes secciones:
 - _Carrito_:
 
     El carrito presenta un link directo a la tienda cuando está vacío, de la misma forma cuando este tiene algún producto, procede a mostrarlo en pantalla, dando la oportunidad de eliminar uno o todos los objetos del mismo.
+    El carrito es persistente, el mismo queda guardado al recargar la página.
     Cuando se eligen los objetos se habilita el formulario, este procede a armar una orden de compra que es subida a la base de datos y modifica la lista de productos en la misma.
     El formulario es funcional, dado que se usan los datos para enviar un mail al usuario a través de la librería de EmailJS.
 
