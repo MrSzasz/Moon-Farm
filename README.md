@@ -8,6 +8,7 @@ Moon Farm es un e-commerce basado en el juego [Stardew Valley®](https://www.sta
 <img src="src/resources/gif/moonFarm.gif" alt="NavigationDemo" width="550"/>
 
 [HD DEMO](https://streamable.com/12etwk) 🎬
+
 ## = Paginas = 📄
 
 La pagina se divide en las siguientes secciones:
@@ -38,7 +39,7 @@ Para la realización de la misma hice uso de las siguientes librerías
 | [React Router Dom](https://v5.reactrouter.com/web/guides/quick-start) | v6.3.0 | Colección de componentes que facilitan la navegación entre páginas en React, el cual use para la navegación dinámica de la misma |
 | [React Icons](https://react-icons.github.io/react-icons/) | v6.1.1 | Colección de iconos usado para el componente `` |
 | [FireBase](https://firebase.google.com/docs) | v9.8.1 | Base de datos provista por Google, utilizada para guardar la lista de productos y las órdenes de compra |
-| [Sass](https://sass-lang.com/documentation/) | v1.51.0 | Preprocesador de CSS, utilizado para darle más funcionalidades a CSS, el cual use para crear y reutilizar estilos |
+| [Sass](https://sass-lang.com/documentation/) | v1.51.0 | Pre-procesador de CSS, utilizado para darle más funcionalidades a CSS, el cual use para crear y reutilizar estilos |
 | [React Hot Toast](https://react-hot-toast.com/docs) | v2.2.0 | Paquete que facilita la creación, estilizado y utilización de alertas, el cual utilice para las alertas de la orden de compra |
 | [EmailJS](https://www.emailjs.com/docs/) | v3.6.2 | API utilizada para enviar Emails automáticamente con base en JS, utilizado para darle una utilidad al formulario más allá de generar la orden de compra |
  

@@ -1,5 +1,6 @@
 // =========================  LIBRARIES  =========================
 
+import { toast } from 'react-hot-toast';
 import { createContext, useContext, useEffect, useState } from "react";
 import {
   addDoc,
@@ -22,6 +23,7 @@ const CartContextProvider = ({ children }) => {
 
   const [cartList, setCartList] = useState([]);
   const [totalOfCart, setTotalOfCart] = useState();
+  const [orderId, setOrderId] = useState("")
 
 
   // ==========  ADD TO CART  ========== //
@@ -124,8 +126,19 @@ const CartContextProvider = ({ children }) => {
 
       const queryCollection = collection(db, "orders");
 
-
       addDoc(queryCollection, customerOrder)
+        .then((res) =>
+        (toast.success(`¡Gracias por comprar! 
+Su código de orden es:
+${res.id}.
+Esté atento a su mailbox`, {
+          className: "toastStyle",
+          style: {
+            minWidth: '320px',
+          },
+          duration: 6900,
+          position: "bottom-right"
+        })))
     }
   }
 
@@ -163,6 +176,7 @@ const CartContextProvider = ({ children }) => {
   return (
     <CartContext.Provider
       value={{
+        orderId,
         cartList,
         getDataForOrder,
         calculateTotalItemsOfCart,

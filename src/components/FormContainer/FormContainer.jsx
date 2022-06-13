@@ -5,7 +5,7 @@ import "./FormContainer.scss";
 // =========================  LIBRARIES  =========================
 
 import { useEffect, useState } from "react";
-import { toast, Toaster } from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast';
 
 // =========================  CUSTOM IMPORTS  =========================
 
@@ -60,20 +60,15 @@ const FormContainer = () => {
         emailjs.sendForm(serviceID, templateID, this)
           .then(() => {
             btn.value = 'FINALIZAR COMPRA',
-              toast.success('¡Gracias por comprar! Esté atento a su mailbox', {
-                className: "toastStyle",
-                duration: 4900,
-                position: "bottom-right"
-              })
+            getDataForOrder()
           }, (err) => {
             btn.value = 'FINALIZAR COMPRA';
             console.log(JSON.stringify(err));
           })
           .finally(
-            getDataForOrder(),
             setTimeout(() => {
               window.location.reload()
-            }, 5000)
+            }, 7000)
           )
       })
     }

@@ -61,5 +61,7 @@
      @include glassMorph(rgba(0, 156, 8, 0.35));
      @include borderRadiusPreset;
      @include svBorder;
+     font-size: small;
      color: $nightFont !important;
+     padding: 0 20px !important;
  }
