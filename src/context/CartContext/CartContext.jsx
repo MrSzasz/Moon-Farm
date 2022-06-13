@@ -40,7 +40,7 @@ const CartContextProvider = ({ children }) => {
   }
 
 
-  // ==========  REMOVE FROM CART  ========== //
+  // ==========  REMOVE FROM CART  ========== // 
 
   function removeFromCart(e) {
     const clickedButton = e.target;
