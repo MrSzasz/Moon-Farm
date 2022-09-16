@@ -14,7 +14,7 @@ import { useNightContext } from "../../context/NightContext/NightContext";
 // ----------  COMPONENTS  ----------
 
 import ModalBase from "../ModalBase/ModalBase";
-import ChangeButton from "../changeButton/changeButton";
+import ChangeButton from "../ChangeButton/ChangeButton";
 import Item from "../Item/Item";
 import ItemDescription from "../ItemDescription/ItemDescription";
 
