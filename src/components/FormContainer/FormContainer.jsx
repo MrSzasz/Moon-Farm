@@ -103,7 +103,7 @@ const FormContainer = () => {
         <label htmlFor="orderHome">
           Region<span>*</span>
         </label>
-        <div className="d-flex justify-content-around">
+        <div className="cityInputContainer">
           <FormInput className={"cityInput"} id={"inputOrderCountry"} name={"orderCountry"} placeholder={"País"} city={true} />
           <FormInput className={"cityInput"} id={"inputOrderCity"} name={"orderCity"} placeholder={"Ciudad"} city={true} />
         </div>

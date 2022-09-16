@@ -69,7 +69,7 @@ const ItemDetail = ({ pack }) => {
               )}
               <hr></hr>
               <div className="d-flex flex-column">
-                <div className="d-flex justify-content-between">
+                <div className="stockAndPrice">
                   <p className="hoverLine">
                     &gt; Stock disponible: {pack.stock}{" "}
                   </p>

@@ -17,6 +17,12 @@
      tr {
          border-bottom: 2px solid $font;
      }
+
+     .clearOrContinue {
+         // d-flex justify-content-around
+         display: flex;
+         justify-content: space-around;
+     }
  }
 
 
@@ -38,6 +44,68 @@
          &:hover {
              td {
                  color: $nightFont !important;
+             }
+         }
+     }
+ }
+
+
+ // ==============================  MEDIA QUERIES  ============================== //
+
+ @media only screen and (max-width: 720px) {
+     .cartContainer {
+         grid-column: 2/3;
+         gap: 20px;
+         padding: 0px;
+
+         h2 {
+             font-size: 18px;
+             padding: 10px;
+         }
+
+         .buttonBack {
+             width: 80% !important;
+             margin-bottom: 1.5em !important;
+         }
+
+         table {
+             font-size: 14px;
+             width: min-content;
+
+
+             th,
+             td {
+                 letter-spacing: normal;
+                 padding: 3px;
+                 font-size: 8px;
+                 width: min-content;
+                 height: min-content;
+             }
+
+             tr {
+                 border-bottom: 2px solid $font;
+
+                 button {
+                     padding: 1em 1.2em;
+                     font-size: 1em;
+                 }
+             }
+         }
+
+         h3 {
+             font-size: 20px;
+         }
+
+         .clearOrContinue {
+             display: flex;
+             flex-direction: column;
+             justify-content: space-around;
+             gap: 1.5em;
+             margin-bottom: 1em;
+
+             button {
+                 width: 80% !important;
+                 margin-inline: auto;
              }
          }
      }

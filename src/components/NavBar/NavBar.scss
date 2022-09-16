@@ -119,3 +119,51 @@
          }
      }
  }
+
+ // ==============================  MEDIA QUERIES  ============================== //
+
+ @media only screen and (max-width: 500px) {
+     header {
+         .logo {
+             height: 50%;
+             width: 50%;
+             border-bottom: 0;
+             margin-inline: auto;
+
+             img {
+                 height: auto;
+                 width: 200px;
+                 padding: 0px;
+             }
+         }
+
+         nav {
+             ul {
+                 justify-content: space-between;
+                 padding: 0 .5em;
+
+                 a {
+                     font-size: 12px;
+                 }
+
+                 .buttonDropdown {
+                     height: 10px;
+                     width: 10px;
+                 }
+
+                 li {
+                     padding: 5px;
+
+                 }
+             }
+         }
+     }
+
+     // ============================== NIGHT MODE ============================== //
+
+     .headerNight {
+         .logo {
+             border-bottom: 0px solid $nightFont;
+         }
+     }
+ }

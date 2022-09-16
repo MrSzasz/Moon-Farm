@@ -46,3 +46,17 @@
          }
      }
  }
+
+ // ==============================  MEDIA QUERIES  ============================== //
+
+ @media only screen and (max-width: 500px) {
+     .itemListDescription {
+         ul {
+             padding: 10px;
+
+             .nameLi {
+                 font-size: 13px;
+             }
+         }
+     }
+ }

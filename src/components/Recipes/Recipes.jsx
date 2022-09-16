@@ -7,8 +7,8 @@ const Recipes = ({ recipeName, recipeIng, recipeSteps, recipeID, recipeImg }) =>
   // ==========  RETURN  ========== //
 
   return (
-    <div key={recipeID}>
-      <div className="d-flex justify-content-around align-items-center">
+    <div className="recipeContentContainer" key={recipeID}>
+      <div className="titleAndImg">
         <img className="imgFromRecipe" src={recipeImg} />
         <h4 className="text-center">= {recipeName} =</h4>
       </div>

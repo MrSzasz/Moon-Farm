@@ -1,3 +1,8 @@
+// =========================  STYLES  =========================
+
+import "./ContinueShoppingButton.scss";
+
+
 // =========================  LIBRARIES  =========================
 
 import { Link, useParams } from "react-router-dom";
@@ -18,7 +23,7 @@ const ContinueShoppingButton = () => {
   // ==========  RETURN  ========== //
 
   return (
-    <div className="d-flex justify-content-around p-3">
+    <div className="continueShopping">
       <Link to={`/tienda/${seasonUrl}`} className={`btn mainButton ${isNight && 'mainButtonNight'}`}>
         &lt; SEGUIR COMPRANDO
       </Link>

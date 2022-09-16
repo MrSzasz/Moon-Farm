@@ -40,7 +40,6 @@
  // ================================================================================ //
 
  .loadingDiv {
-
      @include glassMorph();
      @include borderRadiusPreset();
      @include shadowPreset();
@@ -137,4 +136,22 @@
 
  ::-webkit-scrollbar-thumb {
      background: $iridium;
+ }
+
+ // ==============================  MEDIA QUERIES  ============================== //
+
+ @media only screen and (max-width: 500px) {
+     .loadingDiv {
+         padding: 15px 40px;
+
+         .loader {
+             width: 40px;
+             height: 40px;
+         }
+
+         h2 {
+             font-size: 18px;
+         }
+     }
+
  }

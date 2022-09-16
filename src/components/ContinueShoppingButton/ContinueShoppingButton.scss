@@ -1,0 +1,22 @@
+@import "/src/resources/style/props.scss";
+
+
+// ================================================================================ //
+
+.continueShopping {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+}
+
+// ==============================  MEDIA QUERIES  ============================== //
+
+@media only screen and (max-width: 670px) {
+    .continueShopping {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+        justify-content: space-around;
+        padding: 1rem;
+    }
+}

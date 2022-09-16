@@ -44,7 +44,7 @@ const Cart = () => {
           <h2>Tal vez deberías ir a buscar algo a la tienda...</h2>
           <Link
             to="/tienda"
-            className={`btn mainButton w-25 m-auto ${isNight ? "mainButtonNight" : ""
+            className={`btn mainButton buttonBack w-25 m-auto ${isNight ? "mainButtonNight" : ""
               }`}
           >
             TIENDA &gt;
@@ -92,7 +92,7 @@ const Cart = () => {
             ))}
           </table>
           <h3>Total: ${totalOfCart}</h3>
-          <div className="d-flex justify-content-around">
+          <div className="clearOrContinue">
             <button
               className={`btn mainButton w-25 ${isNight ? "mainButtonNight" : ""
                 }`}

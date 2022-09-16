@@ -12,7 +12,7 @@
      height: 350px;
      min-width: 200px;
      transition: ease all .20s;
-     margin: 10px 0 10px 0;
+     margin: 10px 0;
      cursor: pointer;
      border-radius: 5px;
      margin: auto;
@@ -143,4 +143,20 @@
  .packNightWoH {
      @include glassMorphNight;
      @include svBorder;
+ }
+
+ // ==============================  MEDIA QUERIES  ============================== //
+
+ @media only screen and (max-width: 500px) {
+     .packCard {
+         .contentCard {
+             img {
+                 height: 80%;
+             }
+
+             p {
+                 font-size: 15px;
+             }
+         }
+     }     
  }

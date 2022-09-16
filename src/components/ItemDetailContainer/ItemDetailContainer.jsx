@@ -49,7 +49,7 @@ const ItemDetailContainer = () => {
   // ==========  RETURN  ========== //
 
   return (
-    <div className="d-flex flex-wrap w-100 justify-content-around gap-4 p-4 containerDetails">
+    <div className="containerDetails">
       {loading ? (
         <div
           className={`text-center loadingDiv ${isNight ? "loadingNight" : ""}`}

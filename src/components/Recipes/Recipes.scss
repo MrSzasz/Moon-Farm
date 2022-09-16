@@ -3,16 +3,44 @@
 
  // ================================================================================ //
 
- .imgFromRecipe {
-     @include glassMorph;
-     @include svBorder;
-     @include borderRadiusPreset;
-     height: auto;
-     width: 120px;
-     padding: 20px;
-     transition: ease all .20s;
+ .recipeContentContainer {
+     .titleAndImg {
+         display: flex;
+         justify-content: space-around;
+         align-items: center;
 
-     &:hover {
-         transform: scale(1.1);
+         .imgFromRecipe {
+             @include glassMorph;
+             @include svBorder;
+             @include borderRadiusPreset;
+             height: auto;
+             width: 120px;
+             padding: 20px;
+             transition: ease all .20s;
+
+             &:hover {
+                 transform: scale(1.1);
+             }
+         }
      }
+ }
+
+
+ // ==============================  MEDIA QUERIES  ============================== //
+
+ @media only screen and (max-width: 500px) {
+     .recipeContentContainer {
+        ul{
+            padding: 0;
+        }
+         .titleAndImg {
+             flex-direction: column;
+             gap: 1.5em;
+             padding-top: .5em;
+         }
+         p{
+            font-size: 15px;
+         }
+     }
+
  }

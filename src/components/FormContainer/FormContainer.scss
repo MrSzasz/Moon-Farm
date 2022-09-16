@@ -32,13 +32,18 @@
                  -moz-appearance: textfield;
              }
 
-             &::placeholder{
-                color:rgb(78, 78, 78)
+             &::placeholder {
+                 color: rgb(78, 78, 78)
              }
          }
 
-         .cityInput {
-             width: 40%;
+         .cityInputContainer {
+             display: flex;
+             justify-content: space-around;
+
+             .cityInput {
+                 width: 40%;
+             }
          }
 
          .mainButtonDisabled {
@@ -86,4 +91,85 @@
      -webkit-text-fill-color: $font !important;
      -webkit-box-shadow: 0 0 0px 1000px wheat inset;
      transition: background-color 5000s ease-in-out 0s;
+ }
+
+
+ // ==============================  MEDIA QUERIES  ============================== //
+
+ @media only screen and (max-width: 500px) {
+     .orderContainer {
+         grid-column: 2/3;
+         gap: 10px;
+         margin: 0px;
+
+         h2 {
+             font-size: 16px !important;
+         }
+
+         p {
+             font-size: 14px;
+             text-align: justify;
+         }
+
+         form {
+             gap: 15px;
+
+             label {
+                 font-size: 15px;
+             }
+
+             input{
+                 font-size: 13px;
+                &::placeholder{
+                    font-size: 13px;
+                }
+             }
+
+             .cityInput {
+                 width: 42%;
+             }
+
+             .cityInputContainer {
+                 display: flex;
+                 justify-content: space-between;
+
+                 .cityInput {
+                     width: 45%;
+                 }
+             }
+
+             .mainButtonDisabled {
+                 &:hover {
+                     transform: scale(1);
+                 }
+
+                 color: darkgray !important;
+                 filter: grayscale(70%);
+             }
+
+             .mainButton {
+                 width: 90%;
+                 font-size: 13px;
+                 width: min-content;
+                 margin-bottom: 1em;
+             }
+         }
+
+         span {
+             color: red;
+             font-style: italic;
+             font-size: 10px;
+         }
+     }
+
+
+     // ============================== TOAST ============================== //
+
+     .toastStyle {
+         font-size: smaller;
+         color: $nightFont !important;
+         padding: 0 10px !important;
+     }
+
+
  }

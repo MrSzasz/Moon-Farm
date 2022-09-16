@@ -7,7 +7,7 @@
      @include glassMorph;
      @include borderRadiusPreset;
      @include shadowPreset;
-     padding: 10px 20px 10px 20px;
+     padding: 10px 20px;
      @include svBorder;
      transition: ease all .20s;
 
@@ -33,7 +33,7 @@
          justify-content: center;
          align-items: center;
          gap: 40px;
-         padding: 20px 0 20px 0;
+         padding: 20px 0;
 
          h1 {
              padding: 25px;
@@ -117,5 +117,38 @@
 
      &:hover {
          color: inherit;
+     }
+ }
+
+ // ==============================  MEDIA QUERIES  ============================== //
+
+ @media only screen and (max-width: 500px) {
+     .mainButton {
+         padding: 5px 10px;
+         font-size: 15px;
+     }
+
+     .body {
+         grid-template-columns: 5% auto 5%;
+
+         .indexContainer {
+             h1 {
+                 font-size: 20px;
+                 padding: 15px;
+             }
+
+             .mainImg {
+                 width: 100%;
+             }
+
+             p {
+                 font-size: 12px;
+                 padding: 15px;
+
+                 span {
+                     font-size: 15px;
+                 }
+             }
+         }
      }
  }
